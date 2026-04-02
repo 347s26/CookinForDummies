@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CookinForDummies</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/generic.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">CookinForDummies</h1>
+            <ul class="nav-links">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">My Recipes</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}
+        <!--this will contain page specific html using a different html file-->
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CookinForDummies</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
