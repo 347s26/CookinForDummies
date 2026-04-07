@@ -5,15 +5,16 @@ from django.views.generic import ListView
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 
-# for viewing single recipe
 class RecipeDetailView(DetailView):
     model = Recipe
 
-# Create your views here.
 def index(request):
     """View function for home page of site. 
-    This will collect the recipes, ingredients, and appliance/utensils 
-    so they can be displayed to the user"""
+    Displays landing page for unauthenticated users,
+    and main page for authenticated users."""
+    
+    if not request.user.is_authenticated:
+        return render(request, 'landing.html')
 
     #allRecipes = Recipe.objects.all()
     #allIngredients = Ingredient.objects.all()

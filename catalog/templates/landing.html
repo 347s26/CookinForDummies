@@ -1,0 +1,66 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 20px;">Welcome to CookinForDummies</h1>
+
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="{% url 'account_login' %}" style="display: inline-block; padding: 8px 14px; border: 1px solid #ccc; border-radius: 8px; text-decoration: none; color: #333; background-color: #f9f9f9; font-weight: bold;">
+            Sign In
+        </a>
+    </div>
+
+    <h2 style="margin-bottom: 15px;">Try These Recipes &gt;</h2>
+    <div class="recipe-list">
+        <div class="recipe-card">
+            <h2 class="recipe-title">Spaghetti Carbonara</h2>
+            <div class="recipe-meta">
+                <span class="time">Time: 20 mins</span>
+                <span class="rating">Rating: 5/5</span>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Chicken Stir-Fry</h2>
+            <div class="recipe-meta">
+                <span class="time">Time: 25 mins</span>
+                <span class="rating">Rating: 4/5</span>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Garlic Butter Shrimp</h2>
+            <div class="recipe-meta">
+                <span class="time">Time: 15 mins</span>
+                <span class="rating">Rating: 5/5</span>
+            </div>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 25px; margin-bottom: 15px;">Ingredients &gt;</h2>
+    <div class="recipe-list">
+        <div class="recipe-card">
+            <h2 class="recipe-title">Garlic</h2>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Tomato</h2>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Onion</h2>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 25px; margin-bottom: 15px;">My Utilities &gt;</h2>
+    <div class="recipe-list">
+        <div class="recipe-card">
+            <h2 class="recipe-title">Chef's Knife</h2>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Cutting Board</h2>
+        </div>
+        <div class="recipe-card">
+            <h2 class="recipe-title">Mixing Bowl</h2>
+        </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; color: #666;">
+        <a href="{% url 'account_signup' %}" style="color: #667eea; text-decoration: none;">Sign up</a> to access full recipes and features
+    </p>
+{% endblock %}
