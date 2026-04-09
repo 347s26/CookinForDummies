@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="recipe-detail-wrapper">
+
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
+
+    <div class="recipe-rating">
+        Rating: {{ recipe.rating }}/5
+    </div>
+
+    <div class="recipe-content-box">
+
+        <p class="time-text">
+            <strong>Time to make:</strong> {{ recipe.time_to_make }} minutes
+        </p>
+
+        <h2 class="ingredients-header">Ingredients</h2>
+        <ul class="ingredients-list">
+            {% for ri in recipe.recipeingredient_set.all %}
+                <li>{{ ri.quantity }} - {{ ri.ingredient.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="steps-header">Directions</h2>
+        <p class="steps-text">
+            {{ recipe.steps }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -16,8 +16,8 @@
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">My Recipes</a></li>
                 <li><a href="#">Skills</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Search</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
                 <li><a href="/accounts/login/" class="btn btn-outline-light">Sign In</a></li>
                 <li><a href="/accounts/signup/" class="btn btn-success">Sign Up</a></li>
             </ul>
@@ -33,7 +33,7 @@
     <footer class="footer">
         <p>&copy; 2026 CookinForDummies</p>
         <div class="footer-links">
-            <a href="#">About</a>
+            <a href="{% url 'about' %}">About</a>
             <a href="#">Contact</a>
         </div>
     </footer>

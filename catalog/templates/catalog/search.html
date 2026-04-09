@@ -1,0 +1,91 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h2>Search Recipes</h2>
+    <form method="get" class="search-form" autocomplete="off">
+        <input
+            type="text"
+            name="q"
+            placeholder="Search by recipe title..."
+            value="{{ request.GET.q }}"
+        >
+
+        <input
+            type="number"
+            name="time"
+            placeholder="Max time to Make (mins)"
+            value="{{ request.GET.time }}"
+        >
+
+        <select name="rating">
+            <option value="">Min Rating</option>
+            {% if request.GET.rating == '1' %}
+                <option value="1" selected>1</option>
+            {% else %}
+                <option value="1">1</option>
+            {% endif %}
+
+            {% if request.GET.rating == '2' %}
+                <option value="2" selected>2</option>
+            {% else %}
+                <option value="2">2</option>
+            {% endif %}
+
+            {% if request.GET.rating == '3' %}
+                <option value="3" selected>3</option>
+            {% else %}
+                <option value="3">3</option>
+            {% endif %}
+
+            {% if request.GET.rating == '4' %}
+                <option value="4" selected>4</option>
+            {% else %}
+                <option value="4">4</option>
+            {% endif %}
+
+            {% if request.GET.rating == '5' %}
+                <option value="5" selected>5</option>
+            {% else %}
+                <option value="5">5</option>
+            {% endif %}
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="recipe-list">
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link">
+                    <div class="recipe-card">
+
+                        <h2 class="recipe-title">{{ recipe.title }}</h2>
+
+                        <div class="recipe-meta">
+                            <span class="time">Time: {{ recipe.time_to_make }} mins</span>
+                            <span class="rating">Rating: {{ recipe.rating }}/5</span>
+                        </div>
+
+                    </div>
+                </a>
+
+            {% endfor %}
+        {% else %}
+            <p>No recipes found.</p>
+        {% endif %}
+    </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?q={{ request.GET.q }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?q={{ request.GET.q }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.db.models import UniqueConstraint # Constrains fields to unique values
 from django.db.models.functions import Lower # Returns lower cased value of field
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Ingredient(models.Model):
@@ -53,26 +54,25 @@ class Skill(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
 
-    ingredient = models.ForeignKey(
+    ingredients = models.ManyToManyField(
         Ingredient,
-        on_delete=models.SET_NULL,
-        null=True
+        through='RecipeIngredient'
     )
 
-    tool = models.ForeignKey(
+    tools = models.ManyToManyField(
         Tool,
-        on_delete=models.SET_NULL,
-        null=True
+        blank=True
     )
 
-    skill = models.ForeignKey(
+    skills = models.ManyToManyField(
         Skill,
-        on_delete=models.SET_NULL,
-        null=True
+        blank=True
     )
 
     steps = models.TextField()
-    time_to_make = models.IntegerField()
+    time_to_make = models.IntegerField(
+        help_text="Time in minutes"
+    )
     rating = models.IntegerField()
 
     def __str__(self):
@@ -89,11 +89,44 @@ class Allergy(models.Model):
         help_text="Enter an Allergy(e.g. nuts, berries etc.)"
     )
 
-    Ingredient = models.ForeignKey(
+    Ingredient = models.ManyToManyField(
         Ingredient,
-        on_delete=models.CASCADE,
-        null=True
+        related_name='allergies',
+        blank=True
     )
 
     def __str__(self):
         return self.name
+
+# for ingredients that are in a specific recipe    
+class RecipeIngredient(models.Model):
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE
+    )
+    ingredient = models.ForeignKey(
+        Ingredient,
+        on_delete=models.CASCADE
+    )
+
+    quantity = models.CharField(
+        max_length=100,
+        help_text="e.g. 2 cups, 1 tsp, 3 pieces"
+    )
+
+    def __str__(self):
+        return f"{self.quantity} of {self.ingredient.name}"
+
+# for ingredients a user has to cook with    
+class UserIngredient(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+    ingredient = models.ForeignKey(
+        Ingredient,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f"{self.user.username} has {self.ingredient.name}"
