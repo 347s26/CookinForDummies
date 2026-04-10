@@ -10,11 +10,7 @@ class RecipeDetailView(DetailView):
 
 def index(request):
     """View function for home page of site. 
-    Displays landing page for unauthenticated users,
-    and main page for authenticated users."""
-    
-    if not request.user.is_authenticated:
-        return render(request, 'landing.html')
+    Displays index page as the default home page."""
 
     #allRecipes = Recipe.objects.all()
     #allIngredients = Ingredient.objects.all()
@@ -26,6 +22,16 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+
+def signin_placeholder(request):
+    """Display a non-functional placeholder sign-in page."""
+    return render(request, 'signin_placeholder.html')
+
+
+def about(request):
+    """Display the about page."""
+    return render(request, 'about.html')
 
 # #view function for recipe search
 # def search_view(request):

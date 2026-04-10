@@ -1,0 +1,126 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <style>
+        .about-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8px 6px 20px 6px;
+        }
+
+        .about-title {
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .about-intro {
+            color: #444;
+            line-height: 1.7;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .about-block {
+            margin-bottom: 24px;
+        }
+
+        .about-block h2 {
+            margin-bottom: 8px;
+        }
+
+        .about-block p {
+            color: #444;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .about-bullets {
+            padding-left: 28px;
+            color: #444;
+            line-height: 1.7;
+            list-style-type: disc;
+            list-style-position: outside;
+        }
+
+        .about-bullets li {
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <section class="about-page">
+        <h1 class="about-title">Welcome to CookinForDummies</h1>
+        <p class="about-intro">
+            CookinForDummies helps you organize what you have at home, learn practical cooking techniques,
+            save your favorites, and discover recipes that match your time and ingredients.
+        </p>
+
+        <div class="about-block">
+            <h2>Home</h2>
+            <p>
+                The Home page is your starting point. Use it to enter ingredients you already have in your household,
+                plus the utilities and tools available in your kitchen.
+            </p>
+            <ul class="about-bullets">
+                <li>Add ingredients you currently have in your pantry, fridge, or freezer.</li>
+                <li>Track available kitchen utilities and tools before choosing a recipe.</li>
+                <li>Get a quick overview of what meals are realistic with your current setup.</li>
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h2>Skills</h2>
+            <p>
+                The Skills page helps you learn new cooking skills step by step, so you can build confidence and improve
+                your cooking techniques over time.
+            </p>
+            <ul class="about-bullets">
+                <li>Learn foundational skills like chopping, sautéing, and seasoning.</li>
+                <li>Practice techniques that make recipes faster, safer, and more consistent.</li>
+                <li>Build cooking confidence whether you are a beginner or improving basics.</li>
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h2>My Recipes</h2>
+            <p>
+                My Recipes is your personal collection of saved recipes, making it easy to come back to meals you like
+                and plan what to cook next.
+            </p>
+            <ul class="about-bullets">
+                <li>Save recipes you want to revisit later.</li>
+                <li>Keep favorite meals in one place for quick access.</li>
+                <li>Use saved recipes to plan your week and reduce decision fatigue.</li>
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h2>Search</h2>
+            <p>
+                Use Search to find recipes you already know or explore new ones. You can browse current options,
+                discover ideas, and quickly find meals that fit your needs.
+            </p>
+            <ul class="about-bullets">
+                <li>Search for recipes by name, time, or other criteria.</li>
+                <li>Look up familiar recipes or discover new meal ideas.</li>
+                <li>Compare options quickly to pick the best recipe for the day.</li>
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h2>Help</h2>
+            <p>
+                Need help getting started? Use these quick tips to navigate the app and find what you need faster.
+            </p>
+            <ul class="about-bullets">
+                <li>Start on Home to review featured recipes and skill suggestions.</li>
+                <li>Use Search when you want to filter recipes by name, time, or rating.</li>
+                <li>Use My Recipes to revisit meals you saved previously.</li>
+                <li>Visit Skills to learn techniques before trying harder recipes.</li>
+                <li>If a page seems outdated, refresh your browser to load the latest changes.</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
