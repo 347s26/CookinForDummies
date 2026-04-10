@@ -89,7 +89,7 @@ class Allergy(models.Model):
         help_text="Enter an Allergy(e.g. nuts, berries etc.)"
     )
 
-    Ingredient = models.ManyToManyField(
+    ingredients = models.ManyToManyField(
         Ingredient,
         related_name='allergies',
         blank=True
@@ -130,3 +130,4 @@ class UserIngredient(models.Model):
 
     def __str__(self):
         return f"{self.user.username} has {self.ingredient.name}"
+
