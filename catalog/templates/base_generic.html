@@ -6,6 +6,8 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/generic.css' %}">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 <body>
 
@@ -15,7 +17,7 @@
             <ul class="nav-links">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">My Recipes</a></li>
-                <li><a href="#">Skills</a></li>
+                <li><a href="{% url 'skills' %}">Skills</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'search' %}">Search</a></li>
             </ul>

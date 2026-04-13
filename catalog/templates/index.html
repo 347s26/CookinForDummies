@@ -1,47 +1,62 @@
 {% extends "base_generic.html" %}
-
 {% block content %}
-    <div style="text-align: right; margin-bottom: 20px;">
-        <a href="{% url 'signin-placeholder' %}" title="Open the sign-in placeholder page" style="display: inline-block; padding: 8px 14px; border: 1px solid #ccc; border-radius: 8px; text-decoration: none; color: #333; background-color: #f9f9f9; font-weight: bold;">
-            Sign In
-        </a>
-    </div>
+<div style="text-align: right; margin-bottom: 20px;">
+    <a href="{% url 'signin-placeholder' %}" title="Open the sign-in placeholder page" style="display: inline-block; padding: 8px 14px; border: 0.5px solid #dcd8d7; border-radius: 8px; text-decoration: none; color: #2f4d3d; background-color: #f7fbf4; font-weight: 500;">
+        Sign In
+    </a>
+</div>
 
-    <h2 title="Sample recipes to explore">Try These Recipes &gt;</h2>
-    <div class="recipe-list">
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Spaghetti Carbonara</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 20 mins</span>
-                <span class="rating">Rating: 5/5</span>
+<h2 class="section-title" title="Sample recipes to explore">Try These Recipes ›</h2>
+<div class="recipe-list">
+    <a href="#" class="recipe-card-link">
+        <div class="recipe-card">
+            <div class="recipe-card-image"></div>
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">Spaghetti Carbonara</p>
+                <div class="recipe-meta"><span>20 mins</span><span>★ 5/5</span></div>
             </div>
         </div>
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Chicken Stir-Fry</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 25 mins</span>
-                <span class="rating">Rating: 4/5</span>
+    </a>
+    <a href="#" class="recipe-card-link">
+        <div class="recipe-card">
+            <div class="recipe-card-image"></div>
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">Chicken Stir-Fry</p>
+                <div class="recipe-meta"><span>25 mins</span><span>★ 4/5</span></div>
             </div>
         </div>
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Garlic Butter Shrimp</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 15 mins</span>
-                <span class="rating">Rating: 5/5</span>
+    </a>
+    <a href="#" class="recipe-card-link">
+        <div class="recipe-card">
+            <div class="recipe-card-image"></div>
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">Garlic Butter Shrimp</p>
+                <div class="recipe-meta"><span>15 mins</span><span>★ 5/5</span></div>
             </div>
         </div>
-    </div>
+    </a>
+</div>
 
-    <h2 title="Starter techniques to practice" style="margin-top: 25px; margin-bottom: 15px;">Learn These Skills &gt;</h2>
-    <div class="recipe-list">
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Knife Skills</h2>
-        </div>
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Sautéing Basics</h2>
-        </div>
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Seasoning Properly</h2>
+<h2 class="section-title" title="Starter techniques to practice">Learn These Skills ›</h2>
+<div class="recipe-list">
+    <div class="recipe-card">
+        <div class="recipe-card-image"></div>
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">Knife Skills</p>
         </div>
     </div>
+    <div class="recipe-card">
+        <div class="recipe-card-image"></div>
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">Sautéing Basics</p>
+        </div>
+    </div>
+    <div class="recipe-card">
+        <div class="recipe-card-image"></div>
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">Seasoning Properly</p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

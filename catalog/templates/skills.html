@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<h2>Skills</h2>
+
+{{ skills|json_script:"skills-data" }}
+
+<script>
+const SKILLS = JSON.parse(document.getElementById('skills-data').textContent);
+</script>
+
+<div id="react-skills"></div>
+<script src="{% static 'js/skills.js' %}"></script>
+{% endblock %}

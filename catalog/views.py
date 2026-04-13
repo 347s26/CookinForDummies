@@ -9,7 +9,7 @@ class RecipeDetailView(DetailView):
     model = Recipe
 
 def index(request):
-    """View function for home page of site. 
+    """View function for home page of site.
     Displays index page as the default home page."""
 
     #allRecipes = Recipe.objects.all()
@@ -35,7 +35,7 @@ def about(request):
 
 # #view function for recipe search
 # def search_view(request):
-    
+
 #     recipes = Recipe.objects.all()
 
 #     query = request.GET.get('q') # for title keyword search
@@ -79,3 +79,13 @@ class RecipeSearchView(ListView):
             queryset = queryset.filter(rating__gte=min_rating)
 
         return queryset
+
+
+def skills_view(request):
+    skills = Skill.objects.all()
+
+    context = {
+        'skills': list(skills.values())
+    }
+
+    return render(request, 'skills.html', context)
