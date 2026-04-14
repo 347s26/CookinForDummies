@@ -12,13 +12,14 @@ def index(request):
     """View function for home page of site.
     Displays index page as the default home page."""
 
-    #allRecipes = Recipe.objects.all()
-    #allIngredients = Ingredient.objects.all()
-    #
+    featured_recipes = Recipe.objects.all()[:3]
+    featured_skills = Skill.objects.all()[:3]
+    featured_tools = Tool.objects.all()[:3]
 
     context = {
-        #'allRecipes': allRecipes,
-        #'allIngredients': allIngredients,
+        'featured_recipes': featured_recipes,
+        'featured_skills': featured_skills,
+        'featured_tools': featured_tools,
     }
 
     return render(request, 'index.html', context=context)
