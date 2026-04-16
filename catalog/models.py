@@ -54,6 +54,8 @@ class Skill(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
 
+    description = models.TextField(blank=True)
+
     ingredients = models.ManyToManyField(
         Ingredient,
         through='RecipeIngredient'
@@ -69,11 +71,13 @@ class Recipe(models.Model):
         blank=True
     )
 
-    steps = models.TextField()
     time_to_make = models.IntegerField(
         help_text="Time in minutes"
     )
-    rating = models.IntegerField()
+
+    rating = models.IntegerField(
+        blank=True
+    )
 
     def __str__(self):
         return self.title
@@ -81,6 +85,23 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return reverse('recipe-detail', args=[str(self.id)])
 
+# for seperate steps
+class RecipeStep(models.Model):
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name='recipe_steps'
+    )
+
+    order = models.IntegerField()
+
+    instruction = models.TextField()
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return f"Step {self.order} for {self.recipe.title}"
 
 class Allergy(models.Model):
     name = models.CharField(
@@ -114,6 +135,9 @@ class RecipeIngredient(models.Model):
         help_text="e.g. 2 cups, 1 tsp, 3 pieces"
     )
 
+    class Meta:
+        unique_together = ('recipe', 'ingredient')
+
     def __str__(self):
         return f"{self.quantity} of {self.ingredient.name}"
 
@@ -130,3 +154,4 @@ class UserIngredient(models.Model):
 
     def __str__(self):
         return f"{self.user.username} has {self.ingredient.name}"
+    

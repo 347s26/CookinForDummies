@@ -1,0 +1,29 @@
+{
+  "title": "Sweet and White Potato Gratin with Bay Butter",
+  "description": "This recipe is courtesy of Let’s Stay In by Ashley Rodriguez",
+
+  "ingredients": [
+    { "name": "unsalted butter", "quantity": "1/2 cup" },
+    { "name": "bay leaves", "quantity": "5" },
+    { "name": "sweet potatoes", "quantity": "2 pounds" },
+    { "name": "russet potatoes", "quantity": "4 pounds" },
+    { "name": "sea salt", "quantity": "3 1/2 teaspoons" },
+    { "name": "black pepper", "quantity": "1/2 teaspoon" },
+    { "name": "garlic cloves", "quantity": "5" },
+    { "name": "heavy cream", "quantity": "3 1/2 cups" },
+    { "name": "parmesan cheese", "quantity": "1/2 cup" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 400°F" },
+    { "order": 2, "instruction": "Melt butter with bay leaves and let steep for 10 minutes" },
+    { "order": 3, "instruction": "Slice potatoes and combine with butter" },
+    { "order": 4, "instruction": "Add salt and pepper and toss" },
+    { "order": 5, "instruction": "Layer potatoes in baking dish with garlic and bay leaves" },
+    { "order": 6, "instruction": "Pour cream over the potatoes" },
+    { "order": 7, "instruction": "Sprinkle parmesan cheese on top" },
+    { "order": 8, "instruction": "Bake for 1 hour until tender" }
+  ],
+
+  "time_to_make": 60
+}

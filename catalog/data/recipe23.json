@@ -1,0 +1,24 @@
+{
+  "title": "Fruit Syrup for Swirled Ice Cream",
+  "description": "A thick, reduced fruit syrup designed to swirl into ice cream, creating ribbons of intense fruit flavor.",
+
+  "ingredients": [
+    { "name": "fresh fruit", "quantity": "8 oz (about 225g), prepared" },
+    { "name": "lemon juice", "quantity": "1 tablespoon (30g)" },
+    { "name": "sugar", "quantity": "6 oz (about 3/4 cup + 2 tbsp / 170g)" },
+    { "name": "kosher salt", "quantity": "1/4 teaspoon" },
+    { "name": "orange blossom water", "quantity": "1/2 teaspoon" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Combine fruit, lemon juice, sugar, and salt in a saucepan and mash or blend until juicy." },
+    { "order": 2, "instruction": "Bring mixture to a boil over medium heat, stirring constantly." },
+    { "order": 3, "instruction": "Cook until reduced and thickened to desired consistency (about 220–224°F depending on texture preference)." },
+    { "order": 4, "instruction": "Strain syrup into a container and stir in orange blossom water." },
+    { "order": 5, "instruction": "Cool completely in the refrigerator until under 40°F." },
+    { "order": 6, "instruction": "Stir until viscous, then layer or drizzle into freshly churned ice cream." },
+    { "order": 7, "instruction": "Freeze ice cream according to recipe and use leftover syrup as sauce or soda mixer." }
+  ],
+
+  "time_to_make": 25
+}

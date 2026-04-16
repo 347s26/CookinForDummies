@@ -1,0 +1,36 @@
+{
+  "title": "Potato Soup",
+  "description": "Luxurious, warm and filling potato soup with bacon, Yukon gold potatoes, smoked paprika, and cream. Blended for a creamy texture with hearty chunks and topped like a baked potato.",
+
+  "ingredients": [
+    { "name": "bacon", "quantity": "6 slices (about 10 oz), diced" },
+    { "name": "unsalted butter", "quantity": "2 tablespoons" },
+    { "name": "celery", "quantity": "3 stalks, finely chopped" },
+    { "name": "yellow onion", "quantity": "1 large, finely chopped" },
+    { "name": "carrot", "quantity": "1 large, peeled and chopped" },
+    { "name": "garlic", "quantity": "2 cloves, finely chopped" },
+    { "name": "kosher salt and black pepper", "quantity": "to taste" },
+    { "name": "yukon gold potatoes", "quantity": "3 pounds, peeled and cubed" },
+    { "name": "fresh thyme", "quantity": "1/2 teaspoon (or 1/4 tsp dried)" },
+    { "name": "smoked paprika", "quantity": "1/2 teaspoon" },
+    { "name": "ancho chile powder", "quantity": "1/4 teaspoon (optional)" },
+    { "name": "chicken broth", "quantity": "4 cups" },
+    { "name": "heavy cream", "quantity": "1/2 to 1 cup (to taste)" },
+    { "name": "cheddar cheese", "quantity": "for serving" },
+    { "name": "chives", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Cook diced bacon in a large pot over medium heat until crisp, about 12–14 minutes. Remove and set aside." },
+    { "order": 2, "instruction": "Leave 1 tablespoon bacon fat in the pot and add butter." },
+    { "order": 3, "instruction": "Add celery, onion, carrot, and garlic. Season with salt and cook until softened, about 10 minutes." },
+    { "order": 4, "instruction": "Stir in potatoes, thyme, smoked paprika, and chile powder. Cook for 2 minutes." },
+    { "order": 5, "instruction": "Add chicken broth, bring to a boil, then reduce heat and simmer 15–20 minutes until potatoes are tender." },
+    { "order": 6, "instruction": "Stir in heavy cream to taste and remove from heat." },
+    { "order": 7, "instruction": "Blend half the soup until smooth, then return it to the pot." },
+    { "order": 8, "instruction": "Simmer uncovered until slightly thickened, about 15 minutes." },
+    { "order": 9, "instruction": "Adjust seasoning and serve topped with bacon, cheese, and chives." }
+  ],
+
+  "time_to_make": 90
+}

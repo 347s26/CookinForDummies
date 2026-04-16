@@ -1,0 +1,32 @@
+{
+  "title": "Gyudon (Japanese Simmered Beef and Rice Bowls)",
+  "description": "Gyudon is a Japanese beef and onion rice bowl simmered in a savory-sweet sauce of soy, sake, and dashi. Quick, comforting, and deeply flavorful.",
+
+  "ingredients": [
+    { "name": "onion", "quantity": "1 small (about 120g), slivered" },
+    { "name": "dashi", "quantity": "1/2 cup (120 ml)" },
+    { "name": "sake", "quantity": "1/4 cup (60 ml)" },
+    { "name": "soy sauce", "quantity": "2 tablespoons" },
+    { "name": "sugar", "quantity": "1 tablespoon (plus more to taste)" },
+    { "name": "beef ribeye or chuck", "quantity": "1/2 pound (225g), thinly sliced" },
+    { "name": "fresh ginger", "quantity": "1 teaspoon, grated" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "cooked white rice", "quantity": "2 cups" },
+    { "name": "eggs", "quantity": "2 poached (optional)" },
+    { "name": "scallions", "quantity": "for garnish" },
+    { "name": "beni shoga", "quantity": "for garnish" },
+    { "name": "togarashi", "quantity": "for garnish" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Combine onion, dashi, sake, soy sauce, and sugar in a saucepan and bring to a simmer." },
+    { "order": 2, "instruction": "Cook until onions soften, about 5 minutes." },
+    { "order": 3, "instruction": "Add beef and cook until fully cooked and liquid reduces into a rich sauce, about 5 minutes." },
+    { "order": 4, "instruction": "Stir in grated ginger and simmer for 1 more minute." },
+    { "order": 5, "instruction": "Taste and adjust seasoning with salt or sugar if needed." },
+    { "order": 6, "instruction": "Divide rice into bowls and top with beef mixture." },
+    { "order": 7, "instruction": "Garnish with scallions, beni shoga, togarashi, and optional poached egg. Serve immediately." }
+  ],
+
+  "time_to_make": 20
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Cuban-Style Black Beans and Rice with Coconut Cream",
+  "description": "Hearty black beans simmered with spices and vegetables, served over rice with fresh tomatoes, herbs, and a drizzle of coconut cream.",
+  "ingredients": [
+    { "name": "black beans", "quantity": "2 (14 oz) cans, rinsed and drained" },
+    { "name": "red onion", "quantity": "1 small, thinly sliced" },
+    { "name": "green bell pepper", "quantity": "1, thinly sliced" },
+    { "name": "cumin", "quantity": "1/2 teaspoon" },
+    { "name": "garlic", "quantity": "2 cloves, minced" },
+    { "name": "chicken or vegetable stock", "quantity": "1 cup" },
+    { "name": "olive oil", "quantity": "for cooking" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "grape tomatoes", "quantity": "1 pint, halved" },
+    { "name": "cilantro or parsley", "quantity": "1 tablespoon, chopped" },
+    { "name": "basmati rice", "quantity": "2 cups" },
+    { "name": "coconut cream", "quantity": "1 can" },
+    { "name": "avocado", "quantity": "for serving" },
+    { "name": "lime wedges", "quantity": "for serving" }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Cook the rice according to package instructions and set aside." },
+    { "order": 2, "instruction": "Gently warm the coconut cream until smooth and pourable, then set aside." },
+    { "order": 3, "instruction": "In a bowl, toss tomatoes and herbs with olive oil, salt, and pepper. Let marinate." },
+    { "order": 4, "instruction": "Heat olive oil in a skillet over medium heat. Add onion, bell pepper, and cumin, and cook until soft and golden, about 10–15 minutes." },
+    { "order": 5, "instruction": "Add garlic and cook until fragrant, about 30 seconds." },
+    { "order": 6, "instruction": "Stir in the black beans and stock, then simmer gently." },
+    { "order": 7, "instruction": "Season with salt and pepper to taste." },
+    { "order": 8, "instruction": "Serve rice topped with beans, marinated tomatoes, avocado, herbs, and a drizzle of coconut cream. Add lime wedges on the side." }
+  ],
+  "time_to_make": 55
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Crispy Tofu With Cashews and Blistered Snap Peas",
+  "description": "Crispy pan-seared tofu coated in a rich coconut-ginger sauce with cashews, served alongside blistered snap peas tossed with herbs and vinegar.",
+
+  "ingredients": [
+    { "name": "firm or extra-firm tofu", "quantity": "1 block (14 oz), drained" },
+    { "name": "neutral oil", "quantity": "3 tablespoons (plus more as needed)" },
+    { "name": "kosher salt and black pepper", "quantity": "to taste" },
+    { "name": "snap peas", "quantity": "3/4 pound, trimmed" },
+    { "name": "fresh ginger", "quantity": "2-inch piece (about 2 tablespoons), grated" },
+    { "name": "garlic", "quantity": "2 cloves, grated" },
+    { "name": "coconut milk", "quantity": "1 can (13 oz)" },
+    { "name": "soy sauce", "quantity": "1 tablespoon" },
+    { "name": "molasses (or brown sugar/honey)", "quantity": "2 teaspoons" },
+    { "name": "toasted cashews", "quantity": "1/2 cup" },
+    { "name": "rice vinegar", "quantity": "1 tablespoon" },
+    { "name": "scallions", "quantity": "4, sliced" },
+    { "name": "fresh mint", "quantity": "1/4 cup leaves" },
+    { "name": "red pepper flakes", "quantity": "1/2 teaspoon (optional)" },
+    { "name": "rice or grains", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Slice tofu in half horizontally and pat dry with paper towels." },
+    { "order": 2, "instruction": "Heat 1 tablespoon oil in a skillet over medium-high heat. Season tofu with salt and pepper and sear until golden on both sides, about 8 minutes. Remove and set aside." },
+    { "order": 3, "instruction": "Add 1 tablespoon oil to the pan and cook snap peas until blistered and tender, about 3 minutes. Season with salt and set aside." },
+    { "order": 4, "instruction": "Heat remaining oil and cook ginger and garlic until fragrant, about 30 seconds." },
+    { "order": 5, "instruction": "Add coconut milk, soy sauce, and molasses. Simmer until reduced and thickened, about 6–8 minutes." },
+    { "order": 6, "instruction": "Stir in cashews. Break tofu into pieces and add to the sauce, tossing to coat." },
+    { "order": 7, "instruction": "Toss snap peas with rice vinegar, scallions, mint, and red pepper flakes." },
+    { "order": 8, "instruction": "Serve tofu and snap peas over rice or grains." }
+  ],
+
+  "time_to_make": 30
+}

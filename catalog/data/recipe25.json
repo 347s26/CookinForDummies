@@ -1,0 +1,32 @@
+{
+  "title": "Baked Tofu With Peanut Sauce and Coconut-Lime Rice",
+  "description": "Crispy baked tofu coated in a spicy peanut-miso glaze, served over fragrant coconut-lime rice with fresh greens and pickled peppers.",
+  "ingredients": [
+    { "name": "peanut or vegetable oil", "quantity": "2 tbsp, plus more for brushing and drizzling" },
+    { "name": "lime juice", "quantity": "2/3 cup (about 5 limes), plus zest of 1 lime" },
+    { "name": "kosher salt", "quantity": "to taste" },
+    { "name": "bell pepper", "quantity": "1 medium, thinly sliced" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "jasmine or basmati rice", "quantity": "1 cup" },
+    { "name": "coconut milk", "quantity": "1/2 cup" },
+    { "name": "natural peanut butter", "quantity": "1 cup" },
+    { "name": "red miso", "quantity": "1 tbsp" },
+    { "name": "fresh ginger, grated", "quantity": "1 tbsp" },
+    { "name": "fish sauce (optional)", "quantity": "1 tbsp" },
+    { "name": "habanero or sambal", "quantity": "2 tsp chopped (or 1 tbsp sambal)" },
+    { "name": "buckwheat honey or molasses", "quantity": "2 tbsp" },
+    { "name": "extra-firm tofu", "quantity": "2 (14-oz) packages, drained and sliced" },
+    { "name": "peppery greens (arugula, mizuna, etc.)", "quantity": "3 cups" },
+    { "name": "scallions", "quantity": "2, sliced" }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 450°F and lightly oil a sheet pan." },
+    { "order": 2, "instruction": "Mix lime juice with salt and toss with sliced peppers; set aside." },
+    { "order": 3, "instruction": "Cook rice with coconut milk and water until tender, then let steam off heat." },
+    { "order": 4, "instruction": "Whisk peanut butter, miso, ginger, fish sauce, chili, oil, honey, lime juice, and water into a smooth sauce." },
+    { "order": 5, "instruction": "Arrange tofu on sheet pan, season, and coat with peanut sauce. Roast until caramelized, 18–20 minutes." },
+    { "order": 6, "instruction": "Mix remaining lime juice and honey into leftover sauce to make dressing." },
+    { "order": 7, "instruction": "Fluff rice with lime zest and scallions, assemble bowls with greens, rice, tofu, and sauce, and top with pickled peppers." }
+  ],
+  "time_to_make": 25
+}
