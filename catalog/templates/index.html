@@ -7,41 +7,58 @@
         </a>
     </div>
 
-    <h2 title="Sample recipes to explore">Try These Recipes &gt;</h2>
-    <div class="recipe-list">
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Spaghetti Carbonara</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 20 mins</span>
-                <span class="rating">Rating: 5/5</span>
+<h2 class="section-title" title="Sample recipes to explore">Try These Recipes ›</h2>
+<div class="recipe-list">
+    {% for recipe in featured_recipes %}
+    <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
+        <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
+            <div class="recipe-card-image"></div>
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">{{ recipe.title }}</p>
+                <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
             </div>
         </div>
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Chicken Stir-Fry</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 25 mins</span>
-                <span class="rating">Rating: 4/5</span>
-            </div>
-        </div>
-        <div class="recipe-card" title="Preview recipe details like time and rating">
-            <h2 class="recipe-title">Garlic Butter Shrimp</h2>
-            <div class="recipe-meta">
-                <span class="time">Time: 15 mins</span>
-                <span class="rating">Rating: 5/5</span>
-            </div>
+    </a>
+    {% empty %}
+    <div class="recipe-card" title="No recipe cards available yet">
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">No recipes found yet.</p>
         </div>
     </div>
+    {% endfor %}
+</div>
 
-    <h2 title="Starter techniques to practice" style="margin-top: 25px; margin-bottom: 15px;">Learn These Skills &gt;</h2>
-    <div class="recipe-list">
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Knife Skills</h2>
+<h2 class="section-title" title="Starter techniques to practice">Learn These Skills ›</h2>
+<div class="recipe-list">
+    {% for skill in featured_skills %}
+    <div class="recipe-card" title="Skill: {{ skill.name }}">
+        <div class="recipe-card-image"></div>
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">{{ skill.name }}</p>
         </div>
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Sautéing Basics</h2>
+    </div>
+    {% empty %}
+    <div class="recipe-card" title="No skill cards available yet">
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">No skills found yet.</p>
         </div>
-        <div class="recipe-card" title="A beginner-friendly skill to learn">
-            <h2 class="recipe-title">Seasoning Properly</h2>
+    </div>
+    {% endfor %}
+</div>
+
+<h2 class="section-title" title="Kitchen tools you can track">My Utilities ›</h2>
+<div class="recipe-list">
+    {% for tool in featured_tools %}
+    <div class="recipe-card" title="Tool: {{ tool.name }}">
+        <div class="recipe-card-image"></div>
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">{{ tool.name }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <div class="recipe-card" title="No tool cards available yet">
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">No tools found yet.</p>
         </div>
     </div>
 {% endblock %}
