@@ -6,6 +6,8 @@
 
     <h1 class="recipe-title">{{ recipe.title }}</h1>
 
+    <p class="recipe-description"> Description: {{ recipe.description }}</p>
+
     <div class="recipe-rating">
         Rating: {{ recipe.rating }}/5
     </div>
@@ -24,9 +26,11 @@
         </ul>
 
         <h2 class="steps-header">Directions</h2>
-        <p class="steps-text">
-            {{ recipe.steps }}
-        </p>
+        <ul class="steps-text">
+            {% for s in recipe.recipe_steps.all %}
+                <li> {{s.order}}: {{s.instruction}} </li>
+            {% endfor %}
+        </ul>
 
     </div>
 

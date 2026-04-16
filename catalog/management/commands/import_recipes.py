@@ -51,7 +51,7 @@ class Command(BaseCommand):
 
         # steps
         for step in data["steps"]:
-            RecipeStep.objects.create(
+            RecipeStep.objects.get_or_create(
                 recipe=recipe,
                 order=step["order"],
                 instruction=step["instruction"]
