@@ -61,16 +61,6 @@ class Recipe(models.Model):
         through='RecipeIngredient'
     )
 
-    tools = models.ManyToManyField(
-        Tool,
-        blank=True
-    )
-
-    skills = models.ManyToManyField(
-        Skill,
-        blank=True
-    )
-
     time_to_make = models.IntegerField(
         help_text="Time in minutes"
     )
