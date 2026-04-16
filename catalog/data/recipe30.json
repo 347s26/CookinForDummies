@@ -1,0 +1,22 @@
+{
+  "title": "Pork and Ricotta Meatballs",
+  "description": "Tender, juicy meatballs made with ricotta, Parmesan, and ground pork. Perfect served on their own, with marinara, or over pasta.",
+  "ingredients": [
+    { "name": "ricotta cheese", "quantity": "1/2 cup" },
+    { "name": "grated Parmesan", "quantity": "1/2 cup" },
+    { "name": "kosher salt", "quantity": "2 teaspoons" },
+    { "name": "black pepper", "quantity": "1 teaspoon" },
+    { "name": "egg", "quantity": "1 large" },
+    { "name": "breadcrumbs", "quantity": "1/2 cup" },
+    { "name": "ground pork", "quantity": "1 pound" }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 425°F." },
+    { "order": 2, "instruction": "In a large bowl, combine all ingredients and gently mix until just combined." },
+    { "order": 3, "instruction": "Shape the mixture into 12 evenly sized meatballs." },
+    { "order": 4, "instruction": "Place meatballs on a greased baking sheet." },
+    { "order": 5, "instruction": "Bake for about 15 minutes, until golden and cooked through." },
+    { "order": 6, "instruction": "Serve warm with sauce or as desired." }
+  ],
+  "time_to_make": 20
+}

@@ -1,0 +1,21 @@
+{
+    "title": "Crunchy Greens with Carrot-Ginger Dressing",
+    "description": "Crisp salad with a blended carrot-ginger Japanese-style dressing.",
+    "ingredients": [
+      { "name": "carrot", "quantity": "1 small, chopped" },
+      { "name": "ginger", "quantity": "1 inch piece, chopped" },
+      { "name": "olive oil", "quantity": "1/4 cup" },
+      { "name": "rice vinegar", "quantity": "2 tablespoons" },
+      { "name": "soy sauce", "quantity": "1.5 teaspoons" },
+      { "name": "sugar", "quantity": "1 tablespoon" },
+      { "name": "onion powder", "quantity": "1 teaspoon" },
+      { "name": "lettuce", "quantity": "1 head" },
+      { "name": "mint", "quantity": "1 cup" }
+    ],
+    "steps": [
+      { "order": 1, "instruction": "Blend carrot, ginger, oil, vinegar, soy sauce, sugar, and seasoning until smooth." },
+      { "order": 2, "instruction": "Toss lettuce with dressing lightly." },
+      { "order": 3, "instruction": "Top with mint and serve immediately." }
+    ],
+    "time_to_make": 10
+  }

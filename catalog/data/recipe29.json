@@ -1,0 +1,20 @@
+{
+  "title": "Rice Cooker Lime-Coconut Rice with Cilantro and Black Beans",
+  "description": "Fragrant coconut rice cooked in a rice cooker with lime, finished with cilantro and black beans for a fresh, simple side or base.",
+  "ingredients": [
+    { "name": "basmati or jasmine rice", "quantity": "1 1/2 cups" },
+    { "name": "coconut milk", "quantity": "1 (13.5 oz) can" },
+    { "name": "water", "quantity": "1 1/4 cups" },
+    { "name": "salt", "quantity": "1/4 teaspoon" },
+    { "name": "lime zest and juice", "quantity": "from 1 lime" },
+    { "name": "cilantro", "quantity": "chopped, for serving" },
+    { "name": "black beans", "quantity": "rinsed and drained, for serving" }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Rinse the rice thoroughly until the water runs clear." },
+    { "order": 2, "instruction": "Add rice, coconut milk, water, salt, lime zest, and lime juice to the rice cooker and stir to combine." },
+    { "order": 3, "instruction": "Cook on the white rice setting until done." },
+    { "order": 4, "instruction": "Fluff the rice with a fork, then top with black beans and cilantro before serving." }
+  ],
+  "time_to_make": 55
+}

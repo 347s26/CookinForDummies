@@ -1,0 +1,39 @@
+{
+  "title": "Peruvian-Style Grilled Chicken with Green Sauce",
+  "description": "Peruvian-style grilled chicken marinated in a spice-vinegar rub and served with a creamy cilantro jalapeño green sauce. Bold, tangy, and smoky.",
+
+  "ingredients": [
+    { "name": "jalapeño chiles", "quantity": "3, roughly chopped" },
+    { "name": "ají amarillo paste", "quantity": "1 tablespoon (15 ml)" },
+    { "name": "cilantro leaves", "quantity": "1 cup (about 28g)" },
+    { "name": "garlic", "quantity": "2 cloves" },
+    { "name": "mayonnaise", "quantity": "1/2 cup (120 ml)" },
+    { "name": "sour cream", "quantity": "1/4 cup (60 ml)" },
+    { "name": "lime juice", "quantity": "2 teaspoons (10 ml)" },
+    { "name": "white vinegar", "quantity": "1 teaspoon (5 ml)" },
+    { "name": "olive oil", "quantity": "2 tablespoons (30 ml)" },
+    { "name": "kosher salt and black pepper", "quantity": "to taste" },
+
+    { "name": "whole chicken", "quantity": "1 (3.5–4 lb)" },
+    { "name": "kosher salt", "quantity": "4 teaspoons (about 20g)" },
+    { "name": "ground cumin", "quantity": "2 tablespoons (30g)" },
+    { "name": "paprika", "quantity": "2 tablespoons (30g)" },
+    { "name": "black pepper", "quantity": "1 teaspoon" },
+    { "name": "garlic", "quantity": "3 cloves, minced" },
+    { "name": "white vinegar", "quantity": "2 tablespoons (30 ml)" },
+    { "name": "vegetable oil", "quantity": "2 tablespoons (30 ml)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Make the green sauce: blend jalapeños, ají amarillo, cilantro, garlic, mayo, sour cream, lime juice, and vinegar until smooth." },
+    { "order": 2, "instruction": "Slowly drizzle in olive oil while blending until emulsified. Season with salt and pepper and refrigerate." },
+    { "order": 3, "instruction": "Spatchcock the chicken by removing the backbone and flattening the bird." },
+    { "order": 4, "instruction": "Mix salt, cumin, paprika, pepper, garlic, vinegar, and oil into a paste and coat the chicken evenly." },
+    { "order": 5, "instruction": "Preheat grill (charcoal or gas) and set up two-zone heat." },
+    { "order": 6, "instruction": "Grill chicken skin-side up on cooler side until internal temp reaches about 110°F." },
+    { "order": 7, "instruction": "Flip to hotter side and press down to crisp skin, cooking until 145–150°F internally." },
+    { "order": 8, "instruction": "Rest chicken for 5–10 minutes, then carve and serve with green sauce." }
+  ],
+
+  "time_to_make": 95
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Nutella Stuffed Brown Butter Sea Salt Chocolate Chip Cookies",
+  "description": "The best nutella stuffed chocolate chip cookies made with nutty brown butter and a sprinkle of sea salt. Sweet, indulgent, and crowd-pleasing.",
+
+  "ingredients": [
+    { "name": "all-purpose flour", "quantity": "2 1/4 cups" },
+    { "name": "baking soda", "quantity": "1 1/4 teaspoons" },
+    { "name": "salt", "quantity": "1/4 teaspoon" },
+    { "name": "unsalted butter", "quantity": "2 sticks (1 cup)" },
+    { "name": "dark brown sugar", "quantity": "1 1/4 cups" },
+    { "name": "granulated sugar", "quantity": "1/4 cup" },
+    { "name": "egg", "quantity": "1 large" },
+    { "name": "egg yolk", "quantity": "1" },
+    { "name": "vanilla extract", "quantity": "1 1/2 teaspoons" },
+    { "name": "greek yogurt", "quantity": "1 tablespoon" },
+    { "name": "semi-sweet chocolate chips", "quantity": "3/4 cup" },
+    { "name": "milk chocolate chips", "quantity": "1/2 cup" },
+    { "name": "dark chocolate chips", "quantity": "1/2 cup" },
+    { "name": "nutella", "quantity": "1 jar (chilled)" },
+    { "name": "sea salt", "quantity": "for sprinkling" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Whisk together flour, baking soda, and salt in a bowl. Set aside." },
+    { "order": 2, "instruction": "Melt butter in a saucepan over medium heat, whisking constantly." },
+    { "order": 3, "instruction": "Continue cooking until butter browns and gives off a nutty aroma, then remove from heat and transfer to a bowl to cool." },
+    { "order": 4, "instruction": "Using an electric mixer, mix the browned butter with both sugars until combined." },
+    { "order": 5, "instruction": "Beat in the egg, egg yolk, vanilla extract, and yogurt until smooth." },
+    { "order": 6, "instruction": "Gradually add dry ingredients to wet ingredients and mix until just combined." },
+    { "order": 7, "instruction": "Fold in all chocolate chips." },
+    { "order": 8, "instruction": "Cover and chill dough for 2 hours (or 20–30 minutes in freezer if needed)." },
+    { "order": 9, "instruction": "Preheat oven to 350°F." },
+    { "order": 10, "instruction": "Roll about 1 1/2 tablespoons of dough into a ball." },
+    { "order": 11, "instruction": "Flatten dough, place 1 teaspoon chilled Nutella in center, and wrap dough around it." },
+    { "order": 12, "instruction": "Place dough balls on a baking sheet 2 inches apart and gently flatten tops." },
+    { "order": 13, "instruction": "Bake for 9–11 minutes until edges are golden but centers are soft." },
+    { "order": 14, "instruction": "Cool on baking sheet for 2 minutes, then sprinkle with sea salt." },
+    { "order": 15, "instruction": "Transfer to a wire rack to cool completely." }
+  ],
+
+  "time_to_make": 130
+}
