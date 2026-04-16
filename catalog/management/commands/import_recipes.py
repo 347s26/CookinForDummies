@@ -32,16 +32,20 @@ class Command(BaseCommand):
     def import_recipe(self, data):
         recipe, _ = Recipe.objects.get_or_create(
             title=data["title"],
-            description=data.get("description", ""),
-            time_to_make=data["time_to_make"],
-            rating= 5
+            defaults={
+                "description": data.get("description", ""),
+                "time_to_make": data["time_to_make"],
+                "rating": 5,
+            },
         )
 
         # ingredients
         for item in data["ingredients"]:
             name = item["name"].lower().strip()
 
-            ingredient, _ = Ingredient.objects.get_or_create(name=name)
+            ingredient = Ingredient.objects.filter(name__iexact=name).first()
+            if ingredient is None:
+                ingredient = Ingredient.objects.create(name=name)
 
             RecipeIngredient.objects.get_or_create(
                 recipe=recipe,
@@ -51,8 +55,8 @@ class Command(BaseCommand):
 
         # steps
         for step in data["steps"]:
-            RecipeStep.objects.create(
+            RecipeStep.objects.get_or_create(
                 recipe=recipe,
                 order=step["order"],
-                instruction=step["instruction"]
+                defaults={"instruction": step["instruction"]}
             )

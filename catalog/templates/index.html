@@ -9,8 +9,8 @@
 <h2 class="section-title" title="Sample recipes to explore">Try These Recipes ›</h2>
 <div class="recipe-list">
     {% for recipe in featured_recipes %}
-    <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link">
-        <div class="recipe-card">
+    <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
+        <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
             <div class="recipe-card-image"></div>
             <div class="recipe-card-bottom">
                 <p class="recipe-title">{{ recipe.title }}</p>
@@ -19,7 +19,7 @@
         </div>
     </a>
     {% empty %}
-    <div class="recipe-card">
+    <div class="recipe-card" title="No recipe cards available yet">
         <div class="recipe-card-bottom">
             <p class="recipe-title">No recipes found yet.</p>
         </div>
@@ -30,14 +30,14 @@
 <h2 class="section-title" title="Starter techniques to practice">Learn These Skills ›</h2>
 <div class="recipe-list">
     {% for skill in featured_skills %}
-    <div class="recipe-card">
+    <div class="recipe-card" title="Skill: {{ skill.name }}">
         <div class="recipe-card-image"></div>
         <div class="recipe-card-bottom">
             <p class="recipe-title">{{ skill.name }}</p>
         </div>
     </div>
     {% empty %}
-    <div class="recipe-card">
+    <div class="recipe-card" title="No skill cards available yet">
         <div class="recipe-card-bottom">
             <p class="recipe-title">No skills found yet.</p>
         </div>
@@ -48,14 +48,14 @@
 <h2 class="section-title" title="Kitchen tools you can track">My Utilities ›</h2>
 <div class="recipe-list">
     {% for tool in featured_tools %}
-    <div class="recipe-card">
+    <div class="recipe-card" title="Tool: {{ tool.name }}">
         <div class="recipe-card-image"></div>
         <div class="recipe-card-bottom">
             <p class="recipe-title">{{ tool.name }}</p>
         </div>
     </div>
     {% empty %}
-    <div class="recipe-card">
+    <div class="recipe-card" title="No tool cards available yet">
         <div class="recipe-card-bottom">
             <p class="recipe-title">No tools found yet.</p>
         </div>
