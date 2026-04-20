@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>My Recipes</h1>
+    <div class="recipe-list">
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link">
+                    <div class="recipe-card">
+
+                        <h2 class="recipe-title">{{ recipe.title }}</h2>
+
+                        <div class="recipe-meta">
+                            <span class="time">Time: {{ recipe.time_to_make }} mins</span>
+                            <span class="rating">Rating: {{ recipe.rating }}/5</span>
+                        </div>
+
+                    </div>
+                </a>
+
+            {% endfor %}
+        {% else %}
+            <p>No recipes found.</p>
+        {% endif %}
+    </div>
+{% endblock %}
