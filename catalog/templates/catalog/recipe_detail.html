@@ -6,6 +6,17 @@
 
     <h1 class="recipe-title">{{ recipe.title }}</h1>
 
+    <p class="recipe-description"> Description: {{ recipe.description }}</p>
+
+    <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
+        {% csrf_token %}
+        {% if user in recipe.saved_by.all %}
+            <button type="submit">Unsave Recipe</button>
+        {% else %}
+            <button type="submit">Save Recipe</button>
+        {% endif %}
+    </form>
+
     <div class="recipe-rating">
         Rating: {{ recipe.rating }}/5
     </div>

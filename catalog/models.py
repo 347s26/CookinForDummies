@@ -76,7 +76,14 @@ class Recipe(models.Model):
     )
 
     rating = models.IntegerField(
-        blank=True
+        blank=True,
+        null=True
+    )
+
+    saved_by = models.ManyToManyField(
+        User,
+        blank=True,
+        related_name='saved_recipes'
     )
 
     def __str__(self):

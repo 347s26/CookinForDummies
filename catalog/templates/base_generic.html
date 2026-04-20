@@ -15,8 +15,8 @@
             <h1 class="logo">CookinForDummies</h1>
             <ul class="nav-links">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="#">My Recipes</a></li>
-                <li><a href="#">Skills</a></li>
+                <li><a href="{% url 'my-recipes' %}">My Recipes</a></li>
+                <li><a href="{% url 'skills' %}">Skills</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'search' %}">Search</a></li>
                 <li><a href="/accounts/login/" class="btn btn-outline-light">Sign In</a></li>

@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views import generic
 from django.views.generic import DetailView
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 
@@ -79,3 +82,33 @@ class RecipeSearchView(ListView):
             queryset = queryset.filter(rating__gte=min_rating)
 
         return queryset
+
+# my recipes page
+class MyRecipesView(LoginRequiredMixin, generic.ListView):
+    model = Recipe
+    template_name = 'catalog/my_recipes.html'
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        return self.request.user.saved_recipes.all()
+
+# saving or removing recipes
+@login_required
+def toggle_save_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+
+    if request.user in recipe.saved_by.all():
+        recipe.saved_by.remove(request.user)
+    else:
+        recipe.saved_by.add(request.user)
+
+    return redirect(recipe.get_absolute_url())
+
+def skills_view(request):
+    skills = Skill.objects.all()
+
+    context = {
+        'skills': list(skills.values())
+    }
+
+    return render(request, 'skills.html', context)
