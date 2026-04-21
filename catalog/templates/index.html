@@ -1,17 +1,59 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<div style="text-align: right; margin-bottom: 20px;">
-    <a href="{% url 'signin-placeholder' %}" title="Open the sign-in placeholder page" style="display: inline-block; padding: 8px 14px; border: 0.5px solid #dcd8d7; border-radius: 8px; text-decoration: none; color: #2f4d3d; background-color: #f7fbf4; font-weight: 500;">
-        Sign In
-    </a>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+    {% if user.is_authenticated %}
+        <p style="color: #2f4d3d; font-size: 14px; margin: 0;">Welcome back, {{ user.username }}.</p>
+        <form method="post" action="{% url 'account_logout' %}" style="margin-left: auto;">
+            {% csrf_token %}
+            <button type="submit" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #f7fbf4; color: #2f4d3d; font-size: 13px; cursor: pointer;">Sign Out</button>
+        </form>
+    {% else %}
+        <p style="color: #2f4d3d; font-size: 14px; margin: 0;">Welcome to CookinForDummies. Sign in to save recipes and build your own list.</p>
+        <div style="display: flex; gap: 8px; margin-left: auto;">
+            <a href="{% url 'account_login' %}" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #2f4d3d; color: #e0e7c8; font-size: 13px;">Sign In</a>
+            <a href="{% url 'account_signup' %}" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #f7fbf4; color: #2f4d3d; font-size: 13px;">Create Account</a>
+        </div>
+    {% endif %}
 </div>
 
-<h2 class="section-title" title="Sample recipes to explore">Try These Recipes ›</h2>
+{% if user.is_authenticated %}
+<h2 class="section-title" title="Recipes you saved recently">Your Saved Recipes ›</h2>
+<div class="recipe-list">
+    {% for recipe in saved_recipes %}
+    <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
+        <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
+            {% if recipe.image_url %}
+                <div class="recipe-card-image" style="background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;"></div>
+            {% else %}
+                <div class="recipe-card-image recipe-card-image-placeholder">No image yet</div>
+            {% endif %}
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">{{ recipe.title }}</p>
+                <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
+            </div>
+        </div>
+    </a>
+    {% empty %}
+    <div class="recipe-card" title="No saved recipes yet">
+        <div class="recipe-card-bottom">
+            <p class="recipe-title">You have no saved recipes yet.</p>
+            <div class="recipe-meta"><span>Tip: open a recipe and click Save.</span></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<h2 class="section-title" title="Sample recipes to explore">{% if user.is_authenticated %}More Recipes to Explore{% else %}Try These Recipes{% endif %} ›</h2>
 <div class="recipe-list">
     {% for recipe in featured_recipes %}
     <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
         <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
-            <div class="recipe-card-image" style="{% if recipe.image_url %}background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;{% endif %}"></div>
+            {% if recipe.image_url %}
+                <div class="recipe-card-image" style="background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;"></div>
+            {% else %}
+                <div class="recipe-card-image recipe-card-image-placeholder">No image yet</div>
+            {% endif %}
             <div class="recipe-card-bottom">
                 <p class="recipe-title">{{ recipe.title }}</p>
                 <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
@@ -45,22 +87,6 @@
     {% endfor %}
 </div>
 
-<h2 class="section-title" title="Kitchen tools you can track">My Utilities ›</h2>
-<div class="recipe-list">
-    {% for tool in featured_tools %}
-    <div class="recipe-card" title="Tool: {{ tool.name }}">
-        <div class="recipe-card-image"></div>
-        <div class="recipe-card-bottom">
-            <p class="recipe-title">{{ tool.name }}</p>
-        </div>
-    </div>
-    {% empty %}
-    <div class="recipe-card" title="No tool cards available yet">
-        <div class="recipe-card-bottom">
-            <p class="recipe-title">No tools found yet.</p>
-        </div>
-    </div>
-    {% endfor %}
-</div>
+
 
 {% endblock %}

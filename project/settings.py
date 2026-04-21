@@ -83,6 +83,10 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# Redirect users to the home page after login/logout.
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
