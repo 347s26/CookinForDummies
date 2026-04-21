@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
+# Unsplash API Key for recipe images
+UNSPLASH_API_KEY = '5vZtsaDp7U_A92_YCxP1Neg9rRpR6UjA0bsho-tGVDw'
 
 # Application definition
 

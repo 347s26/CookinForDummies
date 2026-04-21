@@ -6,6 +6,12 @@
 
     <h1 class="recipe-title">{{ recipe.title }}</h1>
 
+    {% if recipe.image_url %}
+    <div style="margin-bottom: 20px; text-align: center;">
+        <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
+    </div>
+    {% endif %}
+
     <div class="recipe-rating">
         Rating: {{ recipe.rating }}/5
     </div>

@@ -79,6 +79,12 @@ class Recipe(models.Model):
         blank=True
     )
 
+    image_url = models.URLField(
+        blank=True,
+        null=True,
+        help_text="URL to recipe image from Unsplash"
+    )
+
     def __str__(self):
         return self.title
 

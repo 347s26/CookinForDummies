@@ -11,7 +11,7 @@
     {% for recipe in featured_recipes %}
     <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
         <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
-            <div class="recipe-card-image"></div>
+            <div class="recipe-card-image" style="{% if recipe.image_url %}background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;{% endif %}"></div>
             <div class="recipe-card-bottom">
                 <p class="recipe-title">{{ recipe.title }}</p>
                 <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
