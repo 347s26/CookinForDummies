@@ -6,6 +6,17 @@
 
     <h1 class="recipe-title">{{ recipe.title }}</h1>
 
+    <p class="recipe-description"> Description: {{ recipe.description }}</p>
+
+    <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
+        {% csrf_token %}
+        {% if user in recipe.saved_by.all %}
+            <button type="submit">Unsave Recipe</button>
+        {% else %}
+            <button type="submit">Save Recipe</button>
+        {% endif %}
+    </form>
+
     {% if recipe.image_url %}
     <div style="margin-bottom: 20px; text-align: center;">
         <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
@@ -30,9 +41,11 @@
         </ul>
 
         <h2 class="steps-header">Directions</h2>
-        <p class="steps-text">
-            {{ recipe.steps }}
-        </p>
+        <ul class="steps-text">
+            {% for s in recipe.recipe_steps.all %}
+                <li> {{s.order}}: {{s.instruction}} </li>
+            {% endfor %}
+        </ul>
 
     </div>
 

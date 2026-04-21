@@ -61,22 +61,19 @@ class Recipe(models.Model):
         through='RecipeIngredient'
     )
 
-    tools = models.ManyToManyField(
-        Tool,
-        blank=True
-    )
-
-    skills = models.ManyToManyField(
-        Skill,
-        blank=True
-    )
-
     time_to_make = models.IntegerField(
         help_text="Time in minutes"
     )
 
     rating = models.IntegerField(
-        blank=True
+        blank=True,
+        null=True
+    )
+
+    saved_by = models.ManyToManyField(
+        User,
+        blank=True,
+        related_name='saved_recipes'
     )
 
     image_url = models.URLField(
