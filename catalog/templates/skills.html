@@ -1,10 +1,13 @@
 {% extends "base_generic.html" %}
 {% load static %}
+{% block banner %}
+<div class="banner">
+    <h1 class="banner-title">Build your kitchen <em>confidence.</em></h1>
+</div>
+{% endblock %}
+
 {% block content %}
-<h2>Skills</h2>
-
 {{ skills|json_script:"skills-data" }}
-
 <script>
 const SKILLS = JSON.parse(document.getElementById('skills-data').textContent);
 </script>

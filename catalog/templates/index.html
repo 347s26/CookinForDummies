@@ -1,23 +1,17 @@
 {% extends "base_generic.html" %}
-{% block content %}
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
-    {% if user.is_authenticated %}
-        <p style="color: #2f4d3d; font-size: 14px; margin: 0;">Welcome back, {{ user.username }}.</p>
-        <form method="post" action="{% url 'account_logout' %}" style="margin-left: auto;">
-            {% csrf_token %}
-            <button type="submit" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #f7fbf4; color: #2f4d3d; font-size: 13px; cursor: pointer;">Sign Out</button>
-        </form>
-    {% else %}
-        <p style="color: #2f4d3d; font-size: 14px; margin: 0;">Welcome to CookinForDummies. Sign in to save recipes and build your own list.</p>
-        <div style="display: flex; gap: 8px; margin-left: auto;">
-            <a href="{% url 'account_login' %}" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #2f4d3d; color: #e0e7c8; font-size: 13px;">Sign In</a>
-            <a href="{% url 'account_signup' %}" style="display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; border: 0.5px solid #2f4d3d; background: #f7fbf4; color: #2f4d3d; font-size: 13px;">Create Account</a>
-        </div>
-    {% endif %}
+{% block banner %}
+<div class="banner">
+    <h1 class="banner-title">The only kitchen <em>helper</em> you'll need.</h1>
+    <form method="get" action="{% url 'search' %}" class="search-form" autocomplete="off">
+        <input type="text" name="q" placeholder="Recipe, ingredient, or time…">
+        <button type="submit">Search</button>
+    </form>
 </div>
+{% endblock %}
 
+{% block content %}
 {% if user.is_authenticated %}
-<h2 class="section-title" title="Recipes you saved recently">Your Saved Recipes ›</h2>
+<h2 class="section-title">Your Saved Recipes ›</h2>
 <div class="recipe-list">
     {% for recipe in saved_recipes %}
     <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
@@ -42,9 +36,12 @@
     </div>
     {% endfor %}
 </div>
+<hr class="section-sep">
 {% endif %}
 
-<h2 class="section-title" title="Sample recipes to explore">{% if user.is_authenticated %}More Recipes to Explore{% else %}Try These Recipes{% endif %} ›</h2>
+<div class="section-header">
+    <h2 class="section-title">{% if user.is_authenticated %}More Recipes to Explore{% else %}Try These Recipes{% endif %} ›</h2>
+</div>
 <div class="recipe-list">
     {% for recipe in featured_recipes %}
     <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
@@ -69,7 +66,12 @@
     {% endfor %}
 </div>
 
-<h2 class="section-title" title="Starter techniques to practice">Learn These Skills ›</h2>
+<hr class="section-sep">
+
+<div class="section-header">
+    <h2 class="section-title">Learn These Skills ›</h2>
+    <a href="{% url 'skills' %}" class="section-link">View all →</a>
+</div>
 <div class="recipe-list">
     {% for skill in featured_skills %}
     <div class="recipe-card" title="Skill: {{ skill.name }}">
@@ -86,7 +88,4 @@
     </div>
     {% endfor %}
 </div>
-
-
-
 {% endblock %}

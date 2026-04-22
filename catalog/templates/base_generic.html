@@ -14,15 +14,27 @@
     <nav class="navbar">
         <div class="nav-container">
             <h1 class="logo">CookinForDummies</h1>
-            <ul class="nav-links">
+            <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'my-recipes' %}">My Recipes</a></li>
                 <li><a href="{% url 'skills' %}">Skills</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'search' %}">Search</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'account_logout' %}" class="nav-signin">Sign Out</a></li>
+            {% else %}
+                <li><a href="{% url 'account_login' %}" class="nav-signin">Sign In</a></li>
+            {% endif %}
             </ul>
         </div>
     </nav>
+
+    {% block banner %}{% endblock %}
 
     <main class="main-content">
         {% block content %}
@@ -37,6 +49,6 @@
             <a href="#">Contact</a>
         </div>
     </footer>
-
+    <script src="{% static 'js/hamburger.js' %}"></script>
 </body>
 </html>
