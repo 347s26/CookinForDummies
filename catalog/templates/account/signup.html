@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-card">
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-subtitle">Join CookinForDummies and start saving recipes.</p>
+
+        <form method="post" action="{% url 'account_signup' %}" class="auth-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+            {% endif %}
+            <button type="submit" class="auth-submit-btn">Create Account</button>
+        </form>
+
+        <div class="auth-links-row">
+            <a href="{% url 'account_login' %}">Already have an account? Sign in</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

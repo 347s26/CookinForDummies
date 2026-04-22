@@ -18,11 +18,16 @@ def index(request):
     featured_recipes = Recipe.objects.all()[:3]
     featured_skills = Skill.objects.all()[:3]
     featured_tools = Tool.objects.all()[:3]
+    saved_recipes = []
+
+    if request.user.is_authenticated:
+        saved_recipes = request.user.saved_recipes.all()[:3]
 
     context = {
         'featured_recipes': featured_recipes,
         'featured_skills': featured_skills,
         'featured_tools': featured_tools,
+        'saved_recipes': saved_recipes,
     }
 
     return render(request, 'index.html', context=context)
