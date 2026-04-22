@@ -4,3 +4,4 @@ gunicorn
 django-ninja
 psycopg~=3.1
 django-allauth
+requests

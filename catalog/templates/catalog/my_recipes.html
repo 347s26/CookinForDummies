@@ -3,24 +3,26 @@
 {% block content %}
     <h1>My Recipes</h1>
     <div class="recipe-list">
-        {% if recipes %}
-            {% for recipe in recipes %}
-                <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link">
-                    <div class="recipe-card">
-
-                        <h2 class="recipe-title">{{ recipe.title }}</h2>
-
-                        <div class="recipe-meta">
-                            <span class="time">Time: {{ recipe.time_to_make }} mins</span>
-                            <span class="rating">Rating: {{ recipe.rating }}/5</span>
-                        </div>
-
-                    </div>
-                </a>
-
-            {% endfor %}
-        {% else %}
-            <p>No recipes found.</p>
-        {% endif %}
+        {% for recipe in recipes %}
+        <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
+            <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
+                {% if recipe.image_url %}
+                    <div class="recipe-card-image" style="background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;"></div>
+                {% else %}
+                    <div class="recipe-card-image recipe-card-image-placeholder">No image yet</div>
+                {% endif %}
+                <div class="recipe-card-bottom">
+                    <p class="recipe-title">{{ recipe.title }}</p>
+                    <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
+                </div>
+            </div>
+        </a>
+        {% empty %}
+        <div class="recipe-card" title="No recipe cards available yet">
+            <div class="recipe-card-bottom">
+                <p class="recipe-title">No recipes found yet.</p>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}
