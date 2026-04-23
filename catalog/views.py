@@ -30,8 +30,9 @@ def generate_ai_cooking_help(user_prompt):
         {
             'role': 'system',
             'content': (
-                'You are a friendly cooking assistant. Keep answers concise, practical, and beginner-friendly. '
-                'Use short bullet points when useful.'
+                'You are a cooking name suggester. Return only short dish names. '
+                'Never include ingredients, steps, explanations, or full recipes. '
+                'Return 3 to 6 dish names, one per line, and keep each line under 6 words.'
             )
         },
         {'role': 'user', 'content': user_prompt}
@@ -59,6 +60,12 @@ def generate_ai_cooking_help(user_prompt):
             if response.ok:
                 data = response.json()
                 text = data['choices'][0]['message']['content'].strip()
+                # Safety clamp: keep the response short and list-like.
+                lines = [line.strip('-* \t') for line in text.splitlines() if line.strip()]
+                lines = [line for line in lines if len(line.split()) <= 8]
+                if not lines:
+                    lines = [text[:80]]
+                text = '\n'.join(lines[:6])
                 return text, None
 
             error_message = response.text
