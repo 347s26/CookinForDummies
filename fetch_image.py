@@ -14,14 +14,14 @@ recipe = Recipe.objects.get(title='Garlic Butter Pasta')
 
 api_key = settings.UNSPLASH_API_KEY
 url = 'https://api.unsplash.com/search/photos'
-params = {
-    'query': 'garlic butter pasta',
-    'per_page': 1,
-    'client_id': api_key,
-    'orientation': 'landscape',
-}
-response = requests.get(url, params=params, timeout=5)
-data = response.json()
+# params = {
+#     'query': 'garlic butter pasta',
+#     'per_page': 1,
+#     'client_id': api_key,
+#     'orientation': 'landscape',
+# }
+# response = requests.get(url, params=params, timeout=5)
+# data = response.json()
 
 if data.get('results'):
     image_url = data['results'][0]['urls']['regular']

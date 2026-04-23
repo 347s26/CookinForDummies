@@ -9,11 +9,70 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
 from catalog.forms import RecipeForm, RecipeIngredientFormSet, RecipeStepFormSet
 from django.db.models import Q
+from django.conf import settings
+import requests
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 
 class RecipeDetailView(DetailView):
     model = Recipe
+
+
+def generate_ai_cooking_help(user_prompt):
+    api_key = getattr(settings, 'LLM_API_KEY', '')
+    if not api_key:
+        return None, 'LLM API key is not configured. Set OPENROUTER_API_KEY in your environment.'
+
+    model_name = getattr(settings, 'LLM_MODEL', 'meta-llama/llama-3.1-8b-instruct:free')
+    endpoint = getattr(settings, 'LLM_API_URL', 'https://openrouter.ai/api/v1/chat/completions')
+
+    messages = [
+        {
+            'role': 'system',
+            'content': (
+                'You are a friendly cooking assistant. Keep answers concise, practical, and beginner-friendly. '
+                'Use short bullet points when useful.'
+            )
+        },
+        {'role': 'user', 'content': user_prompt}
+    ]
+
+    headers = {
+        'Authorization': f'Bearer {api_key}',
+        'Content-Type': 'application/json',
+    }
+    models_to_try = [model_name]
+    if model_name != 'openrouter/auto':
+        models_to_try.append('openrouter/auto')
+
+    last_error = None
+    for candidate_model in models_to_try:
+        payload = {
+            'model': candidate_model,
+            'messages': messages,
+            'temperature': 0.7,
+            'max_tokens': 350,
+        }
+
+        try:
+            response = requests.post(endpoint, headers=headers, json=payload, timeout=20)
+            if response.ok:
+                data = response.json()
+                text = data['choices'][0]['message']['content'].strip()
+                return text, None
+
+            error_message = response.text
+            try:
+                error_json = response.json()
+                error_message = error_json.get('error', {}).get('message', error_message)
+            except Exception:
+                pass
+
+            last_error = f'HTTP {response.status_code}: {error_message}'
+        except Exception as exc:
+            last_error = str(exc)
+
+    return None, f'LLM request failed: {last_error}'
 
 def index(request):
     """View function for home page of site.
@@ -44,7 +103,24 @@ def signin_placeholder(request):
 
 def about(request):
     """Display the about page."""
-    return render(request, 'about.html')
+    ai_response = None
+    ai_error = None
+    user_prompt = ''
+
+    if request.method == 'POST':
+        user_prompt = (request.POST.get('ai_prompt') or '').strip()
+        if len(user_prompt) < 4:
+            ai_error = 'Please enter a slightly longer question so I can help.'
+        elif len(user_prompt) > 500:
+            ai_error = 'Please keep the question under 500 characters.'
+        else:
+            ai_response, ai_error = generate_ai_cooking_help(user_prompt)
+
+    return render(request, 'about.html', {
+        'ai_response': ai_response,
+        'ai_error': ai_error,
+        'ai_prompt': user_prompt,
+    })
 
 # view function for recipe search
 class RecipeSearchView(ListView):

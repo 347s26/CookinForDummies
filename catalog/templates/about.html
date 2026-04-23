@@ -8,6 +8,34 @@
 
 {% block content %}
     <section class="about-page">
+        <div class="about-block" id="ai-helper">
+            <h2>AI Cooking Helper</h2>
+            <p>Ask a cooking question to get a quick suggestion powered by an LLM API.</p>
+
+            <form method="post" style="margin-bottom: 12px;">
+                {% csrf_token %}
+                <textarea
+                    name="ai_prompt"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Example: I only have eggs, rice, and onions. What can I make in 20 minutes?"
+                    style="width: 100%; border: 1px solid #d8e2d0; border-radius: 8px; padding: 10px; font-family: Arial, sans-serif; font-size: 13px; color: #1c2b1c;"
+                >{{ ai_prompt }}</textarea>
+                <button
+                    type="submit"
+                    style="margin-top: 10px; background: #2e4c32; color: #cfe0c4; border: none; border-radius: 8px; padding: 9px 14px; font-size: 12px; cursor: pointer;"
+                >Ask AI Helper</button>
+            </form>
+
+            {% if ai_error %}
+                <p style="color: #9c3f32; font-size: 13px; margin-top: 8px;">{{ ai_error }}</p>
+            {% endif %}
+
+            {% if ai_response %}
+                <div style="background: #f4f8f0; border: 1px solid #d8e2d0; border-radius: 8px; padding: 12px; color: #2f4430; line-height: 1.6; white-space: pre-wrap; font-size: 13px;">{{ ai_response }}</div>
+            {% endif %}
+        </div>
+
         <p class="about-intro">
             CookinForDummies helps you organize what you have at home, learn practical cooking techniques,
             save your favorites, and discover recipes that match your time and ingredients.

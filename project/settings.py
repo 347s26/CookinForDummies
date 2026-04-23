@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +30,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Unsplash API Key for recipe images
 UNSPLASH_API_KEY = '5vZtsaDp7U_A92_YCxP1Neg9rRpR6UjA0bsho-tGVDw'
+
+# LLM API configuration (OpenRouter-compatible)
+LLM_API_KEY = os.getenv('OPENROUTER_API_KEY', '')
+LLM_API_URL = os.getenv('LLM_API_URL', 'https://openrouter.ai/api/v1/chat/completions')
+LLM_MODEL = os.getenv('LLM_MODEL', 'meta-llama/llama-3.1-8b-instruct:free')
 
 # Application definition
 
