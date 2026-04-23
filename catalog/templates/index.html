@@ -11,7 +11,10 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<h2 class="section-title">Your Saved Recipes ›</h2>
+<div class="section-header">
+    <h2 class="section-title">Your Saved Recipes ›</h2>
+    <a href="{% url 'about' %}#saved-recipes" class="section-link">Help →</a>
+</div>
 <div class="recipe-list">
     {% for recipe in saved_recipes %}
     <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
@@ -41,7 +44,10 @@
 
 <div class="section-header">
     <h2 class="section-title">{% if user.is_authenticated %}More Recipes to Explore{% else %}Try These Recipes{% endif %} ›</h2>
-    <a href="{% url 'search' %}" class="section-link">View all →</a>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+        <a href="{% url 'search' %}" class="section-link">View all →</a>
+        <a href="{% url 'about' %}#search" class="section-link">Help →</a>
+    </div>
 </div>
 <div class="recipe-list">
     {% for recipe in featured_recipes %}
@@ -71,9 +77,9 @@
 
 <div class="section-header">
     <h2 class="section-title">Learn These Skills ›</h2>
-    <div>
-        <a href="{% url 'about' %}#help" class="section-link">Help →</a>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
         <a href="{% url 'skills' %}" class="section-link">View all →</a>
+        <a href="{% url 'about' %}#skills" class="section-link">Help →</a>
     </div>
 </div>
 <div class="recipe-list">
