@@ -8,14 +8,24 @@
 
     <p class="recipe-description"> Description: {{ recipe.description }}</p>
 
-    <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
-        {% csrf_token %}
-        {% if user in recipe.saved_by.all %}
-            <button type="submit">Unsave Recipe</button>
-        {% else %}
-            <button type="submit">Save Recipe</button>
-        {% endif %}
-    </form>
+    {% if user.is_authenticated and user != recipe.creator %}
+        <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
+            {% csrf_token %}
+            {% if user in recipe.saved_by.all %}
+                <button type="submit">Unsave Recipe</button>
+            {% else %}
+                <button type="submit">Save Recipe</button>
+            {% endif %}
+        </form>
+    {% endif %}
+
+    {% if user == recipe.creator %}
+        <div style="margin: 15px 0;">
+            <a href="{% url 'recipe-edit' recipe.id %}">Edit Recipe</a>
+            |
+            <a href="{% url 'recipe-delete' recipe.id %}">Delete Recipe</a>
+        </div>
+    {% endif %}
 
     {% if recipe.image_url %}
     <div style="margin-bottom: 20px; text-align: center;">
@@ -24,7 +34,12 @@
     {% endif %}
 
     <div class="recipe-rating">
-        Rating: {{ recipe.rating }}/5
+        Rating:
+        {% if recipe.rating %}
+            {{ recipe.rating }}/5
+        {% else %}
+            Not rated yet
+        {% endif %}
     </div>
 
     <div class="recipe-content-box">

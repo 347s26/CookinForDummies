@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.views import generic
-from django.views.generic import DetailView
-from django.views.generic import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, TemplateView
+from django.views.generic import ListView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView
+from catalog.forms import RecipeForm, RecipeIngredientFormSet, RecipeStepFormSet
+from django.db.models import Q
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 
@@ -42,31 +46,7 @@ def about(request):
     """Display the about page."""
     return render(request, 'about.html')
 
-# #view function for recipe search
-# def search_view(request):
-
-#     recipes = Recipe.objects.all()
-
-#     query = request.GET.get('q') # for title keyword search
-#     max_time = request.GET.get('time') # for time filtering
-#     min_rating = request.GET.get('rating') # for min ratign filtering
-
-#     if query:
-#         recipes = recipes.filter(title__icontains=query)
-
-#     if max_time:
-#         recipes = recipes.filter(time_to_make__lte=max_time)
-
-#     if min_rating:
-#         recipes = recipes.filter(rating__gte=min_rating)
-
-#     context = {
-#         'recipes': recipes,
-#     }
-
-#     return render(request, 'catalog/search.html', context)
-
-# list view for recipe search
+# view function for recipe search
 class RecipeSearchView(ListView):
     model = Recipe
     template_name = 'catalog/search.html'
@@ -90,18 +70,31 @@ class RecipeSearchView(ListView):
         return queryset
 
 # my recipes page
-class MyRecipesView(LoginRequiredMixin, generic.ListView):
-    model = Recipe
+class MyRecipesView(LoginRequiredMixin, TemplateView):
     template_name = 'catalog/my_recipes.html'
-    context_object_name = 'recipes'
 
-    def get_queryset(self):
-        return self.request.user.saved_recipes.all()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['created_recipes'] = Recipe.objects.filter(
+            creator=self.request.user
+        ).distinct()
+
+        context['saved_recipes'] = Recipe.objects.filter(
+            saved_by=self.request.user
+        ).exclude(
+            creator=self.request.user
+        ).distinct()
+
+        return context
 
 # saving or removing recipes
 @login_required
 def toggle_save_recipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
+
+    if recipe.creator == request.user:
+        return redirect(recipe.get_absolute_url())
 
     if request.user in recipe.saved_by.all():
         recipe.saved_by.remove(request.user)
@@ -118,3 +111,107 @@ def skills_view(request):
     }
 
     return render(request, 'skills.html', context)
+
+# for recipe form
+class RecipeCreateView(LoginRequiredMixin, CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'catalog/recipe_form.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['ingredient_formset'] = RecipeIngredientFormSet(
+                self.request.POST,
+                prefix='ingredient'
+            )
+            context['step_formset'] = RecipeStepFormSet(
+                self.request.POST,
+                prefix='step'
+            )
+        else:
+            context['ingredient_formset'] = RecipeIngredientFormSet(prefix='ingredient')
+            context['step_formset'] = RecipeStepFormSet(prefix='step')
+        return context
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        ingredient_formset = context['ingredient_formset']
+        step_formset = context['step_formset']
+
+        if ingredient_formset.is_valid() and step_formset.is_valid():
+            self.object = form.save(commit=False)
+            self.object.creator = self.request.user
+            self.object.save()
+
+            ingredient_formset.instance = self.object
+            ingredient_formset.save()
+
+            step_formset.instance = self.object
+            step_formset.save()
+
+            return redirect(self.object.get_absolute_url())
+
+        return self.render_to_response(self.get_context_data(form=form))
+
+
+
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'catalog/recipe_form.html'
+
+    def test_func(self):
+        return self.get_object().creator == self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['ingredient_formset'] = RecipeIngredientFormSet(
+                self.request.POST,
+                instance=self.object,
+                prefix='ingredient'
+            )
+            context['step_formset'] = RecipeStepFormSet(
+                self.request.POST,
+                instance=self.object,
+                prefix='step'
+            )
+        else:
+            context['ingredient_formset'] = RecipeIngredientFormSet(
+                instance=self.object,
+                prefix='ingredient'
+            )
+            context['step_formset'] = RecipeStepFormSet(
+                instance=self.object,
+                prefix='step'
+            )
+        return context
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        ingredient_formset = context['ingredient_formset']
+        step_formset = context['step_formset']
+
+        if ingredient_formset.is_valid() and step_formset.is_valid():
+            self.object = form.save()
+
+            ingredient_formset.instance = self.object
+            ingredient_formset.save()
+
+            step_formset.instance = self.object
+            step_formset.save()
+
+            return redirect(self.object.get_absolute_url())
+
+        return self.render_to_response(self.get_context_data(form=form))
+
+
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Recipe
+    template_name = 'catalog/recipe_confirm_delete.html'
+    success_url = reverse_lazy('my-recipes')
+
+    def test_func(self):
+        recipe = self.get_object()
+        return recipe.creator == self.request.user

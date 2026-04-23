@@ -76,10 +76,18 @@ class Recipe(models.Model):
         related_name='saved_recipes'
     )
 
+    creator = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='created_recipes',
+        null=True,
+        blank=True
+    )
+
     image_url = models.URLField(
         blank=True,
         null=True,
-        help_text="URL to recipe image from Unsplash"
+        help_text="Paste a direct image URL (e.g. ends in .jpg, .png)"
     )
 
     def __str__(self):
