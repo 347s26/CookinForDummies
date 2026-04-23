@@ -3,7 +3,7 @@
 <div class="banner">
     <h1 class="banner-title">The only kitchen <em>helper</em> you'll need.</h1>
     <form method="get" action="{% url 'search' %}" class="search-form" autocomplete="off">
-        <input type="text" name="q" placeholder="Recipe, ingredient, or time…">
+        <input type="text" name="q" placeholder="Look up any recipe!">
         <button type="submit">Search</button>
     </form>
 </div>
@@ -41,6 +41,7 @@
 
 <div class="section-header">
     <h2 class="section-title">{% if user.is_authenticated %}More Recipes to Explore{% else %}Try These Recipes{% endif %} ›</h2>
+    <a href="{% url 'search' %}" class="section-link">View all →</a>
 </div>
 <div class="recipe-list">
     {% for recipe in featured_recipes %}
