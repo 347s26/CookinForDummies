@@ -12,7 +12,7 @@
             <h2>AI Cooking Helper</h2>
             <p>Ask a cooking question to get a quick suggestion powered by an LLM API.</p>
 
-            <form method="post" style="margin-bottom: 12px;">
+            <form method="post" id="ai-helper-form" style="margin-bottom: 12px;">
                 {% csrf_token %}
                 <textarea
                     name="ai_prompt"
@@ -23,8 +23,14 @@
                 >{{ ai_prompt }}</textarea>
                 <button
                     type="submit"
+                    id="ai-submit-btn"
                     style="margin-top: 10px; background: #2e4c32; color: #cfe0c4; border: none; border-radius: 8px; padding: 9px 14px; font-size: 12px; cursor: pointer;"
                 >Ask AI Helper</button>
+
+                <div id="ai-loading" style="display: none; margin-top: 10px; color: #2e4c32; font-size: 12px; align-items: center; gap: 8px;">
+                    <span style="width: 12px; height: 12px; border: 2px solid #b9cbb2; border-top-color: #2e4c32; border-radius: 50%; display: inline-block; animation: ai-spin 0.8s linear infinite;"></span>
+                    Getting AI help...
+                </div>
             </form>
 
             {% if ai_error %}
@@ -107,4 +113,29 @@
             </ul>
         </div>
     </section>
+
+    <style>
+        @keyframes ai-spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        (function () {
+            const form = document.getElementById('ai-helper-form');
+            const submitBtn = document.getElementById('ai-submit-btn');
+            const loading = document.getElementById('ai-loading');
+
+            if (!form || !submitBtn || !loading) {
+                return;
+            }
+
+            form.addEventListener('submit', function () {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Asking...';
+                submitBtn.style.opacity = '0.8';
+                submitBtn.style.cursor = 'wait';
+                loading.style.display = 'flex';
+            });
+        })();
+    </script>
 {% endblock %}
