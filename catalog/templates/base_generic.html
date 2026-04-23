@@ -7,6 +7,11 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/generic.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <style>
+        #quickStartModal::backdrop {
+            background: rgba(10, 20, 10, 0.45);
+        }
+    </style>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -28,6 +33,7 @@
                 <li><a href="{% url 'skills' %}">Skills</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'search' %}">Search</a></li>
+                <li><button type="button" class="nav-help-btn" id="quickStartOpen">Need Help?</button></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'account_logout' %}" class="nav-signin">Sign Out</a></li>
             {% else %}
@@ -52,6 +58,55 @@
             <a href="#">Contact</a>
         </div>
     </footer>
+
+    <dialog id="quickStartModal" class="quickstart-modal" aria-labelledby="quickStartTitle" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; border: 1px solid #dde5d6; border-radius: 12px; width: min(540px, 92vw); padding: 18px 20px; background: #f7fbf4;">
+        <div class="quickstart-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h2 id="quickStartTitle" style="color: #1c2b1c; font-size: 1rem;">Quick Start Guide</h2>
+            <button type="button" class="quickstart-close" id="quickStartClose" aria-label="Close help dialog" style="border: none; background: transparent; color: #7a9470; font-size: 22px; line-height: 1; cursor: pointer;">&times;</button>
+        </div>
+        <p class="quickstart-intro" style="color: #3a4a3a; font-size: 13px; margin-bottom: 8px;">Start here to get the most out of CookinForDummies:</p>
+        <ol class="quickstart-list" style="margin: 0 0 14px 20px; color: #3a4a3a; font-size: 13px; line-height: 1.7;">
+            <li>Use Search to find recipes by title, time, and rating.</li>
+            <li>Open a recipe and click Save to build your personal list.</li>
+            <li>Visit My Recipes anytime to view your saved meals.</li>
+            <li>Go to Skills to learn techniques before trying tougher recipes.</li>
+        </ol>
+        <div class="quickstart-actions" style="display: flex; justify-content: flex-end;">
+            <button type="button" class="quickstart-primary" id="quickStartGotIt" style="background: #2e4c32; color: #cfe0c4; border: none; border-radius: 8px; padding: 8px 14px; font-size: 12px; cursor: pointer;">Got it</button>
+        </div>
+    </dialog>
+
     <script src="{% static 'js/hamburger.js' %}"></script>
+    <script>
+        (function () {
+            const openBtn = document.getElementById('quickStartOpen');
+            const modal = document.getElementById('quickStartModal');
+            const closeBtn = document.getElementById('quickStartClose');
+            const gotItBtn = document.getElementById('quickStartGotIt');
+
+            if (!openBtn || !modal) {
+                return;
+            }
+
+            openBtn.addEventListener('click', function () {
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                }
+            });
+
+            function closeModal() {
+                if (typeof modal.close === 'function') {
+                    modal.close();
+                }
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            if (gotItBtn) {
+                gotItBtn.addEventListener('click', closeModal);
+            }
+        })();
+    </script>
 </body>
 </html>
