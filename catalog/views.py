@@ -10,9 +10,12 @@ from django.views.generic.edit import CreateView, UpdateView
 from catalog.forms import RecipeForm, RecipeIngredientFormSet, RecipeStepFormSet
 from django.db.models import Q
 from django.conf import settings
+from django.utils import timezone
 import requests
+from django.utils.dateparse import parse_date
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
+from .models import UserIngredient
 
 class RecipeDetailView(DetailView):
     model = Recipe
@@ -142,6 +145,11 @@ class RecipeSearchView(ListView):
         query = self.request.GET.get('q')
         max_time = self.request.GET.get('time')
         min_rating = self.request.GET.get('rating')
+        pantry_ingredient = (self.request.GET.get('ingredient') or '').strip()
+        pantry_ingredient_new = (self.request.GET.get('ingredient_new') or '').strip()
+
+        if pantry_ingredient == '__new__':
+            pantry_ingredient = pantry_ingredient_new
 
         if query:
             queryset = queryset.filter(title__icontains=query)
@@ -150,7 +158,24 @@ class RecipeSearchView(ListView):
         if min_rating:
             queryset = queryset.filter(rating__gte=min_rating)
 
-        return queryset
+        if pantry_ingredient:
+            queryset = queryset.filter(ingredients__name__iexact=pantry_ingredient)
+
+        return queryset.distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['pantry_ingredients'] = list(
+                UserIngredient.objects.filter(user=self.request.user)
+                .select_related('ingredient')
+                .order_by('ingredient__name')
+                .values_list('ingredient__name', flat=True)
+                .distinct()
+            )
+        else:
+            context['pantry_ingredients'] = []
+        return context
 
 # my recipes page
 class MyRecipesView(LoginRequiredMixin, TemplateView):
@@ -186,6 +211,12 @@ def toggle_save_recipe(request, pk):
 
     return redirect(recipe.get_absolute_url())
 
+
+def delete_expired_user_ingredients(user):
+    """Remove pantry items whose expiration date is in the past."""
+    today = timezone.localdate()
+    UserIngredient.objects.filter(user=user, expiration_date__lt=today).delete()
+
 def skills_view(request):
     skills = Skill.objects.all()
 
@@ -194,6 +225,58 @@ def skills_view(request):
     }
 
     return render(request, 'skills.html', context)
+
+
+@login_required
+def my_ingredients(request):
+    """Show and update the user's pantry ingredients."""
+    delete_expired_user_ingredients(request.user)
+
+    if request.method == 'POST':
+        ingredient_name = (request.POST.get('ingredient_name') or '').strip()
+        ingredient_name_new = (request.POST.get('ingredient_name_new') or '').strip()
+        quantity = (request.POST.get('quantity') or '').strip()
+        location = (request.POST.get('location') or '').strip()
+        expiration_date_raw = (request.POST.get('expiration_date') or '').strip()
+
+        if ingredient_name == '__new__':
+            ingredient_name = ingredient_name_new
+
+        if ingredient_name:
+            ingredient, _ = Ingredient.objects.get_or_create(name=ingredient_name)
+            pantry_item, _ = UserIngredient.objects.get_or_create(
+                user=request.user,
+                ingredient=ingredient,
+            )
+            pantry_item.quantity = quantity
+            pantry_item.location = location
+            pantry_item.expiration_date = parse_date(expiration_date_raw) if expiration_date_raw else None
+            pantry_item.save()
+
+        delete_expired_user_ingredients(request.user)
+
+        return redirect('my-ingredients')
+
+    items = UserIngredient.objects.filter(user=request.user).select_related('ingredient').order_by('ingredient__name')
+    ingredient_choices = list(
+        Ingredient.objects.filter(recipeingredient__isnull=False)
+        .distinct()
+        .order_by('name')
+        .values_list('name', flat=True)
+    )
+    return render(request, 'my_ingredients.html', {
+        'items': items,
+        'ingredient_choices': ingredient_choices,
+    })
+
+
+@login_required
+def delete_my_ingredient(request, pk):
+    """Delete one pantry ingredient owned by the current user."""
+    pantry_item = get_object_or_404(UserIngredient, pk=pk, user=request.user)
+    if request.method == 'POST':
+        pantry_item.delete()
+    return redirect('my-ingredients')
 
 # for recipe form
 class RecipeCreateView(LoginRequiredMixin, CreateView):
