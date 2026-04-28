@@ -1,0 +1,30 @@
+{
+  "title": "Crispy Gnocchi With Spinach and Feta",
+  "description": "A bright, herb-filled gnocchi dish inspired by spanakopita, with crispy gnocchi, fresh spinach, feta, and lemon.",
+
+  "ingredients": [
+    { "name": "baby spinach", "quantity": "5 oz" },
+    { "name": "feta cheese", "quantity": "6 oz (crumbled)" },
+    { "name": "lemon", "quantity": "1" },
+    { "name": "olive oil", "quantity": "5 tablespoons" },
+    { "name": "salt and pepper", "quantity": "to taste" },
+    { "name": "gnocchi", "quantity": "16 oz" },
+    { "name": "crushed red pepper", "quantity": "1/2 teaspoon" },
+    { "name": "scallions", "quantity": "2 (sliced)" },
+    { "name": "fresh dill", "quantity": "1 handful (chopped)" },
+    { "name": "fresh mint", "quantity": "1 handful (chopped)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Place spinach in a large bowl. Add half the feta, juice of half the lemon, 1 tablespoon olive oil, and a pinch of salt. Massage until softened." },
+    { "order": 2, "instruction": "Heat a large skillet over medium-high heat and add 2 tablespoons olive oil." },
+    { "order": 3, "instruction": "Add gnocchi and cook for 8–10 minutes, tossing occasionally, until golden and crispy." },
+    { "order": 4, "instruction": "Let gnocchi cool for 5 minutes to crisp further." },
+    { "order": 5, "instruction": "Add gnocchi to the spinach along with red pepper flakes, scallions, dill, and mint." },
+    { "order": 6, "instruction": "Drizzle with remaining olive oil and add remaining feta." },
+    { "order": 7, "instruction": "Squeeze remaining lemon juice over the dish and toss to combine." },
+    { "order": 8, "instruction": "Season with salt and pepper to taste and serve." }
+  ],
+
+  "time_to_make": 25
+}

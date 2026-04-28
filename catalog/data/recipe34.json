@@ -1,0 +1,25 @@
+{
+  "title": "Robin's Muhammara (Red Pepper Dip)",
+  "description": "Muhammara is a Middle Eastern walnut and roasted red pepper dip that is savory, slightly sweet, smoky, and mildly spicy. Great as a dip, spread, or mezze dish.",
+
+  "ingredients": [
+    { "name": "walnuts", "quantity": "1 cup" },
+    { "name": "roasted red peppers", "quantity": "2 (peeled and seeded) or 250 g jarred" },
+    { "name": "garlic cloves", "quantity": "2" },
+    { "name": "pomegranate molasses", "quantity": "2 tablespoons" },
+    { "name": "panko bread crumbs", "quantity": "1 cup" },
+    { "name": "olive oil", "quantity": "1/4 cup" },
+    { "name": "Aleppo pepper", "quantity": "1 tablespoon" },
+    { "name": "salt", "quantity": "1/2 teaspoon" },
+    { "name": "ground cumin", "quantity": "1 teaspoon" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Add all ingredients to a food processor." },
+    { "order": 2, "instruction": "Process until smooth but slightly textured." },
+    { "order": 3, "instruction": "Taste and adjust seasoning as needed." },
+    { "order": 4, "instruction": "Add more breadcrumbs if the mixture is too watery." }
+  ],
+
+  "time_to_make": 10
+}

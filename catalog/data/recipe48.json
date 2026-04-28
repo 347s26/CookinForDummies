@@ -1,0 +1,29 @@
+{
+  "title": "Original Plum Torte",
+  "description": "A classic, simple plum torte with a tender buttery cake base and juicy baked plums, famously published by The New York Times.",
+
+  "ingredients": [
+    { "name": "sugar", "quantity": "3/4 to 1 cup" },
+    { "name": "unsalted butter", "quantity": "1/2 cup (softened)" },
+    { "name": "flour", "quantity": "1 cup (sifted)" },
+    { "name": "baking powder", "quantity": "1 teaspoon" },
+    { "name": "salt", "quantity": "pinch" },
+    { "name": "eggs", "quantity": "2" },
+    { "name": "purple plums", "quantity": "24 halves (pitted)" },
+    { "name": "lemon juice", "quantity": "to taste" },
+    { "name": "cinnamon", "quantity": "1 teaspoon" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 350°F." },
+    { "order": 2, "instruction": "Cream sugar and butter together until light and fluffy." },
+    { "order": 3, "instruction": "Add flour, baking powder, salt, and eggs, and mix until well combined." },
+    { "order": 4, "instruction": "Spread batter into a greased springform pan." },
+    { "order": 5, "instruction": "Arrange plum halves skin-side up on top of the batter." },
+    { "order": 6, "instruction": "Sprinkle with additional sugar, lemon juice, and cinnamon." },
+    { "order": 7, "instruction": "Bake for about 1 hour, until the cake is set and golden." },
+    { "order": 8, "instruction": "Cool before serving. Serve plain or with whipped cream." }
+  ],
+
+  "time_to_make": 75
+}

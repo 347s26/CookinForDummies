@@ -1,0 +1,30 @@
+{
+  "title": "Amma's (Jan's) Strawberry Shortcake",
+  "description": "A classic strawberry shortcake with tender biscuit-like layers, sweet macerated strawberries, and whipped cream.",
+
+  "ingredients": [
+    { "name": "strawberries", "quantity": "1/2 lb" },
+    { "name": "sugar", "quantity": "1/4 cup (plus extra to taste)" },
+    { "name": "half-and-half", "quantity": "1 cup" },
+    { "name": "flour", "quantity": "2 cups" },
+    { "name": "baking powder", "quantity": "2 teaspoons" },
+    { "name": "salt", "quantity": "1 teaspoon" },
+    { "name": "baking soda", "quantity": "1/4 teaspoon" },
+    { "name": "shortening", "quantity": "6 tablespoons" },
+    { "name": "buttermilk", "quantity": "about 1 cup" },
+    { "name": "whipped cream", "quantity": "4–6 oz (for serving)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 450°F." },
+    { "order": 2, "instruction": "Hull and slice strawberries, then mix with sugar and half-and-half. Set aside to macerate." },
+    { "order": 3, "instruction": "In a large bowl, sift together flour, sugar, baking powder, salt, and baking soda." },
+    { "order": 4, "instruction": "Cut shortening into the dry ingredients until the mixture resembles coarse crumbs." },
+    { "order": 5, "instruction": "Add buttermilk and gently stir until just combined (do not overmix)." },
+    { "order": 6, "instruction": "Divide dough into two pie pans and gently pat into 1-inch thick rounds." },
+    { "order": 7, "instruction": "Bake for about 10 minutes, until lightly golden." },
+    { "order": 8, "instruction": "Serve shortcake topped with macerated strawberries and whipped cream." }
+  ],
+
+  "time_to_make": 25
+}

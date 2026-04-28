@@ -138,7 +138,7 @@ class RecipeSearchView(ListView):
 
     def get_queryset(self):
         """Filter recipes based on search input."""
-        queryset = Recipe.objects.all()
+        queryset = Recipe.objects.filter(creator__isnull=True)
         query = self.request.GET.get('q')
         max_time = self.request.GET.get('time')
         min_rating = self.request.GET.get('rating')
@@ -201,6 +201,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     form_class = RecipeForm
     template_name = 'catalog/recipe_form.html'
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        if self.request.method in ('POST', 'PUT'):
+            kwargs['files'] = self.request.FILES
+        return kwargs
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.POST:
@@ -243,6 +249,12 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Recipe
     form_class = RecipeForm
     template_name = 'catalog/recipe_form.html'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        if self.request.method in ('POST', 'PUT'):
+            kwargs['files'] = self.request.FILES
+        return kwargs
 
     def test_func(self):
         return self.get_object().creator == self.request.user

@@ -1,0 +1,28 @@
+{
+  "title": "Uncle Steve's (Emerywood's) Collard Greens",
+  "description": "A savory collard greens dish simmered with bacon, onions, and a tangy-sweet broth. Can be made vegan by substituting vegetable broth and plant-based fat.",
+
+  "ingredients": [
+    { "name": "bacon", "quantity": "3 strips (chopped)" },
+    { "name": "onion", "quantity": "1/2 diced" },
+    { "name": "collard greens", "quantity": "1 head" },
+    { "name": "balsamic vinegar", "quantity": "1/4 cup" },
+    { "name": "brown sugar", "quantity": "1/4 cup" },
+    { "name": "chicken broth", "quantity": "3 cups" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "pepper", "quantity": "to taste" },
+    { "name": "cayenne pepper", "quantity": "1/2 teaspoon (optional)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Chop collard greens into 1–2 inch pieces, dice the onion, and chop the bacon." },
+    { "order": 2, "instruction": "In a large pot or skillet, sauté bacon and onion with a pinch of salt over medium heat until bacon is mostly cooked and onions are translucent or lightly browned." },
+    { "order": 3, "instruction": "Increase heat to medium-high and add chicken broth, brown sugar, and balsamic vinegar, stirring to deglaze the pan." },
+    { "order": 4, "instruction": "Add collard greens and bring the mixture to a simmer or light boil." },
+    { "order": 5, "instruction": "Reduce heat and simmer for at least 30 minutes, up to 3 hours for more tender greens." },
+    { "order": 6, "instruction": "Season with salt, pepper, and optional cayenne to taste." },
+    { "order": 7, "instruction": "Serve using a slotted spoon, allowing excess broth to drain." }
+  ],
+
+  "time_to_make": 60
+}

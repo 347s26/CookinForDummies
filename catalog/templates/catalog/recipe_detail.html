@@ -26,8 +26,11 @@
             <a href="{% url 'recipe-delete' recipe.id %}">Delete Recipe</a>
         </div>
     {% endif %}
-
-    {% if recipe.image_url %}
+    {% if recipe.image %}
+    <div style="margin-bottom: 20px; text-align: center;">
+        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
+    </div>
+    {% elif recipe.image_url %}
     <div style="margin-bottom: 20px; text-align: center;">
         <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
     </div>

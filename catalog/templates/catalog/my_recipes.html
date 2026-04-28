@@ -10,8 +10,8 @@
         {% for recipe in created_recipes %}
         <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
             <div class="recipe-card" title="Open recipe: {{ recipe.title }}">
-                {% if recipe.image_url %}
-                    <div class="recipe-card-image" style="background-image: url('{{ recipe.image_url }}'); background-size: cover; background-position: center;"></div>
+                {% if recipe.image %}
+                    <div class="recipe-card-image" style="background-image: url('{{ recipe.image.url }}'); background-size: cover; background-position: center;"></div>
                 {% else %}
                     <div class="recipe-card-image recipe-card-image-placeholder">No image yet</div>
                 {% endif %}

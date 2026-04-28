@@ -5,7 +5,7 @@
     {% if object %}Edit Recipe{% else %}Create Recipe{% endif %}
 </h1>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
     <fieldset>
@@ -16,7 +16,11 @@
     <fieldset>
         <legend>Ingredients</legend>
         {{ ingredient_formset.management_form }}
-
+        {% if ingredient_formset.non_form_errors %}
+            <div class="form-errors">
+                {{ ingredient_formset.non_form_errors }}
+            </div>
+        {% endif %}
         <div id="ingredient-forms">
             {% for form in ingredient_formset %}
                 <div class="ingredient-form" style="margin-bottom: 15px; padding: 10px; border: 1px solid #ccc;">
@@ -114,6 +118,21 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('add-step-btn').addEventListener('click', addStepForm);
 
     initializeExistingIngredientSelects();
+});
+document.querySelector('form').addEventListener('submit', function(e) {
+    const selects = document.querySelectorAll('#ingredient-forms .ingredient-select');
+    const values = [];
+
+    for (let select of selects) {
+        if (select.value) {
+            if (values.includes(select.value)) {
+                alert("You can only select each ingredient once.");
+                e.preventDefault();
+                return;
+            }
+            values.push(select.value);
+        }
+    }
 });
 </script>
 

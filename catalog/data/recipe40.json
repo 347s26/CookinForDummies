@@ -1,0 +1,28 @@
+{
+  "title": "Amma's (Jan's) Strawberry Pie",
+  "description": "A classic chilled strawberry pie with a glossy strawberry filling in a baked crust, topped with whipped cream.",
+
+  "ingredients": [
+    { "name": "pie crust", "quantity": "1" },
+    { "name": "strawberries", "quantity": "1 quart (hulled and sliced)" },
+    { "name": "sugar", "quantity": "1 cup" },
+    { "name": "cornstarch", "quantity": "2 tablespoons" },
+    { "name": "water", "quantity": "1 cup" },
+    { "name": "strawberry gelatin", "quantity": "4 tablespoons" },
+    { "name": "whipped cream", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Bake the pie crust according to package directions and let it cool completely." },
+    { "order": 2, "instruction": "Hull and slice the strawberries." },
+    { "order": 3, "instruction": "In a saucepan, combine sugar, cornstarch, and water. Cook over medium heat until thickened." },
+    { "order": 4, "instruction": "Remove from heat and stir in strawberry gelatin until dissolved." },
+    { "order": 5, "instruction": "Let the mixture cool completely, stirring occasionally." },
+    { "order": 6, "instruction": "Arrange sliced strawberries in the cooled pie crust." },
+    { "order": 7, "instruction": "Pour the cooled filling over the strawberries." },
+    { "order": 8, "instruction": "Chill in the refrigerator until set." },
+    { "order": 9, "instruction": "Serve topped with whipped cream." }
+  ],
+
+  "time_to_make": 180
+}

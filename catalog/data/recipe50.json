@@ -1,0 +1,26 @@
+{
+  "title": "Prosciutto and Melon Salad",
+  "description": "A refreshing no-cook summer salad with sweet melon, salty prosciutto, creamy mozzarella, and peppery arugula.",
+
+  "ingredients": [
+    { "name": "lemon", "quantity": "1/2" },
+    { "name": "melon", "quantity": "3 cups (bite-size pieces)" },
+    { "name": "arugula", "quantity": "5 oz" },
+    { "name": "basil leaves", "quantity": "15" },
+    { "name": "salt and pepper", "quantity": "to taste" },
+    { "name": "olive oil", "quantity": "2 tablespoons (plus more if needed)" },
+    { "name": "mozzarella", "quantity": "4 oz (small balls, halved or torn)" },
+    { "name": "prosciutto", "quantity": "3 oz (about 8 slices, halved)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Zest the lemon over the melon pieces." },
+    { "order": 2, "instruction": "Place arugula and basil in a large bowl or platter." },
+    { "order": 3, "instruction": "Season greens with salt and pepper, drizzle with 1 tablespoon olive oil, and squeeze lemon juice over. Toss gently." },
+    { "order": 4, "instruction": "Top with melon, mozzarella, and prosciutto." },
+    { "order": 5, "instruction": "Season lightly with salt and pepper and drizzle with remaining olive oil." },
+    { "order": 6, "instruction": "Taste and adjust seasoning as needed, then serve immediately." }
+  ],
+
+  "time_to_make": 15
+}

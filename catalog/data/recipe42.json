@@ -1,0 +1,29 @@
+{
+  "title": "Amma's (Jan's) Oreo Cookie Cake",
+  "description": "A no-bake layered dessert with crushed Oreos, cream cheese filling, chocolate pudding, and whipped topping.",
+
+  "ingredients": [
+    { "name": "oreo cookies", "quantity": "1 package (18 oz or more)" },
+    { "name": "butter", "quantity": "1 stick (melted)" },
+    { "name": "cream cheese", "quantity": "8 oz" },
+    { "name": "sugar", "quantity": "1/2 cup" },
+    { "name": "whipped topping", "quantity": "12 oz" },
+    { "name": "instant chocolate pudding mix", "quantity": "1 large box (5.9 oz)" },
+    { "name": "milk", "quantity": "3 cups (cold)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Crush Oreo cookies into small chunks using a rolling pin or similar tool." },
+    { "order": 2, "instruction": "Mix crushed Oreos with melted butter until combined." },
+    { "order": 3, "instruction": "Press half of the mixture into the bottom of a dish to form a crust." },
+    { "order": 4, "instruction": "In a bowl, beat cream cheese and sugar until smooth." },
+    { "order": 5, "instruction": "Gently fold in the whipped topping." },
+    { "order": 6, "instruction": "Spread the cream cheese mixture over the Oreo crust." },
+    { "order": 7, "instruction": "Prepare chocolate pudding according to package instructions using cold milk." },
+    { "order": 8, "instruction": "Pour pudding evenly over the cream layer." },
+    { "order": 9, "instruction": "Sprinkle remaining Oreo mixture on top." },
+    { "order": 10, "instruction": "Cover and refrigerate for at least 2 hours before serving." }
+  ],
+
+  "time_to_make": 150
+}

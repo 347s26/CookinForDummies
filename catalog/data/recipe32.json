@@ -1,0 +1,32 @@
+{
+  "title": "Spicy Honey-Brushed Chicken Thighs",
+  "description": "Make and share this Spicy Honey-Brushed Chicken Thighs recipe from Food.com.",
+
+  "ingredients": [
+    { "name": "garlic powder", "quantity": "2 teaspoons" },
+    { "name": "chili powder", "quantity": "2 teaspoons" },
+    { "name": "salt", "quantity": "1 teaspoon" },
+    { "name": "ground cumin", "quantity": "1 teaspoon" },
+    { "name": "paprika", "quantity": "1 teaspoon" },
+    { "name": "ground red pepper", "quantity": "1/2 teaspoon" },
+    { "name": "skinless chicken thighs", "quantity": "8 boneless" },
+    { "name": "cooking spray", "quantity": "as needed" },
+    { "name": "honey", "quantity": "6 tablespoons" },
+    { "name": "cider vinegar", "quantity": "2 teaspoons" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat broiler." },
+    { "order": 2, "instruction": "Combine garlic powder, chili powder, salt, cumin, paprika, and red pepper in a large bowl." },
+    { "order": 3, "instruction": "Add chicken and toss to coat." },
+    { "order": 4, "instruction": "Place chicken on a broiler pan coated with cooking spray." },
+    { "order": 5, "instruction": "Broil chicken for 5 minutes on each side." },
+    { "order": 6, "instruction": "Combine honey and vinegar in a small bowl." },
+    { "order": 7, "instruction": "Remove chicken from oven and brush with 1/4 cup of the honey mixture." },
+    { "order": 8, "instruction": "Broil for 1 minute." },
+    { "order": 9, "instruction": "Turn chicken over and brush with remaining honey mixture." },
+    { "order": 10, "instruction": "Broil for 1 additional minute or until chicken is done." }
+  ],
+
+  "time_to_make": 22
+}

@@ -45,6 +45,15 @@ class Skill(models.Model):
         unique=True,
         help_text="Enter a skill(e.g. dicing onions, caramelizing onions, etc)"
     )
+
+    description = models.TextField(blank=True)
+
+    image_url = models.URLField(
+        blank=True,
+        null=True,
+        help_text="Paste a direct image URL (e.g. ends in .jpg, .png)"
+    )
+
     video = models.URLField(blank=True, null=True)
 
     def __str__(self):
@@ -88,6 +97,12 @@ class Recipe(models.Model):
         blank=True,
         null=True,
         help_text="Paste a direct image URL (e.g. ends in .jpg, .png)"
+    )
+
+    image = models.ImageField(
+        upload_to='recipe_images/',
+        blank=True,
+        null=True
     )
 
     def __str__(self):

@@ -1,0 +1,29 @@
+{
+  "title": "Pasta Pomodorini",
+  "description": "A simple Italian pasta with slow-roasted cherry tomatoes, olive oil, basil, and parmesan.",
+
+  "ingredients": [
+    { "name": "cherry tomatoes", "quantity": "4 pints" },
+    { "name": "olive oil", "quantity": "as needed" },
+    { "name": "sugar", "quantity": "1 teaspoon" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "pepper", "quantity": "to taste" },
+    { "name": "spaghetti", "quantity": "1 pound" },
+    { "name": "fresh basil", "quantity": "10 leaves" },
+    { "name": "parmesan cheese", "quantity": "to taste" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 225°F." },
+    { "order": 2, "instruction": "Rinse and dry the cherry tomatoes, then toss with olive oil, sugar, salt, and pepper." },
+    { "order": 3, "instruction": "Spread tomatoes in a single layer on a baking sheet." },
+    { "order": 4, "instruction": "Roast for up to 5 hours, stirring and rotating the pan every 30 minutes, until concentrated and slightly dehydrated." },
+    { "order": 5, "instruction": "Cook pasta according to package instructions. Reserve some pasta water, then drain." },
+    { "order": 6, "instruction": "Return pasta to the pot and add roasted tomatoes." },
+    { "order": 7, "instruction": "Add olive oil, half the basil, and some parmesan cheese, then toss to combine." },
+    { "order": 8, "instruction": "Adjust consistency with reserved pasta water if needed." },
+    { "order": 9, "instruction": "Serve topped with remaining basil and more parmesan cheese." }
+  ],
+
+  "time_to_make": 300
+}

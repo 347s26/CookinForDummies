@@ -1,0 +1,30 @@
+{
+  "title": "Avocado and Corn Salsa",
+  "description": "A fresh and zesty salsa with sweet corn, creamy avocado, and bright lime—great as a dip or topping for tortilla chips.",
+
+  "ingredients": [
+    { "name": "corn", "quantity": "3 ears (cooked and cut off cob)" },
+    { "name": "avocados", "quantity": "2 (cubed)" },
+    { "name": "red onion", "quantity": "1 small (finely diced)" },
+    { "name": "red bell pepper", "quantity": "1 (seeded and diced)" },
+    { "name": "olive oil", "quantity": "2 tablespoons" },
+    { "name": "red wine vinegar", "quantity": "to taste" },
+    { "name": "garlic cloves", "quantity": "2 (minced)" },
+    { "name": "ground cumin", "quantity": "1 tablespoon" },
+    { "name": "red pepper flakes", "quantity": "1 teaspoon" },
+    { "name": "fresh oregano", "quantity": "1/4 cup chopped" },
+    { "name": "lime juice", "quantity": "from 2 limes" },
+    { "name": "salt and pepper", "quantity": "to taste" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Cook corn if needed, then cut kernels off the cob." },
+    { "order": 2, "instruction": "In a large bowl, combine corn, avocado, red onion, red bell pepper, and garlic." },
+    { "order": 3, "instruction": "Add olive oil, red wine vinegar, cumin, red pepper flakes, and oregano." },
+    { "order": 4, "instruction": "Squeeze lime juice over the mixture and gently toss to combine." },
+    { "order": 5, "instruction": "Season with salt and pepper to taste." },
+    { "order": 6, "instruction": "Serve immediately or chill briefly before serving." }
+  ],
+
+  "time_to_make": 20
+}

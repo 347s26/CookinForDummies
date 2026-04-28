@@ -1,0 +1,22 @@
+{
+  "title": "Jessica's Banana Pudding",
+  "description": "A classic layered banana pudding with vanilla wafers, fresh bananas, and warm vanilla pudding.",
+
+  "ingredients": [
+    { "name": "nilla wafers", "quantity": "1 box" },
+    { "name": "bananas", "quantity": "4 sliced" },
+    { "name": "vanilla pudding mix", "quantity": "2 boxes (3.4 oz each)" },
+    { "name": "milk", "quantity": "4 cups" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Slice the bananas." },
+    { "order": 2, "instruction": "In a casserole dish, layer vanilla wafers and banana slices, alternating layers." },
+    { "order": 3, "instruction": "Prepare the vanilla pudding according to package directions using the milk." },
+    { "order": 4, "instruction": "Pour the hot pudding over the layered wafers and bananas." },
+    { "order": 5, "instruction": "Let sit at room temperature until the pudding begins to set and wafers soften." },
+    { "order": 6, "instruction": "Cover and refrigerate before serving." }
+  ],
+
+  "time_to_make": 60
+}

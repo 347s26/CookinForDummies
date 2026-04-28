@@ -1,0 +1,25 @@
+{
+  "title": "Amma's (Jan's) Granola",
+  "description": "A simple homemade granola with oats, nuts, coconut, and maple syrup, baked low and slow until crisp.",
+
+  "ingredients": [
+    { "name": "rolled oats", "quantity": "3 cups" },
+    { "name": "sliced almonds", "quantity": "1 cup" },
+    { "name": "unsweetened shredded coconut", "quantity": "1 cup" },
+    { "name": "brown sugar", "quantity": "1/4 cup" },
+    { "name": "maple syrup", "quantity": "1/4 cup" },
+    { "name": "neutral oil", "quantity": "1/4 cup" },
+    { "name": "salt", "quantity": "3/4 teaspoon" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat oven to 250°F." },
+    { "order": 2, "instruction": "In a large bowl, combine rolled oats, sliced almonds, shredded coconut, and brown sugar." },
+    { "order": 3, "instruction": "In a small bowl, mix maple syrup, oil, and salt." },
+    { "order": 4, "instruction": "Pour wet ingredients over dry ingredients and mix thoroughly." },
+    { "order": 5, "instruction": "Spread mixture evenly onto a jelly roll pan." },
+    { "order": 6, "instruction": "Bake for 45–60 minutes, stirring every 15 minutes, until golden and crisp." }
+  ],
+
+  "time_to_make": 60
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Amma's (Jan's) Chili",
+  "description": "A simple, comforting chili with beans, tomatoes, and spices. Great served over white rice and topped with sour cream, hot sauce, and scallions or chives.",
+
+  "ingredients": [
+    { "name": "ground beef", "quantity": "1 lb" },
+    { "name": "onion", "quantity": "1 chopped" },
+    { "name": "green bell pepper", "quantity": "3/4 cup chopped" },
+    { "name": "garlic", "quantity": "1 clove minced" },
+    { "name": "diced tomatoes", "quantity": "14 oz can" },
+    { "name": "black beans", "quantity": "1 can (rinsed and drained)" },
+    { "name": "tomato sauce", "quantity": "8 oz can" },
+    { "name": "chili powder", "quantity": "2 teaspoons" },
+    { "name": "dried basil", "quantity": "1/2 teaspoon" },
+    { "name": "olive oil", "quantity": "1–2 tablespoons" },
+    { "name": "salt", "quantity": "to taste" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Dice onion, chop green bell pepper, and mince garlic." },
+    { "order": 2, "instruction": "In a large pot or skillet, cook ground beef over medium to medium-high heat until mostly browned." },
+    { "order": 3, "instruction": "Drain excess grease." },
+    { "order": 4, "instruction": "Add olive oil if needed, then sauté onion, bell pepper, and garlic with a pinch of salt until softened." },
+    { "order": 5, "instruction": "Add diced tomatoes (with juices), black beans, tomato sauce, chili powder, and basil." },
+    { "order": 6, "instruction": "Bring to a boil, then reduce heat and simmer for about 20 minutes." },
+    { "order": 7, "instruction": "Season with additional salt to taste and serve." }
+  ],
+
+  "time_to_make": 35
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Brown-Butter Orzo With Butternut Squash",
+  "description": "A creamy, risotto-like orzo dish with roasted butternut squash, brown butter, sage, and parmesan, finished with lemon for brightness.",
+
+  "ingredients": [
+    { "name": "unsalted butter", "quantity": "4 tablespoons" },
+    { "name": "shallots", "quantity": "3/4 cup sliced" },
+    { "name": "butternut squash", "quantity": "3 cups (cubed)" },
+    { "name": "fresh sage", "quantity": "1 tablespoon chopped" },
+    { "name": "salt", "quantity": "1 teaspoon (plus more to taste)" },
+    { "name": "black pepper", "quantity": "1/4 teaspoon (plus more to taste)" },
+    { "name": "red pepper flakes", "quantity": "1/4 teaspoon (plus more to taste)" },
+    { "name": "vegetable or chicken stock", "quantity": "3 cups" },
+    { "name": "orzo", "quantity": "1 1/2 cups" },
+    { "name": "lemon", "quantity": "1 (zested and juiced)" },
+    { "name": "parmesan cheese", "quantity": "2 tablespoons (plus more for serving)" },
+    { "name": "ricotta", "quantity": "1/2 cup (optional)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Melt butter in a large pot or skillet over medium heat and cook until browned and nutty." },
+    { "order": 2, "instruction": "Add shallots and cook until softened." },
+    { "order": 3, "instruction": "Add butternut squash, sage, salt, pepper, and red pepper flakes, and cook until squash begins to soften and brown." },
+    { "order": 4, "instruction": "Add stock and bring to a simmer." },
+    { "order": 5, "instruction": "Stir in orzo, lemon zest, and salt. Cover and simmer until orzo is tender and most liquid is absorbed, stirring occasionally." },
+    { "order": 6, "instruction": "Remove from heat and stir in parmesan cheese." },
+    { "order": 7, "instruction": "Adjust seasoning with salt, pepper, and a squeeze of lemon juice." },
+    { "order": 8, "instruction": "Serve topped with ricotta (if using), extra parmesan, herbs, and red pepper flakes." }
+  ],
+
+  "time_to_make": 45
+}

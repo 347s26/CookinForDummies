@@ -1,0 +1,43 @@
+{
+  "title": "Lasagna Trifecta Delizioso di Scerbo",
+  "description": "A rich three-meat lasagna layered with marinara, béchamel, and a blend of cheeses.",
+
+  "ingredients": [
+    { "name": "ground lamb", "quantity": "1 lb" },
+    { "name": "ground pork sausage", "quantity": "1 lb" },
+    { "name": "ground beef", "quantity": "1 lb" },
+    { "name": "onions", "quantity": "3 chopped" },
+    { "name": "carrots", "quantity": "4 chopped" },
+    { "name": "celery stalks", "quantity": "3 chopped" },
+    { "name": "lasagna noodles", "quantity": "as needed" },
+    { "name": "marinara sauce", "quantity": "4 (26 oz) cans" },
+    { "name": "red pepper flakes", "quantity": "to taste" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "pepper", "quantity": "to taste" },
+    { "name": "garlic powder", "quantity": "to taste" },
+    { "name": "mozzarella", "quantity": "1 lb grated" },
+    { "name": "parmigiano-reggiano", "quantity": "8 oz grated" },
+    { "name": "asiago", "quantity": "8 oz grated" },
+    { "name": "ricotta", "quantity": "15 oz" },
+    { "name": "flour", "quantity": "45 g" },
+    { "name": "butter", "quantity": "45 g" },
+    { "name": "milk", "quantity": "5 cups" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Chop onions, carrots, and celery." },
+    { "order": 2, "instruction": "Cook ground lamb, pork sausage, and beef separately until mostly done, reserving fat." },
+    { "order": 3, "instruction": "Cook vegetables in a large pot using the reserved fat (add butter if needed)." },
+    { "order": 4, "instruction": "Add marinara sauce to vegetables, heat, then add cooked meats." },
+    { "order": 5, "instruction": "Cook lasagna noodles until just before al dente, then shock in ice water (skip if using oven-ready noodles)." },
+    { "order": 6, "instruction": "Make béchamel by melting butter and flour to form a light roux." },
+    { "order": 7, "instruction": "Slowly add milk and heat until thickened and nearly boiling." },
+    { "order": 8, "instruction": "Season béchamel with salt and pepper." },
+    { "order": 9, "instruction": "Spread a thin layer of sauce in a baking dish." },
+    { "order": 10, "instruction": "Layer noodles, a small amount of sauce, béchamel, and cheeses." },
+    { "order": 11, "instruction": "Repeat layering, alternating noodle direction each layer." },
+    { "order": 12, "instruction": "Finish with a top layer of cheese." }
+  ],
+
+  "time_to_make": 90
+}
