@@ -1,11 +1,11 @@
 {% extends "base_generic.html" %}
-
+{% block banner %}
+<div class="banner">
+    <h1 class="banner-title">Save your <em>favorite</em> recipes.</h1>
+</div>
+{% endblock %}
 {% block content %}
-    <h1>My Recipes</h1>
-    <div style="margin-bottom: 20px;">
-        <a href="{% url 'recipe-create' %}" class="button-link">Create Recipe</a>
-    </div>
-    <h1>Created Recipes</h1>
+    <h2 style="margin-bottom: 15px">Created Recipes</h2>
     <div class="recipe-list">
         {% for recipe in created_recipes %}
         <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">
@@ -28,8 +28,11 @@
             </div>
         </div>
         {% endfor %}
+        <div class="create-recipe-container">
+            <a href="{% url 'recipe-create' %}" class="button-link">+ Create Recipe</a>
+        </div>
     </div>
-    <h1>Saved Recipes</h1>
+    <h2 style="margin-bottom: 15px">Saved Recipes</h2>
     <div class="recipe-list">
         {% for recipe in saved_recipes %}
         <a href="{{ recipe.get_absolute_url }}" class="recipe-card-link" title="Open recipe: {{ recipe.title }} ({{ recipe.time_to_make }} mins, rating {{ recipe.rating }}/5)">

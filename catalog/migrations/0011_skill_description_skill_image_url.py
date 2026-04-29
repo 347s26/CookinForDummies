@@ -7,79 +7,7 @@ import requests
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from catalog.models import Recipe, Ingredient, RecipeIngredient, RecipeStep
-
-
-
-def seed_skills(apps, schema_editor):
-    Skill = apps.get_model("catalog", "Skill")
-    
-    skill1 = Skill.objects.create(
-        name="Knife Skills",
-        description="Knowing how to properly hold and use a knife for efficient, safe, and precise cutting (chopping, dicing, slicing).",
-        image_url="",
-        video="https://www.youtube.com/watch?v=Ydc_SaQ_eRQ",
-    )
-    skill1.save()
-
-    skill2 = Skill.objects.create(
-        name="Sautéing",
-        description="Cooking food quickly in a small amount of oil or fat over medium-high heat while stirring or tossing.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=6dEy-OfVcOU",
-    )
-    skill2.save()
-
-    skill3 = Skill.objects.create(
-        name="Boiling",
-        description="Cooking food in water or liquid at its boiling point, commonly used for pasta, vegetables, or eggs.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=kieGBkOdyMU",
-    )
-    skill3.save()
-
-    skill4 = Skill.objects.create(
-        name="Roasting",
-        description="Cooking food in an oven using dry heat, typically at higher temperatures to create browning and depth of flavor.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=5QCtlnNx3xg",
-    )
-    skill4.save()
-
-    skill5 = Skill.objects.create(
-        name="Grilling",
-        description="Cooking food over direct heat, often adding a smoky flavor and char.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=yPAeRiKa0h8",
-    )
-    skill5.save()
-
-    skill6 = Skill.objects.create(
-        name="Seasoning",
-        description="Enhancing flavor with salt, pepper, herbs, spices, and other ingredients; knowing how much and when to add them.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=aWScoBbDK8U",
-    )
-    skill6.save()
-
-    skill7 = Skill.objects.create(
-        name="Baking",
-        description="Cooking food with dry heat in an oven, often requiring precise measurements and timing.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=iu36cQEm2Qs",
-    )
-    skill7.save()
-
-    skill8 = Skill.objects.create(
-        name="Simmering",
-        description="Cooking food gently in liquid just below boiling, often used for soups, sauces, and stews.",
-        image_url="",
-        video="https://www.youtube.com/watch?v=kieGBkOdyMU",
-    )
-    skill8.save()
-
-
-
-    
+  
 
 
 class Migration(migrations.Migration):
@@ -99,5 +27,4 @@ class Migration(migrations.Migration):
             name='image_url',
             field=models.URLField(blank=True, help_text='Paste a direct image URL (e.g. ends in .jpg, .png)', null=True),
         ),
-        migrations.RunPython(seed_skills),
     ]

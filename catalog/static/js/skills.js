@@ -4,9 +4,9 @@ function SkillCard({ skill }) {
     return e(
         "div",
         { className: "recipe-card" },
-        e("div", { className: skill.image ? "recipe-card-image" : "recipe-card-image recipe-card-image-placeholder",
-            style: skill.image
-                ? { backgroundImage: "url('" + skill.image + "')", backgroundSize: "cover", backgroundPosition: "center" }
+        e("div", { className: skill.image_url ? "recipe-card-image" : "recipe-card-image recipe-card-image-placeholder",
+            style: skill.image_url
+                ? { backgroundImage: "url('" + skill.image_url + "')", backgroundSize: "cover", backgroundPosition: "center" }
                 : {}
          }),
         e("div", { className: "recipe-card-bottom" },
