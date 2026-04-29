@@ -11,6 +11,29 @@
             value="{{ request.GET.q }}"
         >
 
+        <select name="ingredient">
+            <option value="">Select an ingredient from my ingredients</option>
+            {% for ingredient_name in pantry_ingredients %}
+                {% if request.GET.ingredient == ingredient_name %}
+                    <option value="{{ ingredient_name }}" selected>{{ ingredient_name }}</option>
+                {% else %}
+                    <option value="{{ ingredient_name }}">{{ ingredient_name }}</option>
+                {% endif %}
+            {% endfor %}
+            {% if request.GET.ingredient == '__new__' %}
+                <option value="__new__" selected>Other ingredient...</option>
+            {% else %}
+                <option value="__new__">Other ingredient...</option>
+            {% endif %}
+        </select>
+
+        <input
+            type="text"
+            name="ingredient_new"
+            placeholder="Type an ingredient if it's not listed"
+            value="{{ request.GET.ingredient_new }}"
+        >
+
         <input
             type="number"
             name="time"
@@ -102,14 +125,33 @@
 
     <div class="pagination">
         {% if page_obj.has_previous %}
-            <a href="?q={{ request.GET.q }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.previous_page_number }}">Previous</a>
+            <a href="?q={{ request.GET.q }}&ingredient={{ request.GET.ingredient }}&ingredient_new={{ request.GET.ingredient_new }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.previous_page_number }}">Previous</a>
         {% endif %}
 
         <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
         {% if page_obj.has_next %}
-            <a href="?q={{ request.GET.q }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?q={{ request.GET.q }}&ingredient={{ request.GET.ingredient }}&ingredient_new={{ request.GET.ingredient_new }}&time={{ request.GET.time }}&rating={{ request.GET.rating }}&page={{ page_obj.next_page_number }}">Next</a>
         {% endif %}
     </div>
+
+    <script>
+        (function () {
+            const select = document.querySelector('select[name="ingredient"]');
+            const typedInput = document.querySelector('input[name="ingredient_new"]');
+
+            function toggleTypedIngredient() {
+                const showTyped = select.value === '__new__';
+                typedInput.style.display = showTyped ? 'inline-block' : 'none';
+                typedInput.required = showTyped;
+                if (!showTyped) {
+                    typedInput.value = '';
+                }
+            }
+
+            select.addEventListener('change', toggleTypedIngredient);
+            toggleTypedIngredient();
+        })();
+    </script>
 
 {% endblock %}

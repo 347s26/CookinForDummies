@@ -1,0 +1,294 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<style>
+    .my-ingredients-page {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 8px 0 28px;
+    }
+
+    .my-ingredients-hero {
+        background: linear-gradient(135deg, #2e4c32 0%, #3b5f40 100%);
+        color: #eef5e8;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+        margin-bottom: 22px;
+    }
+
+    .my-ingredients-hero h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+    .my-ingredients-hero p {
+        margin: 0;
+        color: rgba(238, 245, 232, 0.9);
+        line-height: 1.6;
+        max-width: 62ch;
+    }
+
+    .my-ingredients-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: start;
+    }
+
+    .panel {
+        background: #ffffff;
+        border: 1px solid #dde5d6;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 20px rgba(28, 43, 28, 0.04);
+    }
+
+    .panel h2 {
+        margin: 0 0 12px;
+        font-size: 1.05rem;
+        color: #1c2b1c;
+    }
+
+    .ingredient-form {
+        display: grid;
+        gap: 14px;
+    }
+
+    .field label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2e4c32;
+    }
+
+    .field input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d8e2d0;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        color: #1c2b1c;
+        background: #fbfdf9;
+        outline: none;
+    }
+
+    .field select {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d8e2d0;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        color: #1c2b1c;
+        background: #fbfdf9;
+        outline: none;
+    }
+
+    .field input:focus {
+        border-color: #7a9470;
+        box-shadow: 0 0 0 3px rgba(122, 148, 112, 0.12);
+    }
+
+    .field select:focus {
+        border-color: #7a9470;
+        box-shadow: 0 0 0 3px rgba(122, 148, 112, 0.12);
+    }
+
+    .submit-row {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .submit-row button {
+        padding: 11px 18px;
+        border: none;
+        border-radius: 10px;
+        background: #2e4c32;
+        color: #eef5e8;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: transform 0.15s, opacity 0.15s;
+    }
+
+    .submit-row button:hover {
+        transform: translateY(-1px);
+        opacity: 0.96;
+    }
+
+    .ingredient-actions {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ingredient-actions button {
+        border: 1px solid #d2a7a7;
+        background: #fff6f6;
+        color: #9d3d3d;
+        border-radius: 8px;
+        padding: 7px 11px;
+        cursor: pointer;
+        font-size: 0.85rem;
+    }
+
+    .ingredient-actions button:hover {
+        background: #ffecec;
+    }
+
+    .list-stack {
+        display: grid;
+        gap: 12px;
+    }
+
+    .ingredient-card {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 14px;
+        align-items: center;
+        border: 1px solid #dde5d6;
+        border-radius: 14px;
+        padding: 12px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fbf5 100%);
+    }
+
+    .ingredient-badge {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #dce7d3, #bfd1b4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2e4c32;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .ingredient-name {
+        margin: 0 0 4px;
+        font-size: 1rem;
+        color: #1c2b1c;
+        font-weight: 700;
+    }
+
+    .ingredient-meta {
+        margin: 0;
+        color: #5f745a;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .ingredient-empty {
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px dashed #c9d4bf;
+        color: #5f745a;
+        background: #fbfdf9;
+    }
+
+    @media (max-width: 860px) {
+        .my-ingredients-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="my-ingredients-page">
+    <section class="my-ingredients-hero">
+        <h1>My Ingredients</h1>
+        <p>Tell us what ingredients you have at home, how much of each you have, and when they expire.</p>
+    </section>
+
+    <div class="my-ingredients-grid">
+        <section class="panel">
+            <h2>Add an ingredient</h2>
+            <form method="post" class="ingredient-form">
+                {% csrf_token %}
+                <div class="field">
+                    <label for="ingredient_name">Ingredient</label>
+                    <select id="ingredient_name" name="ingredient_name" required>
+                        <option value="">Select an ingredient</option>
+                        {% for ingredient_name in ingredient_choices %}
+                            <option value="{{ ingredient_name }}">{{ ingredient_name }}</option>
+                        {% endfor %}
+                        <option value="__new__">Other ingredient...</option>
+                    </select>
+                </div>
+                <div class="field" id="ingredient_name_new_field" style="display:none;">
+                    <label for="ingredient_name_new">New ingredient name</label>
+                    <input id="ingredient_name_new" name="ingredient_name_new" type="text" placeholder="e.g. tomatoes">
+                </div>
+                <div class="field">
+                    <label for="quantity">How much do you have?</label>
+                    <input id="quantity" name="quantity" type="text" placeholder="e.g. 2 cups, 3 pieces, 500 g">
+                </div>
+                <div class="field">
+                    <label for="location">Where is it stored?</label>
+                    <input id="location" name="location" type="text" placeholder="e.g. pantry, fridge, freezer">
+                </div>
+                <div class="field">
+                    <label for="expiration_date">Expiry date</label>
+                    <input id="expiration_date" name="expiration_date" type="date">
+                </div>
+                <div class="submit-row">
+                    <button type="submit">Save ingredient</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Your ingredients</h2>
+            <div class="list-stack">
+                {% for item in items %}
+                <article class="ingredient-card">
+                    <div class="ingredient-badge">{{ item.ingredient.name|slice:":1" }}</div>
+                    <div>
+                        <p class="ingredient-name">{{ item.ingredient.name }}</p>
+                        <p class="ingredient-meta">
+                            {% if item.quantity %}
+                                Amount: {{ item.quantity }}<br>
+                            {% else %}
+                                Amount: not set<br>
+                            {% endif %}
+                            {% if item.expiration_date %}
+                                Expires: {{ item.expiration_date }}
+                            {% else %}
+                                Expires: not set
+                            {% endif %}
+                        </p>
+                        <form method="post" action="{% url 'my-ingredient-delete' item.pk %}" class="ingredient-actions">
+                            {% csrf_token %}
+                            <button type="submit" onclick="return confirm('Delete this ingredient from your list?');">Delete</button>
+                        </form>
+                    </div>
+                </article>
+                {% empty %}
+                <div class="ingredient-empty">You haven't added any ingredients yet.</div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    (function () {
+        const select = document.getElementById('ingredient_name');
+        const newField = document.getElementById('ingredient_name_new_field');
+        const newInput = document.getElementById('ingredient_name_new');
+
+        function toggleNewField() {
+            const showNew = select.value === '__new__';
+            newField.style.display = showNew ? 'block' : 'none';
+            newInput.required = showNew;
+            if (!showNew) {
+                newInput.value = '';
+            }
+        }
+
+        select.addEventListener('change', toggleNewField);
+        toggleNewField();
+    })();
+</script>
+{% endblock %}

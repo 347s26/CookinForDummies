@@ -184,7 +184,31 @@ class UserIngredient(models.Model):
         on_delete=models.CASCADE
     )
 
+    quantity = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text='How much of the ingredient you have'
+    )
+
+    location = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        help_text='Where you store it, e.g. pantry or fridge'
+    )
+
+    expiration_date = models.DateField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ('user', 'ingredient')
+
     def __str__(self):
-        return f"{self.user.username} has {self.ingredient.name}"
+        details = []
+        if self.quantity:
+            details.append(self.quantity)
+        if self.expiration_date:
+            details.append(str(self.expiration_date))
+        suffix = f" ({', '.join(details)})" if details else ''
+        return f"{self.user.username} has {self.ingredient.name}{suffix}"
     
 
