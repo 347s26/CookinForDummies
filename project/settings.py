@@ -157,8 +157,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 #digital ocean effort
 import sys
+import environ 
 
-env = os.environ.Env()
+env = environ.Env()
 # FYI: OS environment variables take precedence over variables from .env
 env.read_env(str(BASE_DIR / ".env"))
 
