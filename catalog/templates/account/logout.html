@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-card">
+        <h2 class="auth-title">Sign Out</h2>
+        <p class="auth-subtitle">You're about to leave CookinForDummies.</p>
+
+        <p style="color:#3a4a3a; line-height:1.7; margin-bottom:18px;">
+            Sign out to end your session on this device. You can come back any time to view your recipes, pantry, and search results.
+        </p>
+
+        <form method="post" action="{% url 'account_logout' %}" class="auth-form">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+            {% endif %}
+            <button type="submit" class="auth-submit-btn">Sign Out</button>
+        </form>
+
+        <div class="auth-links-row">
+            <a href="{% url 'index' %}">Back to home</a>
+            <a href="{% url 'account_login' %}">Stay signed in</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
