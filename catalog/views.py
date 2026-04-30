@@ -16,6 +16,7 @@ from django.utils.dateparse import parse_date
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 from .models import UserIngredient
+from .utils import fetch_unsplash_image
 
 class RecipeDetailView(DetailView):
     model = Recipe
@@ -89,12 +90,23 @@ def index(request):
     Displays index page as the default home page."""
 
     featured_recipes = Recipe.objects.all()[:3]
-    featured_skills = Skill.objects.all()[:3]
+    featured_skills_qs = Skill.objects.all()[:3]
     featured_tools = Tool.objects.all()[:3]
     saved_recipes = []
 
     if request.user.is_authenticated:
         saved_recipes = request.user.saved_recipes.all()[:3]
+
+    featured_skills = []
+    for skill in featured_skills_qs:
+        if not skill.image_url:
+            skill.image_url = fetch_unsplash_image(skill.name)
+            try:
+                skill.save(update_fields=['image_url'])
+            except Exception:
+                pass
+
+        featured_skills.append(skill)
 
     context = {
         'featured_recipes': featured_recipes,
@@ -218,10 +230,18 @@ def delete_expired_user_ingredients(user):
     UserIngredient.objects.filter(user=user, expiration_date__lt=today).delete()
 
 def skills_view(request):
-    skills = Skill.objects.all()
+    skills_qs = Skill.objects.all()
+
+    for skill in skills_qs:
+        if not skill.image_url:
+            skill.image_url = fetch_unsplash_image(skill.name)
+            try:
+                skill.save(update_fields=['image_url'])
+            except Exception:
+                pass
 
     context = {
-        'skills': list(skills.values())
+        'skills': list(skills_qs.values())
     }
 
     return render(request, 'skills.html', context)
