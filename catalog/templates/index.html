@@ -85,7 +85,11 @@
 <div class="recipe-list">
     {% for skill in featured_skills %}
     <div class="recipe-card" title="Skill: {{ skill.name }}">
-        <div class="recipe-card-image"></div>
+        {% if skill.image_url %}
+            <div class="recipe-card-image" style="background-image: url('{{ skill.image_url }}'); background-size: cover; background-position: center;"></div>
+        {% else %}
+            <div class="recipe-card-image recipe-card-image-placeholder">No image yet</div>
+        {% endif %}
         <div class="recipe-card-bottom">
             <p class="recipe-title">{{ skill.name }}</p>
         </div>
