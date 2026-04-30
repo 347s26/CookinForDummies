@@ -154,3 +154,34 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+#digital ocean effort
+import sys
+
+env = os.environ.Env()
+# FYI: OS environment variables take precedence over variables from .env
+env.read_env(str(BASE_DIR / ".env"))
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env.str("DJANGO_SECRET_KEY", default="django-insecure-voj5u4t68$8rcz9xg1cysr2rt=fyxx&@=x$arh!dajf()!6!14")
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
+
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
+
+# ...
+if len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    DATABASES = {
+        'default': env.db("DJANGO_DATABASE_URL"), # raises ImproperlyConfigured exception if not found
+    }
+
+# ...
+
+TIME_ZONE = env.str("DJANGO_TIME_ZONE", default="UTC")
+
+# ...
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
