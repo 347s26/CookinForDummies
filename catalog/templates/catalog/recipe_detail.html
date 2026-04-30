@@ -12,9 +12,9 @@
         <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
             {% csrf_token %}
             {% if user in recipe.saved_by.all %}
-                <button type="submit">Unsave Recipe</button>
+                <button type="submit" style="margin-bottom: 15px">Unsave Recipe</button>
             {% else %}
-                <button type="submit">Save Recipe</button>
+                <button type="submit" style="margin-bottom: 15px">Save Recipe</button>
             {% endif %}
         </form>
     {% endif %}

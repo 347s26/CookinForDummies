@@ -6,3 +6,4 @@ psycopg~=3.1
 django-allauth
 requests
 pillow
+python-dotenv
