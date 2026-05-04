@@ -1,72 +1,69 @@
 {% extends "base_generic.html" %}
-
 {% block content %}
-
 <div class="recipe-detail-wrapper">
 
-    <h1 class="recipe-title">{{ recipe.title }}</h1>
-
-    <p class="recipe-description"> Description: {{ recipe.description }}</p>
-
-    {% if user.is_authenticated and user != recipe.creator %}
-        <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
-            {% csrf_token %}
-            {% if user in recipe.saved_by.all %}
-                <button type="submit" style="margin-bottom: 15px">Unsave Recipe</button>
+    <div class="recipe-detail-top">
+        <div class="recipe-detail-image-col">
+            {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-detail-img">
+            {% elif recipe.image_url %}
+                <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" class="recipe-detail-img">
             {% else %}
-                <button type="submit" style="margin-bottom: 15px">Save Recipe</button>
+                <div class="recipe-detail-img-placeholder">No image available</div>
             {% endif %}
-        </form>
-    {% endif %}
-
-    {% if user == recipe.creator %}
-        <div style="margin: 15px 0;">
-            <a href="{% url 'recipe-edit' recipe.id %}">Edit Recipe</a>
-            |
-            <a href="{% url 'recipe-delete' recipe.id %}">Delete Recipe</a>
         </div>
-    {% endif %}
-    {% if recipe.image %}
-    <div style="margin-bottom: 20px; text-align: center;">
-        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
-    </div>
-    {% elif recipe.image_url %}
-    <div style="margin-bottom: 20px; text-align: center;">
-        <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; border-radius: 8px; max-height: 400px;">
-    </div>
-    {% endif %}
 
-    <div class="recipe-rating">
-        Rating:
-        {% if recipe.rating %}
-            {{ recipe.rating }}/5
-        {% else %}
-            Not rated yet
-        {% endif %}
+        <div class="recipe-detail-info-col">
+            <h1 class="recipe-detail-title">{{ recipe.title }}</h1>
+            <p class="recipe-detail-desc">{{ recipe.description }}</p>
+
+            <div class="recipe-detail-meta">
+                <span>⏱ {{ recipe.time_to_make }} min</span>
+                <span>⭐
+                    {% if recipe.rating %}{{ recipe.rating }}/5{% else %}Not rated{% endif %}
+                </span>
+            </div>
+
+            {% if user.is_authenticated and user != recipe.creator %}
+                <form action="{% url 'toggle-save-recipe' recipe.id %}" method="post">
+                    {% csrf_token %}
+                    {% if user in recipe.saved_by.all %}
+                        <button type="submit" class="recipe-action-btn">Unsave Recipe</button>
+                    {% else %}
+                        <button type="submit" class="recipe-action-btn">Save Recipe</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            {% if user == recipe.creator %}
+                <div class="recipe-creator-links">
+                    <a href="{% url 'recipe-edit' recipe.id %}" class="recipe-action-btn">Edit</a>
+                    <a href="{% url 'recipe-delete' recipe.id %}" class="recipe-action-btn recipe-action-btn--danger">Delete</a>
+                </div>
+            {% endif %}
+        </div>
     </div>
 
     <div class="recipe-content-box">
-
-        <p class="time-text">
-            <strong>Time to make:</strong> {{ recipe.time_to_make }} minutes
-        </p>
-
-        <h2 class="ingredients-header">Ingredients</h2>
-        <ul class="ingredients-list">
-            {% for ri in recipe.recipeingredient_set.all %}
-                <li>{{ ri.quantity }} - {{ ri.ingredient.name }}</li>
-            {% endfor %}
-        </ul>
-
-        <h2 class="steps-header">Directions</h2>
-        <ul class="steps-text">
-            {% for s in recipe.recipe_steps.all %}
-                <li> {{s.order}}: {{s.instruction}} </li>
-            {% endfor %}
-        </ul>
-
+        <div class="recipe-bottom-grid">
+            <div>
+                <h2 class="ingredients-header">Ingredients</h2>
+                <ul class="ingredients-list">
+                    {% for ri in recipe.recipeingredient_set.all %}
+                        <li>{{ ri.quantity }} — {{ ri.ingredient.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h2 class="steps-header">Directions</h2>
+                <ol class="steps-text">
+                    {% for s in recipe.recipe_steps.all %}
+                        <li>{{ s.instruction }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
     </div>
 
 </div>
-
 {% endblock %}

@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 import sys
 import environ
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
 env = environ.Env()
@@ -23,7 +25,7 @@ env = environ.Env()
 env.read_env(str(BASE_DIR / ".env"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,12 +33,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-l0x#ed_*mhz0za97maiei+i!*x%0osi$&x!4$m1qjglt4f0jo_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
 # Unsplash API Key for recipe images
 UNSPLASH_API_KEY = '5vZtsaDp7U_A92_YCxP1Neg9rRpR6UjA0bsho-tGVDw'
 
@@ -62,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,7 +75,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -186,4 +183,5 @@ TIME_ZONE = env.str("DJANGO_TIME_ZONE", default="UTC")
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ####################################################################
