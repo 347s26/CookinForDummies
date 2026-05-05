@@ -8,28 +8,25 @@
 
 {% block content %}
     <section class="about-page">
-        <div class="about-block" id="ai-helper">
-            <h2>AI Cooking Helper</h2>
-            <p>Ask a cooking question to get a quick suggestion powered by an LLM API.</p>
+        <div class="about-card" id="ai-helper">
+            <h2 class="about-card-title">AI Cooking Helper</h2>
+            <p class="about-card-desc">Ask a cooking question to get a quick suggestion powered by an LLM API.</p>
 
             <form method="post" id="ai-helper-form" style="margin-bottom: 12px;">
                 {% csrf_token %}
                 <textarea
                     name="ai_prompt"
-                    rows="4"
+                    rows="3"
                     maxlength="500"
                     placeholder="Example: I only have eggs, rice, and onions. What can I make in 20 minutes?"
-                    style="width: 100%; border: 1px solid #d8e2d0; border-radius: 8px; padding: 10px; font-family: Arial, sans-serif; font-size: 13px; color: #1c2b1c;"
+                    class="about-ai-textarea"
                 >{{ ai_prompt }}</textarea>
-                <button
-                    type="submit"
-                    id="ai-submit-btn"
-                    style="margin-top: 10px; background: #2e4c32; color: #cfe0c4; border: none; border-radius: 8px; padding: 9px 14px; font-size: 12px; cursor: pointer;"
-                >Ask AI Helper</button>
-
-                <div id="ai-loading" style="display: none; margin-top: 10px; color: #2e4c32; font-size: 12px; align-items: center; gap: 8px;">
-                    <span style="width: 12px; height: 12px; border: 2px solid #b9cbb2; border-top-color: #2e4c32; border-radius: 50%; display: inline-block; animation: ai-spin 0.8s linear infinite;"></span>
-                    Getting AI help...
+                <div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+                    <button type="submit" id="ai-submit-btn" class="about-ai-btn">Ask AI Helper</button>
+                    <div id="ai-loading" style="display:none; color:#2e4c32; font-size:12px; align-items:center; gap:8px;">
+                        <span style="width:12px;height:12px;border:2px solid #b9cbb2;border-top-color:#2e4c32;border-radius:50%;display:inline-block;animation:ai-spin 0.8s linear infinite;"></span>
+                        Getting AI help...
+                    </div>
                 </div>
             </form>
 
@@ -38,7 +35,7 @@
             {% endif %}
 
             {% if ai_response %}
-                <div style="background: #f4f8f0; border: 1px solid #d8e2d0; border-radius: 8px; padding: 12px; color: #2f4430; line-height: 1.6; white-space: pre-wrap; font-size: 13px;">{{ ai_response }}</div>
+                <div class="about-ai-response">{{ ai_response }}</div>
             {% endif %}
         </div>
 
@@ -47,64 +44,74 @@
             save your favorites, and discover recipes that match your time and ingredients.
         </p>
 
-        <div class="about-block">
-            <h2>Home</h2>
-            <p>
+        <div class="about-cards-grid">
+        <div class="about-card" id="home">
+            <div class="about-card-body">
+            <h2 class="about-card-title">Home</h2>
+            <p class="about-card-desc">
                 The Home page is your starting point. Use it to enter ingredients you already have in your household,
                 plus the utilities and tools available in your kitchen.
             </p>
-            <ul class="about-bullets">
+            <ul class="about-card-bullets">
                 <li>Add ingredients you currently have in your pantry, fridge, or freezer.</li>
                 <li>Track available kitchen utilities and tools before choosing a recipe.</li>
                 <li>Get a quick overview of what meals are realistic with your current setup.</li>
             </ul>
         </div>
+        </div>
 
-        <div class="about-block" id="skills">
-            <h2>Skills</h2>
-            <p>
+        <div class="about-card" id="skills">
+            <div class="about-card-body">
+            <h2 class="about-card-title">Skills</h2>
+            <p class="about-card-desc">
                 The Skills page helps you learn new cooking skills step by step, so you can build confidence and improve
                 your cooking techniques over time.
             </p>
-            <ul class="about-bullets">
+            <ul class="about-card-bullets">
                 <li>Learn foundational skills like chopping, sautéing, and seasoning.</li>
                 <li>Practice techniques that make recipes faster, safer, and more consistent.</li>
                 <li>Build cooking confidence whether you are a beginner or improving basics.</li>
             </ul>
         </div>
+        </div>
 
-        <div class="about-block" id="saved-recipes">
-            <h2>My Recipes</h2>
-            <p>
+        <div class="about-card" id="saved-recipes">
+            <div class="about-card-body">
+            <h2 class="about-card-title">My Recipes</h2>
+            <p class="about-card-desc">
                 My Recipes is your personal collection of saved recipes, making it easy to come back to meals you like
                 and plan what to cook next.
             </p>
-            <ul class="about-bullets">
+            <ul class="about-card-bullets">
                 <li>Save recipes you want to revisit later.</li>
                 <li>Keep favorite meals in one place for quick access.</li>
                 <li>Use saved recipes to plan your week and reduce decision fatigue.</li>
             </ul>
         </div>
+        </div>
 
-        <div class="about-block" id="search">
-            <h2>Search</h2>
-            <p>
+        <div class="about-card" id="search">
+            <div class="about-card-body">
+            <h2 class="about-card-title">Search</h2>
+            <p class="about-card-desc">
                 Use Search to find recipes you already know or explore new ones. You can browse current options,
                 discover ideas, and quickly find meals that fit your needs.
             </p>
-            <ul class="about-bullets">
+            <ul class="about-card-bullets">
                 <li>Search for recipes by name, time, or other criteria.</li>
                 <li>Look up familiar recipes or discover new meal ideas.</li>
                 <li>Compare options quickly to pick the best recipe for the day.</li>
             </ul>
         </div>
+        </div>
 
-        <div class="about-block" id="help">
-            <h2>Help</h2>
-            <p>
+        <div class="about-card" id="help">
+            <div class="about-card-body">
+            <h2 class="about-card-title">Help</h2>
+            <p class="about-card-desc">
                 Need help getting started? Use these quick tips to navigate the app and find what you need faster.
             </p>
-            <ul class="about-bullets">
+            <ul class="about-card-bullets">
                 <li>Start on Home to review featured recipes and skill suggestions.</li>
                 <li>Use Search when you want to filter recipes by name, time, or rating.</li>
                 <li>Use My Recipes to revisit meals you saved previously.</li>
@@ -112,6 +119,8 @@
                 <li>If a page seems outdated, refresh your browser to load the latest changes.</li>
             </ul>
         </div>
+    </div>
+    </div>
     </section>
 
     <style>

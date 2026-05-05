@@ -29,20 +29,20 @@ env.read_env(str(BASE_DIR / ".env"))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l0x#ed_*mhz0za97maiei+i!*x%0osi$&x!4$m1qjglt4f0jo_'
+SECRET_KEY = env.str('DJANGO_SECRET_KEY', default='django-insecure-l0x#ed_*mhz0za97maiei+i!*x%0osi$&x!4$m1qjglt4f0jo_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1', 'localhost'])
 
 # Unsplash API Key for recipe images
-UNSPLASH_API_KEY = '5vZtsaDp7U_A92_YCxP1Neg9rRpR6UjA0bsho-tGVDw'
+UNSPLASH_API_KEY = env.str('UNSPLASH_API_KEY', default='')
 
 # LLM API configuration (OpenRouter-compatible)
-LLM_API_KEY = os.getenv('OPENROUTER_API_KEY', '')
-LLM_API_URL = os.getenv('LLM_API_URL', 'https://openrouter.ai/api/v1/chat/completions')
-LLM_MODEL = os.getenv('LLM_MODEL', 'meta-llama/llama-3.1-8b-instruct:free')
+LLM_API_KEY = env.str('OPENROUTER_API_KEY', default='')
+LLM_API_URL = env.str('LLM_API_URL', default='https://openrouter.ai/api/v1/chat/completions')
+LLM_MODEL = env.str('LLM_MODEL', default='meta-llama/llama-3.1-8b-instruct:free')
 
 # Application definition
 
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,7 +78,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,10 +109,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': env.db(
+        'DJANGO_DATABASE_URL',
+        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}'
+    )
 }
 
 
@@ -160,29 +161,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+TIME_ZONE = env.str('DJANGO_TIME_ZONE', default=TIME_ZONE)
 
-
-##############FOR DEPLOYING ON DIGITAL OCEAN#####################
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str("DJANGO_SECRET_KEY", default="django-insecure-voj5u4t68$8rcz9xg1cysr2rt=fyxx&@=x$arh!dajf()!6!14")
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DJANGO_DEBUG", default=False)
-
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
-
-# ...
-if len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    DATABASES = {
-        'default': env.db("DJANGO_DATABASE_URL"), # raises ImproperlyConfigured exception if not found
-    }
-
-# ...
-
-TIME_ZONE = env.str("DJANGO_TIME_ZONE", default="UTC")
-
-# ...
-
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-####################################################################
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
