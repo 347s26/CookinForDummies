@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% load rating_extras %}
 
 {% block content %}
 
@@ -110,7 +111,23 @@
                 {% endif %}
                 <div class="recipe-card-bottom">
                     <p class="recipe-title">{{ recipe.title }}</p>
-                    <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
+                    <div class="recipe-meta">
+                        <span>{{ recipe.time_to_make }} mins</span>
+                        <span>
+                            ★
+                            {% if user.is_authenticated %}
+                                {% with rating=user_ratings|get_item:recipe.id %}
+                                {% if rating %}
+                                    {{ rating }}/5
+                                {% else %}
+                                    Unrated
+                                {% endif %}
+                                {% endwith %}
+                            {% else %}
+                                Unrated
+                            {% endif %}
+                        </span>
+                    </div>
                 </div>
             </div>
         </a>

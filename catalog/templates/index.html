@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% load rating_extras %}
 {% block banner %}
 <div class="banner">
     <h1 class="banner-title">The only kitchen <em>helper</em> you'll need.</h1>
@@ -26,7 +27,23 @@
             {% endif %}
             <div class="recipe-card-bottom">
                 <p class="recipe-title">{{ recipe.title }}</p>
-                <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
+                <div class="recipe-meta">
+                    <span>{{ recipe.time_to_make }} mins</span>
+                    <span>
+                        ★
+                        {% if user.is_authenticated %}
+                            {% with rating=user_ratings|get_item:recipe.id %}
+                                {% if rating %}
+                                    {{ rating }}/5
+                                {% else %}
+                                    Not Rated
+                                {% endif %}
+                            {% endwith %}
+                        {% else %}
+                            Not Rated
+                        {% endif %}
+                    </span>
+                </div>
             </div>
         </div>
     </a>
@@ -60,7 +77,23 @@
             {% endif %}
             <div class="recipe-card-bottom">
                 <p class="recipe-title">{{ recipe.title }}</p>
-                <div class="recipe-meta"><span>{{ recipe.time_to_make }} mins</span><span>★ {{ recipe.rating }}/5</span></div>
+                <div class="recipe-meta">
+                    <span>{{ recipe.time_to_make }} mins</span>
+                    <span>
+                        ★
+                        {% if user.is_authenticated %}
+                            {% with rating=user_ratings|get_item:recipe.id %}
+                                {% if rating %}
+                                    {{ rating }}/5
+                                {% else %}
+                                    Not Rated
+                                {% endif %}
+                            {% endwith %}
+                        {% else %}
+                            Not Rated
+                        {% endif %}
+                    </span>
+                </div>
             </div>
         </div>
     </a>
@@ -84,6 +117,7 @@
 </div>
 <div class="recipe-list">
     {% for skill in featured_skills %}
+    <a href="{% url 'skills' %}" class="recipe-card-link">
     <div class="recipe-card" title="Skill: {{ skill.name }}">
         {% if skill.image_url %}
             <div class="recipe-card-image" style="background-image: url('{{ skill.image_url }}'); background-size: cover; background-position: center;"></div>
@@ -94,6 +128,7 @@
             <p class="recipe-title">{{ skill.name }}</p>
         </div>
     </div>
+    </a>
     {% empty %}
     <div class="recipe-card" title="No skill cards available yet">
         <div class="recipe-card-bottom">

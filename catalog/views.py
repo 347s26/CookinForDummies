@@ -140,11 +140,27 @@ def index(request):
 
         featured_skills.append(skill)
 
+    user_ratings = {}
+
+    if request.user.is_authenticated:
+        all_visible_recipes = list(featured_recipes) + list(saved_recipes)
+
+        ratings = RecipeRating.objects.filter(
+            user=request.user,
+            recipe__in=all_visible_recipes
+        )
+
+        user_ratings = {
+            rating.recipe_id: rating.rating
+            for rating in ratings
+        }
+
     context = {
         'featured_recipes': featured_recipes,
         'featured_skills': featured_skills,
         'featured_tools': featured_tools,
         'saved_recipes': saved_recipes,
+        'user_ratings': user_ratings,
     }
 
     return render(request, 'index.html', context=context)
@@ -184,8 +200,8 @@ class RecipeSearchView(ListView):
     paginate_by = 9
 
     def get_queryset(self):
-        """Filter recipes based on search input."""
         queryset = Recipe.objects.filter(creator__isnull=True)
+
         query = self.request.GET.get('q')
         max_time = self.request.GET.get('time')
         min_rating = self.request.GET.get('rating')
@@ -197,10 +213,17 @@ class RecipeSearchView(ListView):
 
         if query:
             queryset = queryset.filter(title__icontains=query)
+
         if max_time:
             queryset = queryset.filter(time_to_make__lte=max_time)
-        if min_rating:
-            queryset = queryset.filter(rating__gte=min_rating)
+
+        if min_rating and self.request.user.is_authenticated:
+            rated_recipe_ids = RecipeRating.objects.filter(
+                user=self.request.user,
+                rating__gte=min_rating
+            ).values_list('recipe_id', flat=True)
+
+            queryset = queryset.filter(id__in=rated_recipe_ids)
 
         if pantry_ingredient:
             queryset = queryset.filter(ingredients__name__iexact=pantry_ingredient)
@@ -209,6 +232,7 @@ class RecipeSearchView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         if self.request.user.is_authenticated:
             context['pantry_ingredients'] = list(
                 UserIngredient.objects.filter(user=self.request.user)
@@ -217,8 +241,20 @@ class RecipeSearchView(ListView):
                 .values_list('ingredient__name', flat=True)
                 .distinct()
             )
+
+            ratings = RecipeRating.objects.filter(
+                user=self.request.user,
+                recipe__in=context['recipes']
+            )
+
+            context['user_ratings'] = {
+                rating.recipe_id: rating.rating
+                for rating in ratings
+            }
         else:
             context['pantry_ingredients'] = []
+            context['user_ratings'] = {}
+
         return context
 
 # my recipes page
@@ -228,15 +264,31 @@ class MyRecipesView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['created_recipes'] = Recipe.objects.filter(
+        created_recipes = Recipe.objects.filter(
             creator=self.request.user
         ).distinct()
 
-        context['saved_recipes'] = Recipe.objects.filter(
+        saved_recipes = Recipe.objects.filter(
             saved_by=self.request.user
         ).exclude(
             creator=self.request.user
         ).distinct()
+
+        all_recipes = list(created_recipes) + list(saved_recipes)
+
+        ratings = RecipeRating.objects.filter(
+            user=self.request.user,
+            recipe__in=all_recipes
+        )
+
+        user_ratings = {
+            rating.recipe_id: rating.rating
+            for rating in ratings
+        }
+
+        context['created_recipes'] = created_recipes
+        context['saved_recipes'] = saved_recipes
+        context['user_ratings'] = user_ratings
 
         return context
 

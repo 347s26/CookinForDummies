@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'time_to_make', 'rating', 'image']
+        fields = ['title', 'description', 'time_to_make', 'image']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4}),
         }
