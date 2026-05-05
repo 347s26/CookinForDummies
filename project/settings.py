@@ -13,11 +13,19 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import sys
+import environ
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
+env = environ.Env()
+# FYI: OS environment variables take precedence over variables from .env
+env.read_env(str(BASE_DIR / ".env"))
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,12 +33,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-l0x#ed_*mhz0za97maiei+i!*x%0osi$&x!4$m1qjglt4f0jo_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
 # Unsplash API Key for recipe images
 UNSPLASH_API_KEY = '5vZtsaDp7U_A92_YCxP1Neg9rRpR6UjA0bsho-tGVDw'
 
@@ -56,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,7 +75,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,3 +157,31 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
+##############FOR DEPLOYING ON DIGITAL OCEAN#####################
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env.str("DJANGO_SECRET_KEY", default="django-insecure-voj5u4t68$8rcz9xg1cysr2rt=fyxx&@=x$arh!dajf()!6!14")
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
+
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
+
+# ...
+if len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    DATABASES = {
+        'default': env.db("DJANGO_DATABASE_URL"), # raises ImproperlyConfigured exception if not found
+    }
+
+# ...
+
+TIME_ZONE = env.str("DJANGO_TIME_ZONE", default="UTC")
+
+# ...
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+####################################################################
