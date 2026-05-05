@@ -664,6 +664,40 @@ body {
     padding: 28px 32px;
 }
 
+.rating-modal[hidden] {
+    display: none;
+}
+
+.rating-modal {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 320px;
+    max-width: 90%;
+    position: relative;
+}
+
+.rating-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 .time-text {
     font-size: 13px;
     color: #7a9470;
@@ -698,6 +732,41 @@ body {
 
 .ingredients-list li:last-child {
     border-bottom: none;
+}
+
+.rating-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 320px;
+    max-width: 90%;
+    position: relative;
+}
+
+.rating-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.rating-modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin: 12px 0;
 }
 
 .steps-text {

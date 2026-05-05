@@ -210,5 +210,29 @@ class UserIngredient(models.Model):
             details.append(str(self.expiration_date))
         suffix = f" ({', '.join(details)})" if details else ''
         return f"{self.user.username} has {self.ingredient.name}{suffix}"
-    
 
+# user specific recipe ratings  
+class RecipeRating(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='recipe_ratings'
+    )
+
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name='user_ratings'
+    )
+
+    rating = models.IntegerField(
+        blank=True,
+        null=True,
+        help_text="Rating from 1 to 5"
+    )
+
+    class Meta:
+        unique_together = ('user', 'recipe')
+
+    def __str__(self):
+        return f"{self.user.username} rated {self.recipe.title}: {self.rating}"

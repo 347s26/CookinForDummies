@@ -13,6 +13,7 @@ from django.conf import settings
 from django.utils import timezone
 import requests
 from django.utils.dateparse import parse_date
+from .models import RecipeRating
 
 from .models import Recipe, Ingredient, Tool, Skill, Allergy
 from .models import UserIngredient
@@ -20,7 +21,38 @@ from .utils import fetch_unsplash_image
 
 class RecipeDetailView(DetailView):
     model = Recipe
+    template_name = 'catalog/recipe_detail.html'
+    context_object_name = 'recipe'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        user_rating = None
+
+        if self.request.user.is_authenticated:
+            user_rating = RecipeRating.objects.filter(
+                user=self.request.user,
+                recipe=self.object
+            ).first()
+
+        context['user_rating'] = user_rating
+        return context
+
+@login_required
+def rate_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+
+    if request.method == 'POST':
+        rating_value = request.POST.get('rating')
+
+        if rating_value in ['1', '2', '3', '4', '5']:
+            RecipeRating.objects.update_or_create(
+                user=request.user,
+                recipe=recipe,
+                defaults={'rating': int(rating_value)}
+            )
+
+    return redirect(recipe.get_absolute_url())
 
 def generate_ai_cooking_help(user_prompt):
     api_key = getattr(settings, 'LLM_API_KEY', '')

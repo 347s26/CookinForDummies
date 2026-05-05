@@ -19,9 +19,43 @@
 
             <div class="recipe-detail-meta">
                 <span>⏱ {{ recipe.time_to_make }} min</span>
-                <span>⭐
-                    {% if recipe.rating %}{{ recipe.rating }}/5{% else %}Not rated{% endif %}
+                <span>
+                    ⭐
+                    {% if user_rating and user_rating.rating %}
+                        {{ user_rating.rating }}/5
+                    {% else %}
+                        Not Rated
+                    {% endif %}
                 </span>
+                {% if user.is_authenticated %}
+                    <button type="button" class="recipe-action-btn" id="openRatingModal">
+                        Rate Recipe
+                    </button>
+
+                    <div id="ratingModal" class="rating-modal" hidden>
+                        <div class="rating-modal-content">
+                            <button type="button" class="rating-modal-close" id="closeRatingModal">&times;</button>
+
+                            <h2>Rate Recipe</h2>
+
+                            <form id="ratingForm" action="{% url 'rate-recipe' recipe.id %}" method="post">
+                                {% csrf_token %}
+
+                                <label for="rating">Choose a rating:</label>
+                                <select name="rating" id="rating" required>
+                                    <option value="">Select rating</option>
+                                    <option value="1" {% if user_rating and user_rating.rating == 1 %}selected{% endif %}>1</option>
+                                    <option value="2" {% if user_rating and user_rating.rating == 2 %}selected{% endif %}>2</option>
+                                    <option value="3" {% if user_rating and user_rating.rating == 3 %}selected{% endif %}>3</option>
+                                    <option value="4" {% if user_rating and user_rating.rating == 4 %}selected{% endif %}>4</option>
+                                    <option value="5" {% if user_rating and user_rating.rating == 5 %}selected{% endif %}>5</option>
+                                </select>
+
+                                <button type="submit" class="recipe-action-btn">Save Rating</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
 
             {% if user.is_authenticated and user != recipe.creator %}
@@ -66,4 +100,30 @@
     </div>
 
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('ratingModal');
+    const openBtn = document.getElementById('openRatingModal');
+    const closeBtn = document.getElementById('closeRatingModal');
+    const ratingForm = document.getElementById('ratingForm');
+
+    openBtn.addEventListener('click', function () {
+        modal.hidden = false;
+    });
+
+    closeBtn.addEventListener('click', function () {
+        modal.hidden = true;
+    });
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.hidden = true;
+        }
+    });
+
+    ratingForm.addEventListener('submit', function () {
+        modal.hidden = true;
+    });
+});
+</script>
 {% endblock %}
