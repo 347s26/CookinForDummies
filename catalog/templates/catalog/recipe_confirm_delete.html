@@ -1,13 +1,25 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Delete Recipe</h1>
-    <p>Are you sure you want to delete "{{ object.title }}"?</p>
+<div class="delete-recipe-page">
+    <div class="delete-recipe-card">
+        <h1 class="delete-title">Delete Recipe</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Yes, delete it</button>
-    </form>
+        <p class="delete-message">
+            Are you sure you want to permanently delete
+            <span class="delete-recipe-name">"{{ object.title }}"</span>?
+        </p>
 
-    <p><a href="{{ object.get_absolute_url }}">Cancel</a></p>
+        <form method="post" class="delete-form">
+            {% csrf_token %}
+            <button type="submit" class="delete-confirm-btn">
+                Yes, Delete Recipe
+            </button>
+        </form>
+
+        <a href="{{ object.get_absolute_url }}" class="delete-cancel-btn">
+            Cancel
+        </a>
+    </div>
+</div>
 {% endblock %}
