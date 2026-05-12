@@ -1,0 +1,38 @@
+{
+  "title": "Breakfast Salad",
+  "description": "A bright Australian-inspired breakfast salad with crisp romaine, marinated feta, avocado, eggs, sprouts, and fresh herbs.",
+
+  "ingredients": [
+    { "name": "feta cheese", "quantity": "4 ounces" },
+    { "name": "garlic clove", "quantity": "1, smashed and peeled" },
+    { "name": "black or mixed peppercorns", "quantity": "1 dozen, coarsely cracked" },
+    { "name": "extra-virgin olive oil", "quantity": "enough to cover feta, plus more for serving" },
+    { "name": "romaine lettuce hearts", "quantity": "2 large, outer leaves removed" },
+    { "name": "lemons", "quantity": "2, halved" },
+    { "name": "avocado", "quantity": "1, halved, pit removed" },
+    { "name": "sprouts", "quantity": "2 ounces (alfalfa, clover, or rainbow)" },
+    { "name": "mini or Kirby cucumbers", "quantity": "2, cut into spears or sliced" },
+    { "name": "hard-boiled eggs", "quantity": "2 to 3, peeled and halved" },
+    { "name": "flaky salt", "quantity": "to taste" },
+    { "name": "coarsely ground black pepper", "quantity": "to taste" },
+    { "name": "soft herbs", "quantity": "2 handfuls (basil, chives, cilantro, or mint)" },
+    { "name": "sourdough toast", "quantity": "optional, for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "The day before serving, place the feta in a small airtight container with the garlic clove and cracked peppercorns." },
+    { "order": 2, "instruction": "Pour in enough olive oil to completely cover the feta, then refrigerate overnight." },
+    { "order": 3, "instruction": "Wash the romaine by swishing each lettuce heart in a bowl of very cold water to loosen dirt, then drain upside down." },
+    { "order": 4, "instruction": "Trim the white stem ends and gently separate the romaine leaves while keeping their natural shape intact." },
+    { "order": 5, "instruction": "Arrange the romaine hearts on serving plates." },
+    { "order": 6, "instruction": "Squeeze half a lemon over each lettuce heart." },
+    { "order": 7, "instruction": "Scoop chunks of avocado onto the salad." },
+    { "order": 8, "instruction": "Add the sprouts, cucumber pieces, hard-boiled egg halves, and about 6 chunks of marinated feta." },
+    { "order": 9, "instruction": "Season generously with flaky salt and black pepper." },
+    { "order": 10, "instruction": "Drizzle generously with olive oil, including over the eggs, cheese, and avocado." },
+    { "order": 11, "instruction": "Scatter the fresh herbs over the salad and serve with the remaining lemon halves." },
+    { "order": 12, "instruction": "Serve with warm sourdough toast if desired." }
+  ],
+
+  "time_to_make": 750
+}

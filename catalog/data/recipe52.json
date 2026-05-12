@@ -1,0 +1,35 @@
+{
+  "title": "Bangers With Mashed Winter Squash and Fried Sage",
+  "description": "This autumnal spin on traditional British bangers and mash is cooked almost entirely on one sheet pan, making it a hands-off, weeknight-friendly dinner.",
+
+  "ingredients": [
+    { "name": "butternut squash", "quantity": "1 medium (about 2 pounds), peeled, seeded, and cut into 3/4-inch cubes" },
+    { "name": "extra-virgin olive oil", "quantity": "3 tablespoons" },
+    { "name": "Kosher salt and black pepper", "quantity": "to taste" },
+    { "name": "sweet or spicy Italian sausages", "quantity": "1 pound" },
+    { "name": "half-and-half or whole milk", "quantity": "1/4 cup" },
+    { "name": "maple syrup", "quantity": "1 teaspoon" },
+    { "name": "ground cayenne", "quantity": "1 pinch" },
+    { "name": "unsalted butter", "quantity": "4 tablespoons" },
+    { "name": "fresh sage leaves", "quantity": "1/3 cup" },
+    { "name": "garlic clove", "quantity": "1 large, minced" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 450°F." },
+    { "order": 2, "instruction": "Place the butternut squash on a sheet pan and drizzle with olive oil." },
+    { "order": 3, "instruction": "Season with 1/2 teaspoon salt and 1/4 teaspoon black pepper, then toss to coat." },
+    { "order": 4, "instruction": "Add the sausages to the pan, turning them to coat in the oil." },
+    { "order": 5, "instruction": "Roast for 30 minutes, tossing about halfway through, until the sausages are browned and cooked through." },
+    { "order": 6, "instruction": "Transfer the butternut squash to a bowl and mash with a potato masher." },
+    { "order": 7, "instruction": "Add the half-and-half, maple syrup, cayenne, and 1/4 teaspoon salt, then mix until smooth. Adjust seasoning to taste." },
+    { "order": 8, "instruction": "In a small skillet, melt the butter over medium heat until simmering." },
+    { "order": 9, "instruction": "Add the sage and cook for 2 minutes." },
+    { "order": 10, "instruction": "Add the minced garlic and cook until the garlic is golden, the sage is crisp, and the butter is browned, about 2 more minutes." },
+    { "order": 11, "instruction": "Remove from heat and transfer the fried sage leaves to a paper towel-lined plate." },
+    { "order": 12, "instruction": "Stir about half of the brown butter into the mashed squash until incorporated." },
+    { "order": 13, "instruction": "Serve the sausages with the squash mash, topped with fried sage and a drizzle of the remaining brown butter." }
+  ],
+
+  "time_to_make": 50
+}

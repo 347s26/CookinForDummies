@@ -1,0 +1,38 @@
+{
+  "title": "Pasta With Butternut Squash, Kale and Brown Butter",
+  "description": "This pantry pasta turns pasta, squash, kale, and butter into a rich, deeply flavored dish with browned butter and warming garam masala.",
+
+  "ingredients": [
+    { "name": "Kosher salt", "quantity": "to taste" },
+    { "name": "neutral oil", "quantity": "1 tablespoon (such as canola or grapeseed oil)" },
+    { "name": "butternut squash", "quantity": "1 1/2 pounds, peeled if desired, halved, seeded, and sliced 1/4-inch thick" },
+    { "name": "whole-wheat spaghetti or linguine", "quantity": "1 pound" },
+    { "name": "Tuscan kale", "quantity": "1 bunch, ribs removed, leaves torn or chopped" },
+    { "name": "unsalted butter", "quantity": "6 tablespoons, sliced" },
+    { "name": "garam masala", "quantity": "1 1/4 teaspoons" },
+    { "name": "red-pepper flakes", "quantity": "1/2 teaspoon, plus more as needed" },
+    { "name": "lemon zest", "quantity": "1 teaspoon" },
+    { "name": "lemon juice", "quantity": "2 tablespoons, plus more as needed" },
+    { "name": "grated Parmesan", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Bring a large pot of salted water to a boil." },
+    { "order": 2, "instruction": "Heat half of the oil in a large Dutch oven or skillet over medium-high heat." },
+    { "order": 3, "instruction": "Add half of the squash in a single layer, season with salt, and cook undisturbed until browned underneath, about 3 to 5 minutes." },
+    { "order": 4, "instruction": "Move the browned squash aside and cook the remaining squash with the rest of the oil in the same way. Remove squash if needed and return all to the pan once browned." },
+    { "order": 5, "instruction": "Cook the pasta according to package directions until al dente." },
+    { "order": 6, "instruction": "During the last 3 minutes of pasta cooking, add the kale to the boiling water." },
+    { "order": 7, "instruction": "Reserve 1 cup of pasta water, then drain the pasta and kale." },
+    { "order": 8, "instruction": "Reduce the squash pan heat to medium-low and add the butter. Stir until the butter is golden brown, nutty, and foaming, about 1 to 4 minutes." },
+    { "order": 9, "instruction": "Add the garam masala and red-pepper flakes, stirring until fragrant, about 1 minute." },
+    { "order": 10, "instruction": "Add 1 tablespoon cold water or an ice cube to stop the butter from cooking further." },
+    { "order": 11, "instruction": "Add the pasta, kale, and 1/2 cup pasta water to the squash mixture." },
+    { "order": 12, "instruction": "Toss over low heat until the pasta is coated in sauce, adding more pasta water if needed." },
+    { "order": 13, "instruction": "Remove from heat and stir in the lemon zest and lemon juice." },
+    { "order": 14, "instruction": "Adjust seasoning with additional lemon juice, red-pepper flakes, and salt as desired." },
+    { "order": 15, "instruction": "Serve topped with grated Parmesan." }
+  ],
+
+  "time_to_make": 30
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Peppered Sea Scallops With Spinach",
+  "description": "An easy but elegant full-flavored main course featuring generously peppered sea scallops served over Indian-spiced spinach purée.",
+
+  "ingredients": [
+    { "name": "butter or mild oil", "quantity": "2 tablespoons" },
+    { "name": "cumin seeds", "quantity": "1/2 teaspoon" },
+    { "name": "onion", "quantity": "1 small, finely diced" },
+    { "name": "garlic cloves", "quantity": "2, grated" },
+    { "name": "jalapeño", "quantity": "1, halved, seeds removed, thinly sliced" },
+    { "name": "fresh ginger", "quantity": "2 teaspoons, grated" },
+    { "name": "garam masala", "quantity": "1 teaspoon" },
+    { "name": "ground turmeric", "quantity": "1/2 teaspoon" },
+    { "name": "spinach leaves", "quantity": "6 ounces, roughly chopped" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "ground cayenne", "quantity": "a speck" },
+    { "name": "dry white wine", "quantity": "2 tablespoons" },
+    { "name": "water", "quantity": "1 cup, for blending" },
+    { "name": "sea scallops", "quantity": "12 large (about 1 pound), trimmed and patted dry" },
+    { "name": "coarsely ground black pepper", "quantity": "to taste" },
+    { "name": "mild oil", "quantity": "2 tablespoons" },
+    { "name": "lemon", "quantity": "1, zest and juice" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Make the spinach purée by heating the butter or oil in a wide skillet or wok over medium heat." },
+    { "order": 2, "instruction": "Add the cumin seeds and cook until fragrant and beginning to pop, about 1 minute." },
+    { "order": 3, "instruction": "Add the onion and cook until softened and barely browned, about 3 minutes." },
+    { "order": 4, "instruction": "Add the garlic, jalapeño, ginger, garam masala, and turmeric. Cook, stirring frequently, for 2 minutes." },
+    { "order": 5, "instruction": "Add the spinach, season with salt and cayenne, then add the white wine." },
+    { "order": 6, "instruction": "Cook, stirring, until the spinach is just wilted, then remove from heat and let cool slightly." },
+    { "order": 7, "instruction": "Transfer the spinach mixture to a blender or food processor and blend with enough water to make a medium-thick purée. Adjust seasoning to taste." },
+    { "order": 8, "instruction": "Pour the spinach purée into a small saucepan and keep warm over low heat." },
+    { "order": 9, "instruction": "Season the scallops on both sides with salt and generous amounts of coarse black pepper." },
+    { "order": 10, "instruction": "Heat the oil in a heavy skillet over medium-high heat until shimmering." },
+    { "order": 11, "instruction": "Add the scallops without crowding the pan and cook undisturbed for about 5 minutes until browned on one side." },
+    { "order": 12, "instruction": "Flip the scallops carefully and cook for about 2 more minutes until opaque on the sides." },
+    { "order": 13, "instruction": "Spoon the warm spinach purée into serving plates, top with scallops, sprinkle with lemon zest, squeeze lemon juice over the top, and serve." }
+  ],
+
+  "time_to_make": 35
+}

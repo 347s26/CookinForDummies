@@ -1,0 +1,28 @@
+{
+  "title": "Sautéed Kale",
+  "description": "A simple, savory kale side dish cooked with garlic, stock, and red-wine vinegar until tender and flavorful.",
+
+  "ingredients": [
+    { "name": "extra-virgin olive oil", "quantity": "1/4 cup" },
+    { "name": "garlic", "quantity": "3 cloves, peeled and sliced" },
+    { "name": "kale", "quantity": "1 large bunch, stems removed, leaves coarsely chopped" },
+    { "name": "vegetable stock", "quantity": "1/2 cup (or white wine or water)" },
+    { "name": "Kosher salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "red pepper flakes", "quantity": "to taste" },
+    { "name": "red-wine vinegar", "quantity": "2 tablespoons" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Heat the olive oil in a large sauté pan over medium-high heat until shimmering." },
+    { "order": 2, "instruction": "Add the sliced garlic and cook until softened and fragrant." },
+    { "order": 3, "instruction": "Add the chopped kale to the pan and increase the heat to high." },
+    { "order": 4, "instruction": "Pour in the vegetable stock, then toss the kale to coat in the oil and liquid." },
+    { "order": 5, "instruction": "Cover the pan and cook for 5 to 7 minutes until the kale is tender but still bright green." },
+    { "order": 6, "instruction": "Remove the lid and continue cooking, stirring occasionally, until the liquid has fully evaporated, about 1 to 2 minutes." },
+    { "order": 7, "instruction": "Season with salt, black pepper, and red pepper flakes to taste." },
+    { "order": 8, "instruction": "Add the red-wine vinegar, toss to combine, and serve." }
+  ],
+
+  "time_to_make": 15
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Dry-Brined Thanksgiving Turkey With Chiles",
+  "description": "A boldly spiced dry-brined Thanksgiving turkey featuring fresh and dried chiles, cumin, mint, and roasted peppers for a deeply flavorful holiday centerpiece.",
+
+  "ingredients": [
+    { "name": "turkey", "quantity": "14 pounds, thawed, neck and giblets removed" },
+    { "name": "coarse kosher salt", "quantity": "5 to 7 teaspoons" },
+    { "name": "black peppercorns", "quantity": "1 tablespoon" },
+    { "name": "cumin seeds", "quantity": "1 tablespoon" },
+    { "name": "bird's eye chiles", "quantity": "1 tablespoon" },
+    { "name": "dried mint", "quantity": "2 heaping tablespoons" },
+    { "name": "red chile powder", "quantity": "2 teaspoons" },
+    { "name": "mixed fresh peppers", "quantity": "2 pounds (such as poblanos, jalapeños, bells, shishitos, or Cubanelles)" },
+    { "name": "white onion", "quantity": "1 large, cut into 8 wedges" },
+    { "name": "fresh mint sprigs", "quantity": "1 bunch, optional" },
+    { "name": "unsalted butter", "quantity": "4 tablespoons, melted and cooled" },
+    { "name": "olive oil", "quantity": "1/4 cup" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Two to three days before roasting, pat the turkey dry and season all over, including the cavity, with coarse kosher salt." },
+    { "order": 2, "instruction": "Wrap or place the turkey in a large resealable bag, set on a sheet pan, and refrigerate for 24 to 72 hours." },
+    { "order": 3, "instruction": "The night before roasting, toast the black peppercorns, cumin seeds, and bird’s eye chiles in a dry skillet over medium heat until fragrant, about 1 to 2 minutes." },
+    { "order": 4, "instruction": "Grind the toasted spices coarsely using a mortar and pestle, spice grinder, or blender." },
+    { "order": 5, "instruction": "Mix the ground spices with dried mint, red chile powder, and 3/4 teaspoon salt to make the spice rub." },
+    { "order": 6, "instruction": "Drain any liquid from the turkey, pat it very dry, and rub the spice mixture all over the turkey and inside the cavity." },
+    { "order": 7, "instruction": "Refrigerate the uncovered turkey for 8 to 24 hours to dry the skin." },
+    { "order": 8, "instruction": "On roasting day, remove the turkey from the refrigerator 1 hour before cooking." },
+    { "order": 9, "instruction": "Preheat the oven to 425°F and place a rack in the lowest oven position." },
+    { "order": 10, "instruction": "Transfer the turkey to a roasting pan and scatter the fresh peppers and onion around it." },
+    { "order": 11, "instruction": "Stuff the cavity with fresh mint sprigs if using, tie the legs together, and tuck the wing tips under." },
+    { "order": 12, "instruction": "Brush the turkey all over with melted butter and drizzle the turkey and vegetables with olive oil." },
+    { "order": 13, "instruction": "Roast for 30 minutes." },
+    { "order": 14, "instruction": "Reduce the oven temperature to 325°F and continue roasting, rotating the pan occasionally and basting with pan juices, until the thigh reaches 165°F, about 1 1/2 to 2 1/2 hours more." },
+    { "order": 15, "instruction": "Let the turkey rest for at least 20 minutes before carving." },
+    { "order": 16, "instruction": "Serve with the roasted peppers, onions, and additional mint if desired." }
+  ],
+
+  "time_to_make": 3020
+}

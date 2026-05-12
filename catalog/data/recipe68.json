@@ -1,0 +1,35 @@
+{
+  "title": "Potato Pavé With Parmesan Crust",
+  "description": "A rich, elegant layered potato terrine baked in cream and butter, chilled, then seared with a crispy Parmesan crust.",
+
+  "ingredients": [
+    { "name": "unsalted butter", "quantity": "6 tablespoons, plus more for greasing" },
+    { "name": "Kosher salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "heavy cream", "quantity": "1 cup" },
+    { "name": "Yukon Gold potatoes", "quantity": "5 pounds, thinly sliced" },
+    { "name": "canola oil", "quantity": "1/4 to 1/3 cup, as needed for searing" },
+    { "name": "Parmesan cheese", "quantity": "2/3 cup, finely grated" },
+    { "name": "flaky sea salt", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 350°F and prepare a 9-inch loaf pan by greasing it and lining it with parchment paper." },
+    { "order": 2, "instruction": "Melt the butter in a small saucepan, then whisk in the heavy cream, salt, and black pepper." },
+    { "order": 3, "instruction": "Peel the potatoes and slice them into 1/8-inch thick rounds using a mandoline or sharp knife." },
+    { "order": 4, "instruction": "Toss the sliced potatoes in the cream mixture until evenly coated." },
+    { "order": 5, "instruction": "Layer the potato slices in the loaf pan, pressing down occasionally to compact the layers." },
+    { "order": 6, "instruction": "Fold the parchment over the potatoes, cover tightly with foil, and bake for 2 hours until tender." },
+    { "order": 7, "instruction": "Remove from the oven, uncover, and let steam escape for 15 minutes." },
+    { "order": 8, "instruction": "Weight the terrine down with a flat object and heavy cans, then let cool completely for 1 to 1 1/2 hours." },
+    { "order": 9, "instruction": "Rewrap tightly and refrigerate for at least 8 hours or up to 3 days." },
+    { "order": 10, "instruction": "Remove the chilled terrine from the pan, trim the edges, and cut into 12 equal rectangular pieces." },
+    { "order": 11, "instruction": "Let the pieces sit at room temperature for 15 to 30 minutes." },
+    { "order": 12, "instruction": "Heat canola oil in a skillet over medium-high heat." },
+    { "order": 13, "instruction": "Dip the two largest sides of each potato piece into the grated Parmesan." },
+    { "order": 14, "instruction": "Sear the Parmesan-coated sides in batches for 2 to 3 minutes per side until golden and crisp." },
+    { "order": 15, "instruction": "Transfer to paper towels, sprinkle with flaky sea salt, and serve immediately." }
+  ],
+
+  "time_to_make": 600
+}

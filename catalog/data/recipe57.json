@@ -1,0 +1,37 @@
+{
+  "title": "Chicken au Poivre",
+  "description": "A playful take on steak au poivre featuring golden pan-seared chicken thighs simmered in a rich, peppery cream sauce with lemon and herbs.",
+
+  "ingredients": [
+    { "name": "whole black peppercorns", "quantity": "1 tablespoon" },
+    { "name": "extra-virgin olive oil", "quantity": "2 tablespoons" },
+    { "name": "boneless skinless chicken thighs", "quantity": "8 (about 2 pounds)" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "unsalted butter", "quantity": "2 tablespoons" },
+    { "name": "shallot", "quantity": "2 tablespoons, minced" },
+    { "name": "low-sodium chicken broth", "quantity": "1 cup" },
+    { "name": "heavy cream", "quantity": "1/2 cup" },
+    { "name": "thyme sprigs", "quantity": "3" },
+    { "name": "lemon juice", "quantity": "1 tablespoon" },
+    { "name": "parsley", "quantity": "1 tablespoon, finely chopped, plus more for garnish" },
+    { "name": "crusty bread or egg noodles", "quantity": "optional, for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Place the peppercorns in a resealable bag and gently crush them with a mallet or saucepan until coarsely cracked." },
+    { "order": 2, "instruction": "Heat the olive oil in a large heavy skillet over medium heat." },
+    { "order": 3, "instruction": "Season the chicken thighs with salt." },
+    { "order": 4, "instruction": "Sear the chicken in two batches until lightly golden all over, about 5 minutes per batch, then transfer to a plate." },
+    { "order": 5, "instruction": "Discard any excess oil from the skillet." },
+    { "order": 6, "instruction": "Add the butter and minced shallot to the skillet and cook until the shallot softens, about 1 minute." },
+    { "order": 7, "instruction": "Add the chicken broth, heavy cream, thyme sprigs, and crushed peppercorns, stirring to scrape up the browned bits from the pan." },
+    { "order": 8, "instruction": "Return the chicken and any accumulated juices to the skillet." },
+    { "order": 9, "instruction": "Bring to a simmer and cook, turning and basting occasionally, until the chicken is cooked through and reaches 165°F internally, about 6 to 8 minutes." },
+    { "order": 10, "instruction": "Transfer the chicken to serving plates and discard the thyme sprigs." },
+    { "order": 11, "instruction": "Add the lemon juice to the sauce and simmer until slightly thickened, about 2 minutes." },
+    { "order": 12, "instruction": "Season with salt, stir in the parsley, and spoon the sauce over the chicken." },
+    { "order": 13, "instruction": "Garnish with additional parsley and serve with crusty bread or egg noodles if desired." }
+  ],
+
+  "time_to_make": 45
+}

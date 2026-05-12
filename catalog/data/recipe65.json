@@ -1,0 +1,51 @@
+{
+  "title": "Pumpkin Crumb Cake",
+  "description": "A moist pumpkin cake topped with a crispy spiced streusel and finished with an optional sweet glaze, perfect for fall baking.",
+
+  "ingredients": [
+    { "name": "light brown sugar", "quantity": "1/2 cup, packed" },
+    { "name": "all-purpose flour", "quantity": "1/2 cup" },
+    { "name": "pumpkin spice blend", "quantity": "1 teaspoon" },
+    { "name": "salt", "quantity": "1 pinch" },
+    { "name": "cold unsalted butter", "quantity": "1/4 cup, cubed" },
+
+    { "name": "nonstick cooking spray", "quantity": "for pan" },
+    { "name": "light brown sugar", "quantity": "1 cup, packed" },
+    { "name": "eggs", "quantity": "2 large" },
+    { "name": "canned pumpkin purée", "quantity": "1 cup" },
+    { "name": "melted unsalted butter", "quantity": "1/4 cup" },
+    { "name": "neutral oil", "quantity": "1/4 cup" },
+    { "name": "pumpkin spice blend", "quantity": "1 tablespoon" },
+    { "name": "fine sea salt", "quantity": "1/2 teaspoon" },
+    { "name": "baking powder", "quantity": "1 teaspoon" },
+    { "name": "baking soda", "quantity": "1/2 teaspoon" },
+    { "name": "all-purpose flour", "quantity": "1 1/2 cups" },
+
+    { "name": "confectioners' sugar", "quantity": "3/4 cup" },
+    { "name": "pumpkin spice blend", "quantity": "3/4 teaspoon" },
+    { "name": "salt", "quantity": "1 pinch" },
+    { "name": "milk", "quantity": "3 to 5 teaspoons" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 350°F and line an 8-inch square or 9-inch round baking pan with parchment paper after spraying with nonstick cooking spray." },
+
+    { "order": 2, "instruction": "Make the streusel by combining 1/2 cup brown sugar, 1/2 cup flour, 1 teaspoon pumpkin spice, and a pinch of salt in a small bowl." },
+    { "order": 3, "instruction": "Add the cold cubed butter and work it into the dry ingredients with your fingertips until pebble-sized crumbs form." },
+
+    { "order": 4, "instruction": "In a large bowl, whisk 1 cup brown sugar and the eggs until pale and foamy, about 1 minute." },
+    { "order": 5, "instruction": "Add the pumpkin purée, melted butter, oil, pumpkin spice, and salt, then whisk until smooth." },
+    { "order": 6, "instruction": "Whisk in the baking powder and baking soda, then stir in the flour until fully combined." },
+
+    { "order": 7, "instruction": "Pour the batter into the prepared pan, smooth the top, and tap the pan lightly to release air bubbles." },
+    { "order": 8, "instruction": "Sprinkle the streusel evenly over the top." },
+
+    { "order": 9, "instruction": "Bake for 40 to 45 minutes, until golden and a toothpick inserted in the center comes out clean." },
+    { "order": 10, "instruction": "Cool in the pan for 15 minutes, then remove and cool almost completely on a wire rack." },
+
+    { "order": 11, "instruction": "If making the glaze, whisk together the confectioners' sugar, pumpkin spice, salt, and 3 teaspoons milk, adding more milk as needed until thick but drizzleable." },
+    { "order": 12, "instruction": "Drizzle the glaze over the slightly warm cake and serve." }
+  ],
+
+  "time_to_make": 60
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Creamy Braised White Beans",
+  "description": "A rich and comforting vegetarian bean dish made with chickpeas, white beans, whole milk, garlic, and herbs, perfect with crusty bread.",
+
+  "ingredients": [
+    { "name": "unsalted butter", "quantity": "1 tablespoon" },
+    { "name": "garlic", "quantity": "1 whole head, halved crosswise" },
+    { "name": "whole milk", "quantity": "1 cup" },
+    { "name": "chickpeas", "quantity": "1 can (15 ounces), with liquid" },
+    { "name": "white beans", "quantity": "1 can (15 ounces), drained and rinsed" },
+    { "name": "thyme", "quantity": "1 sprig" },
+    { "name": "ground nutmeg", "quantity": "1/8 teaspoon" },
+    { "name": "Kosher salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "crusty bread or thick toast", "quantity": "4 slices" },
+    { "name": "extra-virgin olive oil", "quantity": "for serving" },
+    { "name": "Parmesan cheese", "quantity": "for serving, grated" },
+    { "name": "Aleppo pepper or red pepper flakes", "quantity": "for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Melt the butter in a medium saucepan over medium-high heat." },
+    { "order": 2, "instruction": "Add the halved garlic, cut side down, and cook until golden brown, about 1 to 2 minutes." },
+    { "order": 3, "instruction": "Add the whole milk, chickpeas with their liquid, white beans, thyme, and ground nutmeg." },
+    { "order": 4, "instruction": "Season generously with salt and black pepper, then stir to combine." },
+    { "order": 5, "instruction": "When the mixture begins to bubble gently around the edges, reduce the heat to low and simmer for about 15 minutes, stirring occasionally, until thickened." },
+    { "order": 6, "instruction": "Remove the garlic halves and let them cool slightly, then squeeze or scoop the softened cloves from their skins." },
+    { "order": 7, "instruction": "Spread the roasted garlic onto the crusty bread or toast." },
+    { "order": 8, "instruction": "If you prefer a thicker, stew-like consistency, mash some of the beans with a spoon or potato masher." },
+    { "order": 9, "instruction": "Taste and adjust seasoning with additional salt and pepper." },
+    { "order": 10, "instruction": "Serve in bowls with a drizzle of olive oil, grated Parmesan, Aleppo pepper or red pepper flakes, and the garlic toast alongside." }
+  ],
+
+  "time_to_make": 25
+}

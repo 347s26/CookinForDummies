@@ -1,0 +1,34 @@
+{
+  "title": "Cheese Dreams",
+  "description": "Crispy, cheesy two-bite sandwich snacks made with sharp cheddar, butter, and a savory spread, perfect as an appetizer.",
+
+  "ingredients": [
+    { "name": "white sandwich bread", "quantity": "1 loaf (16 ounces)" },
+    { "name": "sharp cheddar cheese", "quantity": "2 cups (8 ounces), finely shredded" },
+    { "name": "salted butter", "quantity": "1 cup (8 ounces), softened" },
+    { "name": "egg", "quantity": "1 large" },
+    { "name": "heavy cream", "quantity": "1/4 cup, room temperature" },
+    { "name": "Worcestershire sauce", "quantity": "1 1/2 teaspoons" },
+    { "name": "garlic powder", "quantity": "1 teaspoon" },
+    { "name": "mustard powder", "quantity": "1/2 teaspoon" },
+    { "name": "salt", "quantity": "1/4 teaspoon, plus more to taste" },
+    { "name": "hot sauce", "quantity": "1 to 2 teaspoons, optional" },
+    { "name": "marinara sauce", "quantity": "optional, for dipping" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 375°F and line a baking sheet with parchment paper." },
+    { "order": 2, "instruction": "Trim the crusts off the bread and cut each slice into 4 equal squares." },
+    { "order": 3, "instruction": "In a medium bowl, beat the cheddar cheese and softened butter with a hand mixer until well combined." },
+    { "order": 4, "instruction": "Add the egg and beat until fully incorporated." },
+    { "order": 5, "instruction": "Add the heavy cream, Worcestershire sauce, garlic powder, mustard powder, salt, and hot sauce if using, then beat until smooth." },
+    { "order": 6, "instruction": "Spread about 1 teaspoon of the cheese mixture onto one side of a bread square." },
+    { "order": 7, "instruction": "Top with another bread square to form a sandwich." },
+    { "order": 8, "instruction": "Spread more cheese mixture over the top and sides of the sandwich, leaving the bottom plain." },
+    { "order": 9, "instruction": "Repeat with the remaining bread and cheese mixture, placing the sandwiches about 1 inch apart on the baking sheet." },
+    { "order": 10, "instruction": "Bake for 15 to 20 minutes until golden brown and crisp." },
+    { "order": 11, "instruction": "Serve immediately with marinara sauce for dipping if desired." }
+  ],
+
+  "time_to_make": 50
+}

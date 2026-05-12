@@ -1,0 +1,36 @@
+{
+  "title": "Fluffy Cheddar Biscuits",
+  "description": "Golden, crisp, buttery cheddar biscuits that are light and fluffy inside with cheesy flavor throughout.",
+
+  "ingredients": [
+    { "name": "all-purpose flour", "quantity": "3 cups" },
+    { "name": "granulated sugar", "quantity": "3 tablespoons" },
+    { "name": "baking powder", "quantity": "1 tablespoon" },
+    { "name": "garlic powder", "quantity": "1 1/2 teaspoons" },
+    { "name": "fine sea salt", "quantity": "3/4 teaspoon" },
+    { "name": "paprika", "quantity": "1/4 teaspoon" },
+    { "name": "cold unsalted butter", "quantity": "1/2 cup (1 stick), cubed" },
+    { "name": "melted unsalted butter", "quantity": "6 tablespoons" },
+    { "name": "sharp or extra-sharp cheddar cheese", "quantity": "8 ounces (about 2 packed cups), shredded" },
+    { "name": "buttermilk", "quantity": "1 cup" },
+    { "name": "egg", "quantity": "1 large" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 375°F and arrange racks in the upper and lower thirds of the oven. Line two baking sheets with parchment paper." },
+    { "order": 2, "instruction": "In a medium bowl, combine the flour, sugar, baking powder, garlic powder, salt, and paprika." },
+    { "order": 3, "instruction": "Add the cubed cold butter and toss until coated in the flour mixture." },
+    { "order": 4, "instruction": "Use a pastry cutter or your hands to work the butter into the flour until the mixture resembles coarse crumbs with no pieces larger than a pea." },
+    { "order": 5, "instruction": "If the butter becomes too soft, refrigerate the mixture for 15 minutes." },
+    { "order": 6, "instruction": "Stir in 1 1/2 cups of the shredded cheddar cheese." },
+    { "order": 7, "instruction": "In a separate bowl or measuring cup, whisk together the buttermilk and egg." },
+    { "order": 8, "instruction": "Pour the wet ingredients into the dry ingredients and stir with a wooden spoon until just combined." },
+    { "order": 9, "instruction": "Divide the dough into 12 equal portions and place them on the prepared baking sheets, 6 biscuits per sheet." },
+    { "order": 10, "instruction": "Brush the tops with some of the melted butter and sprinkle the remaining cheddar cheese over each biscuit." },
+    { "order": 11, "instruction": "Bake for 15 minutes." },
+    { "order": 12, "instruction": "Brush the biscuits with more melted butter, rotate the pans, and continue baking for 5 to 10 more minutes until golden brown." },
+    { "order": 13, "instruction": "Brush generously with the remaining melted butter and let cool for at least 10 minutes before serving." }
+  ],
+
+  "time_to_make": 45
+}

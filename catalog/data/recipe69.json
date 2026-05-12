@@ -1,0 +1,36 @@
+{
+  "title": "Tuscan Farro Soup",
+  "description": "A hearty Tuscan-style vegetable and bean soup with farro, tomatoes, herbs, and Parmesan.",
+
+  "ingredients": [
+    { "name": "extra virgin olive oil", "quantity": "2 tablespoons" },
+    { "name": "onion", "quantity": "1 large, sliced" },
+    { "name": "celery", "quantity": "2 stalks, trimmed and chopped" },
+    { "name": "carrots", "quantity": "2, peeled and chopped" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "garlic", "quantity": "1 tablespoon, minced" },
+    { "name": "farro", "quantity": "1 cup" },
+    { "name": "dried white beans", "quantity": "1 cup, soaked overnight" },
+    { "name": "chopped tomatoes", "quantity": "2 cups" },
+    { "name": "stock or water", "quantity": "6 cups, plus more as needed" },
+    { "name": "fresh parsley", "quantity": "1/4 cup, chopped" },
+    { "name": "fresh basil", "quantity": "1/4 cup, chopped (optional)" },
+    { "name": "Parmesan cheese", "quantity": "for serving, freshly grated" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Heat the olive oil in a large deep saucepan over medium heat." },
+    { "order": 2, "instruction": "Add the onion, celery, carrots, a large pinch of salt, and black pepper." },
+    { "order": 3, "instruction": "Cook for 5 to 10 minutes until the vegetables soften and become glossy." },
+    { "order": 4, "instruction": "Add the minced garlic and stir briefly until fragrant." },
+    { "order": 5, "instruction": "Add the farro, soaked white beans, chopped tomatoes, and stock or water." },
+    { "order": 6, "instruction": "Bring the soup to a boil, then reduce heat to maintain a steady simmer." },
+    { "order": 7, "instruction": "Cook for about 1 hour, or until the farro and beans are tender, adding more liquid if the soup becomes too thick." },
+    { "order": 8, "instruction": "Stir in the parsley and basil if using, then simmer for another 5 minutes." },
+    { "order": 9, "instruction": "Taste and adjust seasoning with more salt and pepper if needed." },
+    { "order": 10, "instruction": "Serve hot topped with freshly grated Parmesan cheese." }
+  ],
+
+  "time_to_make": 90
+}

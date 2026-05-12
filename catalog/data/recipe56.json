@@ -1,0 +1,43 @@
+{
+  "title": "Orange Beef",
+  "description": "A takeout-style orange beef dish with crispy steak pieces coated in a bold sweet, tangy, orange-flavored sauce.",
+
+  "ingredients": [
+    { "name": "neutral oil", "quantity": "1 tablespoon" },
+    { "name": "fresh ginger", "quantity": "1/2-inch piece, peeled and minced" },
+    { "name": "jalapeño", "quantity": "1, seeded and minced" },
+    { "name": "orange zest", "quantity": "2 tablespoons" },
+    { "name": "orange juice", "quantity": "juice of 1 orange" },
+    { "name": "garlic cloves", "quantity": "3, peeled and minced" },
+    { "name": "light brown sugar", "quantity": "1/4 cup" },
+    { "name": "rice vinegar", "quantity": "1/4 cup" },
+    { "name": "soy sauce", "quantity": "1/4 cup" },
+    { "name": "fish sauce", "quantity": "1 tablespoon" },
+    { "name": "egg white", "quantity": "1 large" },
+    { "name": "cornstarch", "quantity": "1 tablespoon" },
+    { "name": "Kosher salt", "quantity": "1 pinch" },
+    { "name": "rib-eye steak", "quantity": "1 boneless steak (1 to 1 1/2 pounds), cut into 1-inch pieces" },
+    { "name": "neutral oil", "quantity": "1/4 cup" },
+    { "name": "scallions", "quantity": "6, white and green parts separated, cut into 1-inch pieces" },
+    { "name": "dried red chiles", "quantity": "2 to 4, to taste" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Make the sauce by heating 1 tablespoon of neutral oil in a small saucepan over medium-high heat." },
+    { "order": 2, "instruction": "Add the ginger, jalapeño, and orange zest, then sauté until softened, about 2 to 3 minutes." },
+    { "order": 3, "instruction": "Add the garlic and cook for 1 to 2 more minutes until softened." },
+    { "order": 4, "instruction": "Stir in the orange juice, brown sugar, rice vinegar, soy sauce, and fish sauce." },
+    { "order": 5, "instruction": "Bring to a boil, then reduce heat and simmer until the sauce thickens and reduces by half, about 10 to 15 minutes." },
+    { "order": 6, "instruction": "Prepare the beef by combining the egg white, cornstarch, and salt in a bowl." },
+    { "order": 7, "instruction": "Add the steak pieces and toss until evenly coated." },
+    { "order": 8, "instruction": "Heat 1/4 cup neutral oil in a large skillet or wok over high heat until shimmering." },
+    { "order": 9, "instruction": "Add the beef in a single layer and cook without stirring for 60 to 90 seconds until crisp and golden underneath." },
+    { "order": 10, "instruction": "Add the white scallion pieces and dried red chiles, then flip the beef and cook for about 3 more minutes until medium-rare." },
+    { "order": 11, "instruction": "Transfer the beef to a platter." },
+    { "order": 12, "instruction": "Pour the orange sauce into the hot skillet or wok and boil, stirring as it thickens." },
+    { "order": 13, "instruction": "Return the beef to the pan and toss until coated in the sauce." },
+    { "order": 14, "instruction": "Transfer to a serving platter, top with green scallions, and serve." }
+  ],
+
+  "time_to_make": 30
+}

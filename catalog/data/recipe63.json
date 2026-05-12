@@ -1,0 +1,49 @@
+{
+  "title": "Butternut Squash and Green Curry Soup",
+  "description": "A creamy Thai-inspired butternut squash soup with coconut milk, green curry paste, fish sauce, and a crunchy peanut-coconut garnish.",
+
+  "ingredients": [
+    { "name": "coconut oil or neutral oil", "quantity": "4 tablespoons" },
+    { "name": "shallots", "quantity": "3 medium, diced" },
+    { "name": "fresh ginger", "quantity": "1 piece (2-inch), peeled and thinly sliced" },
+    { "name": "lemongrass", "quantity": "1 stalk, cut into 3-inch pieces" },
+    { "name": "Kosher salt", "quantity": "to taste" },
+    { "name": "butternut squash", "quantity": "2 medium (about 4 pounds), peeled, seeded, cubed" },
+    { "name": "coconut milk", "quantity": "2 cans (13.5 ounces each)" },
+    { "name": "Thai green curry paste", "quantity": "6 to 8 tablespoons, to taste" },
+    { "name": "fish sauce", "quantity": "3 tablespoons" },
+    { "name": "water or chicken stock", "quantity": "3 to 4 cups" },
+
+    { "name": "raw peanuts", "quantity": "3/4 cup" },
+    { "name": "unsweetened coconut flakes", "quantity": "3/4 cup" },
+    { "name": "fish sauce", "quantity": "2 tablespoons" },
+    { "name": "dried red chiles", "quantity": "8 small, thinly sliced" },
+    { "name": "neutral oil or melted coconut oil", "quantity": "1 tablespoon" },
+    { "name": "minced lemongrass", "quantity": "1 tablespoon" },
+    { "name": "sugar", "quantity": "1 teaspoon" },
+    { "name": "lime leaves", "quantity": "10, thinly sliced (optional)" },
+    { "name": "Thai or Italian basil leaves", "quantity": "1 handful, sliced" },
+    { "name": "limes", "quantity": "2 to 3, quartered" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "Preheat the oven to 300°F." },
+    { "order": 2, "instruction": "Heat the oil in a large Dutch oven or soup pot over medium-high heat." },
+    { "order": 3, "instruction": "Add the shallots, ginger, lemongrass, and a generous pinch of salt." },
+    { "order": 4, "instruction": "Reduce heat to low and cook, stirring occasionally, until the shallots are tender and lightly browned, about 18 minutes." },
+    { "order": 5, "instruction": "Add the butternut squash, coconut milk, curry paste, fish sauce, and water or stock." },
+    { "order": 6, "instruction": "Bring to a boil, reduce to a simmer, cover, and cook until the squash is tender, about 25 minutes." },
+
+    { "order": 7, "instruction": "While the soup cooks, make the garnish by combining the peanuts, coconut flakes, fish sauce, sliced chiles, oil, minced lemongrass, sugar, and lime leaves if using." },
+    { "order": 8, "instruction": "Spread the mixture onto a baking sheet in a single layer." },
+    { "order": 9, "instruction": "Bake for 18 to 20 minutes, stirring every 3 minutes after the first 10 minutes, until golden brown." },
+    { "order": 10, "instruction": "Transfer the garnish immediately to a bowl to prevent overcooking." },
+
+    { "order": 11, "instruction": "Remove the soup from heat and discard the lemongrass stalks." },
+    { "order": 12, "instruction": "Purée the soup with an immersion blender or in batches using a blender until smooth." },
+    { "order": 13, "instruction": "Adjust seasoning and thin with more water or stock if needed." },
+    { "order": 14, "instruction": "Serve hot topped with basil, lime wedges, and the peanut-coconut garnish." }
+  ],
+
+  "time_to_make": 60
+}

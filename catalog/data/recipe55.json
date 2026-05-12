@@ -1,0 +1,32 @@
+{
+  "title": "Chicken Noodle Soup",
+  "description": "A classic, comforting homemade chicken noodle soup made with carrots, celery, egg noodles, herbs, and cooked chicken for a quick weeknight meal.",
+
+  "ingredients": [
+    { "name": "unsalted butter", "quantity": "2 tablespoons" },
+    { "name": "yellow onion", "quantity": "1 medium, finely chopped" },
+    { "name": "salt", "quantity": "to taste" },
+    { "name": "black pepper", "quantity": "to taste" },
+    { "name": "chicken stock", "quantity": "8 cups" },
+    { "name": "bay leaves", "quantity": "2 (or 1 teaspoon dried thyme)" },
+    { "name": "parsley or dill", "quantity": "1/4 cup, finely chopped, stems reserved, plus more for garnish" },
+    { "name": "carrots", "quantity": "2 medium, cut into 1/2-inch pieces" },
+    { "name": "celery", "quantity": "2 stalks, cut into 1/2-inch pieces" },
+    { "name": "dried noodles", "quantity": "6 ounces (such as egg noodles or short pasta)" },
+    { "name": "cooked chicken", "quantity": "3 cups, shredded (from 1 rotisserie chicken)" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "In a large pot or Dutch oven, melt the butter over medium heat." },
+    { "order": 2, "instruction": "Add the chopped onion, season with salt and black pepper, and cook until softened but not browned, about 5 to 7 minutes." },
+    { "order": 3, "instruction": "Add the chicken stock, bay leaves, and reserved herb stems, then bring to a boil over high heat." },
+    { "order": 4, "instruction": "Add the carrots, celery, and dried noodles." },
+    { "order": 5, "instruction": "Cook uncovered over medium-high heat until the noodles are al dente, about 7 to 10 minutes." },
+    { "order": 6, "instruction": "Add the shredded cooked chicken and simmer for 1 to 2 minutes until warmed through." },
+    { "order": 7, "instruction": "Remove and discard the bay leaves and herb stems." },
+    { "order": 8, "instruction": "Stir in the chopped parsley or dill and adjust seasoning with additional salt and pepper as needed." },
+    { "order": 9, "instruction": "Serve hot, garnished with extra herbs if desired." }
+  ],
+
+  "time_to_make": 40
+}

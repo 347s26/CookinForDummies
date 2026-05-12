@@ -1,0 +1,36 @@
+{
+  "title": "Thai Combination Fried Rice",
+  "description": "A Thai-inspired fried rice dish with tofu, eggs, vegetables, fish sauce, and jasmine rice, cooked quickly in a hot wok.",
+
+  "ingredients": [
+    { "name": "canola or vegetable oil", "quantity": "4 tablespoons" },
+    { "name": "garlic cloves", "quantity": "8, minced or pressed" },
+    { "name": "carrot", "quantity": "1 large, peeled and diced or julienned" },
+    { "name": "tofu", "quantity": "4 ounces, patted dry and cut into 1/2-inch cubes" },
+    { "name": "eggs", "quantity": "4, beaten and seasoned with salt and pepper" },
+    { "name": "cooked jasmine rice", "quantity": "5 cups" },
+    { "name": "Thai or Vietnamese fish sauce", "quantity": "2 to 3 tablespoons, to taste" },
+    { "name": "Thai or Indonesian chile sauce", "quantity": "2 to 3 teaspoons, to taste" },
+    { "name": "tomato", "quantity": "1, chopped" },
+    { "name": "scallions", "quantity": "1 bunch, chopped" },
+    { "name": "chopped cilantro", "quantity": "1/2 cup" },
+    { "name": "cucumber", "quantity": "thinly sliced, for serving" },
+    { "name": "lime wedges", "quantity": "for serving" },
+    { "name": "fish sauce with hot chiles", "quantity": "optional, for serving" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "If needed, prepare the jasmine rice ahead of time and chill it so you have 5 cups cooked rice ready." },
+    { "order": 2, "instruction": "Prepare all ingredients before cooking: mince the garlic, cut the carrot, cube the tofu, beat the eggs, chop the tomato and scallions." },
+    { "order": 3, "instruction": "Heat a large wok or heavy skillet over medium-high heat until very hot." },
+    { "order": 4, "instruction": "Add the oil and swirl to coat the pan." },
+    { "order": 5, "instruction": "Add the carrot and tofu, stir-frying until lightly browned, about 2 minutes." },
+    { "order": 6, "instruction": "Add the garlic and stir-fry until golden, about 30 seconds." },
+    { "order": 7, "instruction": "Pour in the beaten eggs and scramble until just cooked." },
+    { "order": 8, "instruction": "Add the cooked rice and stir-fry, pressing and tossing it repeatedly, for about 2 minutes." },
+    { "order": 9, "instruction": "Add the fish sauce, chile sauce, tomato, and scallions, then stir-fry for about 30 seconds." },
+    { "order": 10, "instruction": "Serve immediately, garnished with cilantro and cucumber, with lime wedges and extra fish sauce on the side." }
+  ],
+
+  "time_to_make": 30
+}

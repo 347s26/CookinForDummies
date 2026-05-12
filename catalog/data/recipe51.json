@@ -1,0 +1,32 @@
+{
+  "title": "Orecchiette Salad With Halloumi Croutons",
+  "description": "Crispy, salty, chewy cubes of sautéed halloumi add great texture and heartiness to this bright pasta salad filled with veggies, herbs and tomatoes.",
+
+  "ingredients": [
+    { "name": "cherry or grape tomatoes", "quantity": "1 pint, halved" },
+    { "name": "olive oil", "quantity": "4 tablespoons, plus more as needed" },
+    { "name": "red wine vinegar", "quantity": "2 tablespoons, plus more as needed" },
+    { "name": "Kosher salt and freshly ground pepper", "quantity": "to taste" },
+    { "name": "orecchiette or other small pasta", "quantity": "8 ounces" },
+    { "name": "halloumi cheese", "quantity": "8 ounces, chopped into 1/2-inch pieces" },
+    { "name": "cucumbers", "quantity": "3 Persian, chopped into 1/2-inch pieces" },
+    { "name": "baby arugula", "quantity": "2 cups, optional" },
+    { "name": "chopped fresh cilantro", "quantity": "1/2 cup" },
+    { "name": "Mint", "quantity": "1/2 cup fresh leaves, chopped" },
+    { "name": "finely chopped red onion", "quantity": "1/4 cup" }
+  ],
+
+  "steps": [
+    { "order": 1, "instruction": "In a large bowl, combine the tomatoes, 2 tablespoons olive oil, the vinegar, 1/2 teaspoon salt and 1/2 teaspoon pepper." },
+    { "order": 2, "instruction": "Bring a large pot of salted water to a boil, and cook the pasta to al dente according to package directions." },
+    { "order": 3, "instruction": "Drain the pasta well and add it to the tomato mixture while still warm." },
+    { "order": 4, "instruction": "Stir gently to combine, then let the mixture cool slightly." },
+    { "order": 5, "instruction": "While the mixture cools, heat 2 tablespoons olive oil in a large nonstick skillet over medium-high heat." },
+    { "order": 6, "instruction": "Pat the halloumi dry with paper towels, then cook it until golden-brown, stirring occasionally, 3 to 5 minutes." },
+    { "order": 7, "instruction": "Add the cucumbers, arugula if using, cilantro, mint and red onion to the pasta, then stir to combine." },
+    { "order": 8, "instruction": "Top with the halloumi, then add more salt, pepper, olive oil and vinegar to taste." },
+    { "order": 9, "instruction": "Serve immediately." }
+  ],
+
+  "time_to_make": 45
+}
